@@ -6,7 +6,8 @@ process-attributes answer: 3 - 5
 process-document   foo: 5 - 8
 robot: 3 - 5
 process-document   foo: 5 - 8
-netty: 2 - 3
+netty: 1 - 2
+process-self       netty: 2 - 3
 process-attributes on: 3 - 5
 process-document   foo: 5 - 8
 
