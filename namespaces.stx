@@ -1,14 +1,25 @@
 <?xml version="1.0"?>
 <!-- namespace handling -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-  <stx:options pass-through="text" />
+
+  <stx:options pass-through="none" />
 
   <stx:template match="*:test">
     <stx:copy attributes="@*">
+      <stx:text>&#xA;</stx:text>
+      <stx:for-each select="get-in-scope-namespaces(.)">
+        <stx:if test="position() != 1">, </stx:if>
+        <stx:value-of
+            select="concat(., '=',
+                           get-namespace-uri-for-prefix(current(), .))" />
+      </stx:for-each>
       <stx:if test="has-child-nodes()">
+        <stx:text>&#xA;</stx:text>
         <new xmlns:foo="foo" prop="foo:value"><foo:foo xmlns="bar"/></new>
       </stx:if>
+      <stx:text>&#xA;</stx:text>
       <stx:process-children />
+      <stx:text>&#xA;</stx:text>
     </stx:copy>
   </stx:template>
 
