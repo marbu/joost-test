@@ -6,6 +6,10 @@
   <stx:template match="/">
     <stx:text>principal source document</stx:text>
     <stx:process-children />
+    <stx:text>&#xA;</stx:text>
+    <stx:process-document href="()" />
+    <stx:process-document href="('sum.xml','serialize.xml', 'xmlspace.xml')"
+                          group="copy" />
   </stx:template>
   
   <stx:template match="doc">
@@ -24,8 +28,8 @@
       <stx:if test="position() != 1">, </stx:if>
       <stx:value-of select="normalize-space(.)" />
     </stx:template>
-
-
   </stx:group>
 
+  <stx:group name="copy" pass-through="all" />
+  
 </stx:transform>

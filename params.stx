@@ -65,7 +65,7 @@
       <stx:value-of select="concat(name(), ': ', $fib1, ' - ', $fib2,
                                    '&#xA;')" />
       <stx:text>process-document   </stx:text>
-      <stx:process-document href="params.xml" base="#input" group="d">
+      <stx:process-document href="'params.xml'" base="#input" group="d">
         <stx:with-param name="fib1" select="$fib2" />
         <stx:with-param name="fib2" select="$fib1 + $fib2" />
       </stx:process-document>
