@@ -467,6 +467,10 @@
 <p>All of the following data are used under the
             <a href="http://rdf.dmoz.org/license.html">Open Directory
               License</a>.</p>
+<dl class="pages"><dt><strong><a href="http://rdf.dmoz.org/rdf/content.example.txt" target="_blank">The Open Directory Project content example</a></strong></dt>
+<dd>The source of this example
+      (extended and adapted to the current format).</dd>
+</dl><hr />
 
 <div align="center"><p><table border="0" bgcolor="#336600" cellpadding="3" cellspacing="0"><tr><td><table width="100%" cellpadding="2" cellspacing="0" border="0"><tr align="center"><td><font face="sans-serif, Arial, Helvetica" size="2" color="#FFFFFF">Help build the largest human-edited
             directory on the web.</font></td></tr><tr bgcolor="#CCCCCC" align="center"><td><font face="sans-serif, Arial, Helvetica" size="2"><a href="http://dmoz.org/cgi-bin/add.cgi?where=Top/Bookmarks">Submit

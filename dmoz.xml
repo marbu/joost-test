@@ -494,7 +494,14 @@
 
 <Topic r:id="Top/Bookmarks">
   <catid>18</catid>
+  <link r:resource="http://rdf.dmoz.org/rdf/content.example.txt" />
 </Topic>
 
+<!-- Added by ob -->
+<ExternalPage about="http://rdf.dmoz.org/rdf/content.example.txt">
+  <d:Title>The Open Directory Project content example</d:Title>
+  <d:Description>The source of this example
+      (extended and adapted to the current format).</d:Description>
+</ExternalPage>
 
 </RDF>
