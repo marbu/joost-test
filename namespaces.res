@@ -9,11 +9,11 @@ x, xml,
 
 </x:test>
 </test><one:test xmlns:two="uri:two" xmlns:one="uri:one" xmlns:three="uri:three" t="two:processing">
-xml=http://www.w3.org/XML/1998/namespace, two=uri:two, one=uri:one, three=uri:three
-xml, two, one, three
+two=uri:two, xml=http://www.w3.org/XML/1998/namespace, one=uri:one, three=uri:three
+two, xml, one, three
 
 </one:test><default:test xmlns:default="uri:d">
-xml=http://www.w3.org/XML/1998/namespace, default=uri:d
-xml, default
+default=uri:d, xml=http://www.w3.org/XML/1998/namespace
+default, xml
 
 </default:test>
