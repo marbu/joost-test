@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:buffer name="data">
+    <foo>
+      <item>123</item>
+      <item>42</item>
+      <item>10000</item>
+      <item>0.5</item>
+    </foo>
+  </stx:buffer>
+
+  
+  <stx:template match="/">
+    <stx:if test="filter-available('http://www.w3.org/1999/XSL/Transform')">
+      <stx:process-buffer name="data" src=" url( ' xslt.xsl ' )"
+                          filter="http://www.w3.org/1999/XSL/Transform">
+        <stx:with-param name="ns:p" select="'bear'" xmlns:ns="urn:ext" />
+      </stx:process-buffer>
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="data" src="buffer(code)"
+                          filter="http://www.w3.org/1999/XSL/Transform">
+        <stx:with-param name="answer" select="42" />
+      </stx:process-buffer>
+    </stx:if>
+    <stx:else>XSLT not available</stx:else>
+  </stx:template>
+
+  
+  <stx:buffer name="code">
+    <xsl:stylesheet version="1.0"
+                    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+      <xsl:param name="answer" />
+
+      <xsl:template match="foo">
+        <intern xmlns:p="dummy" answer="{{$answer}}">
+          <xsl:comment> comment </xsl:comment>
+          <xsl:text xml:space="preserve">&#xA;</xsl:text>
+          <stx:start-element name="wow" />
+          <stx:attribute name="items">{count(item)}</stx:attribute>
+          <stx:text> cool </stx:text>
+          <stx:end-element name="{'wow'}" />
+          <xsl:processing-instruction name="pi" />
+        </intern>
+      </xsl:template>
+
+    </xsl:stylesheet>
+  </stx:buffer>
+
+  
+</stx:transform>
