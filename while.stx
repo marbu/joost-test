@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options strip-space="yes" />
+  
+  <stx:template match="root">
+    <stx:variable name="cnt" select="10" />
+    <stx:while test="$cnt > 0">
+      <stx:value-of select="$cnt" />, <stx:text />
+      <stx:if test="$cnt = 5">
+        <stx:process-children />
+        <stx:text>&#xA;</stx:text>
+      </stx:if>
+      <stx:assign name="cnt" select="$cnt - 1" />
+    </stx:while>
+  </stx:template>
+
+  <stx:template match="a">
+    <stx:variable name="a" select="1" />
+    <stx:text>&#xA;</stx:text>
+    <wrap>
+      <stx:process-self group="copy" />
+      <stx:while test="$a &lt; 3">
+        <stx:variable name="dummy" />
+        <stx:process-siblings while="a" group="copy" />
+        <stx:process-siblings while="b" group="copy" />
+        <stx:assign name="a" select="$a + 1" />
+        <stx:text>&#xA;</stx:text>
+        <next />
+      </stx:while>
+    </wrap>
+  </stx:template>
+
+  <stx:group name="copy">
+    <stx:template match="*">
+      <stx:copy attributes="@*" />
+    </stx:template>
+  </stx:group>
+  
+</stx:transform>
