@@ -13,6 +13,13 @@ Hello, world
     false,
     false,
     true,
+ ends-with
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
  contains
     true,
     true,
@@ -49,6 +56,11 @@ Hello, world
     "THIS IS A NEW FOO FOR ALL BARS"
     "1299.50"
     "xyzde"
+ string-pad
+    "STXSTXSTX"
+    "STX"
+    ""
+    ""
  floor, ceiling, round
     * 2.3: 2, 3, 2
     * 2.7: 2, 3, 3

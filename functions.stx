@@ -18,6 +18,13 @@
     <stx:value-of select="starts-with('abcd', 'xyz')" />,
     <stx:value-of select="starts-with('', 'xyz')" />,
     <stx:value-of select="starts-with('', '')" />,
+ ends-with
+    <stx:value-of select="ends-with('abcd', 'cd')" />,
+    <stx:value-of select="ends-with('abcd', 'abcd')" />,
+    <stx:value-of select="ends-with('abcd', '')" />,
+    <stx:value-of select="ends-with('abcd', 'xyz')" />,
+    <stx:value-of select="ends-with('', 'xyz')" />,
+    <stx:value-of select="ends-with('', '')" />,
  contains
     <stx:value-of select="contains('abcd','bc')" />,
     <stx:value-of select="contains('abcd','abcd')" />,
@@ -55,8 +62,12 @@
                                      'abcdefghijklmnopqrstuvwxyz',
                                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />"
     "<stx:value-of select="translate('1.299,50', ',.', '.')" />"
-    "<stx:value-of select="translate('abcde', 'abcabc', 'xyz1234')"
-    />"
+    "<stx:value-of select="translate('abcde', 'abcabc', 'xyz1234')" />"
+ string-pad
+    "<stx:value-of select="string-pad('STX',3)" />"
+    "<stx:value-of select="string-pad('STX',1)" />"
+    "<stx:value-of select="string-pad('STX',0)" />"
+    "<stx:value-of select="string-pad((),20)" />"
  floor, ceiling, round<stx:text/>
     <stx:variable name="n" select="2.3" />
     * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
@@ -83,7 +94,7 @@
     <stx:value-of select="concat(position(), ' ', name($n),' ')" />
     <stx:if test="local-name()">
       <stx:value-of select="concat('({', namespace-uri(.), ' | ',
-                                   prefix(.), '}, ',
+                                   substring-before(name(.),':'), '}, ',
                                    local-name(.), ')')" />
     </stx:if>
     <stx:if test="name()='' and normalize-space()=."> no whitespace!</stx:if>
