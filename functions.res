@@ -36,7 +36,6 @@ Hello, world
     "12345"
     ""
     "12345"
-    
  substring-before
     "ab"
     ""
@@ -45,6 +44,10 @@ Hello, world
     "eabcde"
     "abcdeabcde"
     ""
+ translate
+    "THIS IS A NEW FOO FOR ALL BARS"
+    "1299.50"
+    "xyzde"
     
 1 pi ({ | }, pi)
 2 root ({http://root.uri | }, root)

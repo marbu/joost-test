@@ -40,7 +40,6 @@
     "<stx:value-of select="substring('12345',-42, 1 div 0)" />"
     "<stx:value-of select="substring('12345',-1 div 0, 1 div 0)" />"
     "<stx:value-of select="substring('12345',-1 div 0)" />"
-    
  substring-before
     "<stx:value-of select="substring-before('abcdeabcde','cd')" />"
     "<stx:value-of select="substring-before('abcdeabcde','')" />"
@@ -49,6 +48,12 @@
     "<stx:value-of select="substring-after('abcdeabcde','cd')" />"
     "<stx:value-of select="substring-after('abcdeabcde','')" />"
     "<stx:value-of select="substring-after('abcdeabcde','xxx')" />"
+ translate
+    "<stx:value-of select="translate('This is a new foo for all bars',
+                                     'abcdefghijklmnopqrstuvwxyz',
+                                     'ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />"
+    "<stx:value-of select="translate('1.299,50', ',.', '.')" />"
+    "<stx:value-of select="translate('abcde', 'abcabc', 'xyz1234')" />"
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
   </stx:template>
