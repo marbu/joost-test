@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- variables with contents -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options no-match-events="text" />
+  
+  <stx:template match="*">
+    <stx:variable name="text">
+      <stx:process-children />
+    </stx:variable>
+    <stx:assign name="text">
+      <stx:value-of select="$text" />
+      <stx:text>|</stx:text>
+      <stx:value-of select="$text" />
+    </stx:assign>
+    <stx:value-of select="$text" />
+  </stx:template>
+
+  <stx:variable name="xxx">
+    <stx:text>The answer is </stx:text>
+    <stx:value-of select="42" />
+  </stx:variable>
+
+  <stx:param name="par1" select="42" />
+  <stx:param name="par2">42</stx:param>
+  <stx:param name="par3">6 * 7</stx:param>
+  
+  <stx:template match="/">
+    <stx:value-of select="$xxx" />
+    <stx:text>|</stx:text>
+    <stx:value-of select="$par1" />
+    <stx:text>|</stx:text>
+    <stx:value-of select="$par2" />
+    <stx:text>|</stx:text>
+    <stx:value-of select="$par3" />
+    <stx:text>&#xA;</stx:text>
+    <stx:process-children />
+    <stx:assign name="par3" /> <!-- clear -->
+    <stx:value-of select="$par3" />
+  </stx:template>
+  
+</stx:transform>
