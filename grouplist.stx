@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- groups -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
-               strict-mode="yes" version="1.0">
+               version="1.0">
 
   <stx:options output-encoding="iso-8859-1" />
 
@@ -41,7 +41,7 @@
     </stx:group>
   </stx:group>
 
-  <stx:group strict-mode="yes">
+  <stx:group>
     <stx:template match="b" visibility="global">
       <stx:text>*</stx:text>
       <stx:process-children />
