@@ -8,6 +8,8 @@
     <stx:process-children />
     <stx:text>&#xA;</stx:text>
     <stx:process-document href="()" />
+    <stx:variable name="b" select="'include/'" />
+    <stx:process-document href="'inc4.stx'" base="{$b}" group="copy" />
     <stx:process-document href="('sum.xml','serialize.xml', 'xmlspace.xml')"
                           group="copy" />
   </stx:template>

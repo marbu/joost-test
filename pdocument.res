@@ -6,7 +6,20 @@ other document
 Processing http://cvs.sourceforge.net/viewcvs.py/*checkout*/joost/test/bubble.xml?rev=HEAD
 other document
 127, 126, 130, 124, 128, 131, 134, 132, 133, 123, 135, 136, 125, 129
-<flat>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:procedure name="p4" visibility="global">
+    <stx:text>Greetings from inc4.stx
+</stx:text>
+    <stx:call-procedure name="p1" />
+  </stx:procedure>
+
+  <stx:template match="*">
+    <stx:text />in inc4.stx: <stx:copy />
+    <stx:text>
+</stx:text>
+  </stx:template>
+</stx:transform><flat>
   <entry> 123 </entry>
   <entry> 124 </entry>
   <entry> 125 </entry>
