@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- choose with wrong children -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="/">
+    <stx:choose>
+      <stx:if test="true()" />
+      <stx:otherwise/>
+    </stx:choose>
+  </stx:template>
+
+</stx:transform>
