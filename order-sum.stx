@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- sum orders and output a table (from the xml.com article) -->
 <stx:transform version="1.0"
   xmlns:stx="http://stx.sourceforge.net/2002/ns"
   xmlns="http://www.w3.org/1999/xhtml">
