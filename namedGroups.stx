@@ -85,6 +85,20 @@
       <stx:group name="buf">
         <stx:template match="*">
           <stx:text />buf: <stx:value-of select="name()" />
+          <stx:text>&#xA;</stx:text>
+          <stx:process-self group="other-buf" />
+        </stx:template>
+
+        <stx:template match="*" priority="-1">
+          <stx:text />buf again: <stx:value-of select="name()" />
+        </stx:template>
+      </stx:group>
+
+      <stx:group name="other-buf">
+        <stx:template match="*">
+          <stx:text />other buf: <stx:value-of select="name()" />
+          <stx:text>&#xA;</stx:text>
+          <stx:process-self group="buf" /> <!-- group self recursion -->
         </stx:template>
       </stx:group>
     </stx:group>

@@ -23,3 +23,5 @@ B: b3
 B/local
 second local: b3
 buf: foo
+other buf: foo
+buf again: foo
