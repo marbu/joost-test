@@ -10,3 +10,9 @@ appending ...
 finished
 
 }
+    <x>
+      <yyy and="last">
+        <!--but not least-->
+        <z />
+      </yyy>
+    </x>

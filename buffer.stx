@@ -5,6 +5,14 @@
 
   <stx:buffer name="buf1" />
   <stx:buffer name="buf2" />
+  <stx:buffer name="buf3" xml:space="preserve">
+    <x>
+      <y and="last">
+        <stx:comment>but not least</stx:comment>
+        <stx:element name="z" />
+      </y>
+    </x>
+  </stx:buffer>
   
   <stx:template match="root">
     <stx:result-buffer name="buf1">
@@ -43,5 +51,17 @@
 
   <stx:template match="/">
     <stx:text/>{<stx:process-children/>}<stx:text/>
+    <stx:process-buffer name="buf3" />
   </stx:template>
+
+  <stx:template match="y"> <!-- from buf3 -->
+    <stx:buffer name="buf4">
+      <yyy>
+        <stx:process-attributes />
+        <stx:process-children />
+      </yyy>
+    </stx:buffer>
+    <stx:process-buffer name="buf4" />
+  </stx:template>
+  
 </stx:transform>
