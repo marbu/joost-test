@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+`stx:with-param' must be used only as a child of an stx:process-... instruction
+ -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:with-param name="foo" />
+    <stx:process-children />
+  </stx:template>
+</stx:transform>

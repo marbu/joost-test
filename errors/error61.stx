@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Parameter `bar' already passed in line 7 -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:process-children>
+      <stx:with-param name="foo" />
+      <stx:with-param name="bar" />
+      <stx:with-param name="baz" />
+      <stx:with-param name="bar" />
+    </stx:process-children>
+  </stx:template>
+</stx:transform>
