@@ -29,6 +29,14 @@ Hello, world
     ""
     ""
     ""
+ substring-before
+    "ab"
+    ""
+    ""
+ substring-after
+    "eabcde"
+    "abcdeabcde"
+    ""
     
 1 pi ({}, pi)
 2 root ({http://root.uri}, root)

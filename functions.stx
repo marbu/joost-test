@@ -33,6 +33,14 @@
     "<stx:value-of select="substring('abcde',1 div 0)" />"
     "<stx:value-of select="substring('abcde',3,0)" />"
     "<stx:value-of select="substring('abcde',3,5)" />"
+ substring-before
+    "<stx:value-of select="substring-before('abcdeabcde','cd')" />"
+    "<stx:value-of select="substring-before('abcdeabcde','')" />"
+    "<stx:value-of select="substring-before('abcdeabcde','xxx')" />"
+ substring-after
+    "<stx:value-of select="substring-after('abcdeabcde','cd')" />"
+    "<stx:value-of select="substring-after('abcdeabcde','')" />"
+    "<stx:value-of select="substring-after('abcdeabcde','xxx')" />"
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
   </stx:template>
