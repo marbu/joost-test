@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="/" xml:space="preserve">
+    <a>
+      <b xml:space="default">
+        <c>
+          <stx:text markup="serialize">
+            <d>
+              <e />
+            </d>
+          </stx:text>
+          <stx:text markup="serialize" xml:space="default">
+            <d>
+              <e />
+            </d>
+          </stx:text>
+          <stx:cdata> </stx:cdata>
+          <stx:cdata xml:space="default"> </stx:cdata>
+        </c>
+      </b>
+    </a>
+  </stx:template>
+
+</stx:transform>
