@@ -2,6 +2,9 @@
 <!-- No, this is not bubble sort at all.
      It uses XSLT for sorting and does something with the result just for
      demonstration purposes. -->
+<!-- Note: for some reason this doesn't work (NullPointerException) with the
+     JDK 1.4 built-in XSLT processor (Xalan). Saxon runs pretty well, so put
+     saxon.jar on your classpath and everything should be fine. -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                version="1.0">
 
