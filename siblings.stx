@@ -32,6 +32,8 @@
       <stx:process-buffer name="input" group="e" />
       <stx:text>&#xA;</stx:text>
       <stx:process-buffer name="input" group="f" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="g" />
     </root>
   </stx:template>
 
@@ -116,6 +118,26 @@
       <stx:value-of select="concat(' was ', $local, '/', $cnt)" />
       <stx:text>&#xA;</stx:text>
     </stx:template>
+  </stx:group>
+
+  <stx:group name="g">
+    <stx:group>
+      <stx:variable name="pos" select="0" />
+      <stx:template match="*[$pos &lt; position()]" visibility="public">
+        <stx:value-of select="concat(name(), ' at ', position())" />
+        <stx:text>&#xA;</stx:text>
+        <sibs>
+          <stx:process-siblings until="*[position() mod 4 = $pos]"
+                                group="g2" />
+        </sibs>
+        <stx:text>&#xA;</stx:text>
+      </stx:template>
+    </stx:group>
+    <stx:group name="g2">
+      <stx:template match="*">
+        <stx:copy attributes="@*" />
+      </stx:template>
+    </stx:group>
   </stx:group>
   
   <stx:template match="node()">

@@ -44,4 +44,11 @@ y is 7
 <y att="2" /> was 3/7
 <x att="2" /> was 2/7
 <x att="1" /> was 1/7
+
+x at 50
+<sibs><x att="2" /></sibs>
+y at 52
+<sibs><y att="3" /><x att="3" /><z att="3" /></sibs>
+y at 56
+<sibs />
 </root><top><!-- after --></top></top>
