@@ -10,16 +10,17 @@
     </foo>
   </stx:buffer>
 
+  <stx:variable name="xsltns"
+                select="'http://www.w3.org/1999/XSL/Transform'" />
   
   <stx:template match="/">
-    <stx:if test="filter-available('http://www.w3.org/1999/XSL/Transform')">
+    <stx:if test="filter-available($xsltns)">
       <stx:process-buffer name="data" src=" url( ' xslt.xsl ' )"
-                          filter="http://www.w3.org/1999/XSL/Transform">
+                          filter="{$xsltns}">
         <stx:with-param name="ns:p" select="'bear'" xmlns:ns="urn:ext" />
       </stx:process-buffer>
       <stx:text>&#xA;</stx:text>
-      <stx:process-buffer name="data" src="buffer(code)"
-                          filter="http://www.w3.org/1999/XSL/Transform">
+      <stx:process-buffer name="data" src="buffer(code)" filter="{$xsltns}">
         <stx:with-param name="answer" select="42" />
       </stx:process-buffer>
     </stx:if>
