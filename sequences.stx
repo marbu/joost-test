@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
-  <stx:variable name="empty" />
+  <stx:variable name="empty" select="()" />
   <stx:variable name="seq1" select="(1,2,3)" />
   <stx:variable name="seq2" select="(5,6)" />
   <stx:variable name="seq3"
