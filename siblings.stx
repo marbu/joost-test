@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- test for stx:process-siblings -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options pass-through="all" strip-space="yes" />
+
+  <stx:template match="/node()">
+    <top>
+      <stx:copy>
+        <stx:process-children />
+      </stx:copy>
+      <stx:process-siblings />
+    </top>
+  </stx:template>
+
+  
+  <stx:buffer name="input" />
+
+  <stx:template match="root" priority="2">
+    <root>
+      <stx:result-buffer name="input">
+        <stx:process-children group="copy" />
+      </stx:result-buffer>
+      <stx:process-buffer name="input" group="a" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="b" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="c" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="d" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="e" />
+    </root>
+  </stx:template>
+
+  <stx:group name="copy" />
+
+  <stx:group name="a">
+    <stx:template match="x">
+      <stx:text>&#xA;</stx:text>
+      <a>
+        <stx:process-self group="copy" />
+        <stx:process-siblings group="copy" />
+        position = <stx:value-of select="position()" />
+        value = <stx:value-of select="." />
+        has children = <stx:value-of select="has-child-nodes()" />.
+      </a>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:group name="b">
+    <stx:template match="x">
+      <stx:text>&#xA;</stx:text>
+      <b>
+        <stx:process-self group="copy" />
+        <stx:process-siblings group="copy" while="x|text()" />
+      </b>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:group name="c">
+    <stx:template match="x">
+      <stx:text>&#xA;</stx:text>
+      <c>
+        <stx:process-self group="copy" />
+        <stx:process-siblings until="y" group="copy" />
+      </c>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:group name="d">
+    <stx:template match="x">
+      <stx:text>&#xA;</stx:text>
+      <d>
+        <stx:process-self group="copy" />
+        <stx:process-siblings while="x" />
+      </d>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+
+    <stx:template match="*[@att='2']">
+      <stx:text>&#xA;</stx:text>
+      <datt>
+        <stx:process-self group="copy" />
+        <stx:process-siblings while="*[@att='2']" group="copy" />
+      </datt>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:group name="e">
+    <stx:template match="x">
+      <stx:text>&#xA;</stx:text>
+      <e>
+        <stx:process-self group="copy" />
+        <stx:process-siblings while="x|y" until="*[@att='3']" group="copy" />
+      </e>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:template match="node()">
+    Caught: <stx:copy/>
+  </stx:template>
+  
+</stx:transform>

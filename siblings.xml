@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- before -->
+<root>
+  <x att="1">x1</x>
+  <x att="2" />
+  <y att="2" />
+  <y att="3" />
+  <x att="3" />
+  <z att="3" />
+  <y att="3" />
+</root>
+<!-- after -->
