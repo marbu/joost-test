@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- Test for stx:process-attributes and attribute patterns -->
+<a b="c" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <d e="f" xlink:href="uri" xlink:type="simple" />
+  <g xmlns="g-uri" h="h-value" xmlns:g="g-uri" g:h="g:h-value" g:b="bbb">
+    <foo b="bar" g:b="g:bar" />
+  </g>
+</a>

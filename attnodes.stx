@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Test for stx:process-attributes and attribute patterns -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <!-- copy template -->
+  <stx:template match="node()">
+    <stx:copy>
+      <stx:process-attributes />
+      <stx:process-children />
+    </stx:copy>
+    <stx:process-attributes /> <!-- second call -->
+  </stx:template>
+
+  <stx:template match="@*[.='uri']">
+    Found <stx:value-of select="name()" /> with an "uri" value<stx:text/>
+  </stx:template>
+  
+  <stx:template match="@*">
+    Found <stx:value-of select="name()" />="<stx:value-of select="." />"<stx:text />
+    <!-- Position: <stx:value-of select="position()" /> -->
+    <stx:process-attributes /> <!-- to be ignored -->
+  </stx:template>
+
+  <stx:template match="@b">
+    Found b, value: "<stx:value-of select="." />"<stx:text />
+    <!-- Position: <stx:value-of select="position()" /> -->
+  </stx:template>
+
+  <stx:template match="@*:b">
+    Found qualified b, value: "<stx:value-of select="." />"<stx:text />
+  </stx:template>
+
+  <stx:template match="@xlink:*" xmlns:xlink="http://www.w3.org/1999/xlink">
+    Found xlink attribute <stx:value-of select="local-name()" />="<stx:value-of select="." />"<stx:text />
+    <stx:process-children /> <!-- to be ignored -->
+  </stx:template>
+
+  <stx:template match="@g:h" xmlns:g="g-uri">
+    Found {g-uri}h, value: "<stx:value-of select="." />"<stx:text />
+  </stx:template>
+
+  <stx:template match="g:foo/@b | g:foo/@g:b" xmlns:g="g-uri">
+    <foo><stx:copy /></foo>
+    self: <stx:process-self />
+  </stx:template>
+
+</stx:transform>
