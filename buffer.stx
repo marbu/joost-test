@@ -39,7 +39,7 @@
     <stx:text>&#xA;finished&#xA;</stx:text>
   </stx:template>
 
-  <stx:template match="root/inside">touche</stx:template>
+  <stx:template match="root/inside">[<stx:process-children/>]</stx:template>
 
   <stx:template match="/">
     <stx:text/>{<stx:process-children/>}<stx:text/>
