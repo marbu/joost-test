@@ -17,10 +17,17 @@
     sum(NaNs): <stx:value-of select="sum((1, 'NaN', 2))" />
     empty(empty): <stx:value-of select="empty($empty)" />
     empty(seq1): <stx:value-of select="empty($seq1)" />
+    exists(empty): <stx:value-of select="exists($empty)" />
+    exists(seq1): <stx:value-of select="exists($seq1)" />
     item-at(seq1,1): <stx:value-of select="item-at($seq1,1)" />
     count(item-at(seq1,1)): <stx:value-of select="count(item-at($seq1,1))" />
     item-at(seq1,3): <stx:value-of select="item-at($seq1,3)" />
     item-at(empty,2): <stx:value-of select="item-at($empty,2)" />
+    index-of(seq3,3): <stx:value-of select="index-of($seq3,3)" />
+    index-of(seq3,35): <stx:value-of select="index-of($seq3,35)" />
+    index-of((3,seq3,'3'),3): <stx:value-of select="index-of((3,$seq3,'3'),3)" />
+    index-of(empty,3): <stx:value-of select="index-of($empty,3)" />
+    index-of(seq3,empty): <stx:value-of select="index-of($seq3,$empty)" />
     count(subsequence(seq3,3,5)): <stx:value-of select="count(subsequence($seq3,3,5))" />
     sum(subsequence(seq3,3,5)): <stx:value-of select="sum(subsequence($seq3,3,5))" />
     count(subsequence(seq3,1,1)): <stx:value-of select="count(subsequence($seq3,1,1))" />
@@ -34,6 +41,22 @@
     count(subsequence(seq3,8)): <stx:value-of select="count(subsequence($seq3,8))" />
     count(subsequence(seq3,0)): <stx:value-of select="count(subsequence($seq3,0))" />
     count(subsequence(seq3,-2)): <stx:value-of select="count(subsequence($seq3,-2))" />
+    insert-before(seq3,0,(99,88)): <stx:value-of select="insert-before($seq3,0,(99,88))" />
+    insert-before(seq3,1,(99,88)): <stx:value-of select="insert-before($seq3,1,(99,88))" />
+    insert-before(seq3,2,(99,88)): <stx:value-of select="insert-before($seq3,2,(99,88))" />
+    insert-before(seq3,9,(99,88)): <stx:value-of select="insert-before($seq3,9,(99,88))" />
+    insert-before(seq3,20,(99,88)): <stx:value-of select="insert-before($seq3,20,(99,88))" />
+    insert-before(empty,20,(99,88)): <stx:value-of select="insert-before($empty,20,(99,88))" />
+    insert-before(seq3,20,empty): <stx:value-of select="insert-before($seq3,20,$empty)" />
+    remove(seq3,0): <stx:value-of select="remove($seq3,0)" />
+    remove(seq3,1): <stx:value-of select="remove($seq3,1)" />
+    remove(seq3,7): <stx:value-of select="remove($seq3,7)" />
+    remove(seq3,200): <stx:value-of select="remove($seq3,200)" />
+    remove(empty,20): <stx:value-of select="remove($empty,20)" />
+    remove(1,1): <stx:value-of select="remove(1,1)" />
+    string-join(seq3,'--'): <stx:value-of select="string-join($seq3,'--')" />
+    string-join(seq3,''): <stx:value-of select="string-join($seq3,'')" />
+    string-join(empty,'--'): <stx:value-of select="string-join($empty,'--')" />
     empty=empty: <stx:value-of select="$empty = $empty" />
     empty!=empty: <stx:value-of select="$empty != $empty" />
     empty='': <stx:value-of select="$empty=''" />
