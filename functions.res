@@ -4,7 +4,13 @@ Hello, world
     x y z,
     0,
     true,
-    false
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true
 1 pi ({}, pi)
 2 root ({http://root.uri}, root)
 1  

@@ -8,7 +8,13 @@
     <stx:value-of select="normalize-space('   x    y  &#9;     z ')" />,
     <stx:value-of select="string-length(normalize-space('  &#xA;   '))" />,
     <stx:value-of select="not(true() and false())" />,
-    <stx:value-of select="not(true() or false())" />
+    <stx:value-of select="not(true() or false())" />,
+    <stx:value-of select="starts-with('abcd', 'ab')" />,
+    <stx:value-of select="starts-with('abcd', 'abcd')" />,
+    <stx:value-of select="starts-with('abcd', '')" />,
+    <stx:value-of select="starts-with('abcd', 'xyz')" />,
+    <stx:value-of select="starts-with('', 'xyz')" />,
+    <stx:value-of select="starts-with('', '')" />
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
   </stx:template>
