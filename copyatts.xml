@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Test for stx:copy with an attributes attribute -->
+<root>
+  <a x="1" y="2" z="3" ok="ok" misc="ok" />
+  <b x="1" y="2" z="3" ok="ok" misc="ok" />
+  <c x="1" y="2" z="3" ok="ok" misc="ok" />
+  <d x="1" y="2" z="3" ok="ok" misc="ok" />
+  <e x="1" y="2" z="3" ok="ok" misc="ok" />
+  <f x="1" y="2" z="3" ok="ok" misc="ok" />
+  <g x="1" y="2" z="3" ok="ok" misc="ok" />
+  <h x="1" y="2" z="3" ok="ok" misc="ok" />
+</root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Test for stx:copy with an attributes attribute -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options no-match-events="text" />
+  
+  <stx:template match="a">
+    <stx:copy>  <!-- no "attributes" attribute -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+
+  <stx:template match="b">
+    <stx:copy attributes="@*"> <!-- all -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="c">
+    <stx:copy attributes="none"> <!-- nomen est omen -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="d">
+    <stx:copy attributes="@*[false()]"> <!-- same as "none" -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+
+  <stx:template match="e">
+    <stx:copy attributes="@ok"> <!-- just this -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="f">
+    <stx:copy attributes="@*[.='ok']"> <!-- just these -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="g">
+    <stx:copy attributes="@x | @ok"> <!-- just these -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="h">
+    <stx:copy attributes="@*[string-length(name())=1]"> <!-- just these -->
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+
+</stx:transform>
