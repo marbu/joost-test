@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="/">
+    <stx:if test="filter-available('http://xml.org/sax')">
+      <stx:process-children />
+    </stx:if>
+  </stx:template>
+  
+  <stx:template match="contents">
+    <parse>
+      <stx:process-self filter-method="http://xml.org/sax" />
+    </parse>
+  </stx:template>
+
+</stx:transform>
