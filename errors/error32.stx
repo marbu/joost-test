@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- Can't process active buffer `buf1' -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:options no-match-events="copy" />
+
+  <stx:buffer name="buf1" />
+  <stx:buffer name="buf2" />
+  
+  <stx:template match="/">
+    <stx:result-buffer name="buf1">
+      <buffer1>
+        <stx:process-children />
+      </buffer1>
+    </stx:result-buffer>
+  </stx:template>
+
+  <stx:template match="*">
+    <stx:result-buffer name="buf2">
+      <stx:process-buffer name="buf1" />
+    </stx:result-buffer>
+  </stx:template>
+  
+</stx:transform>
