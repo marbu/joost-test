@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Escape test -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:options no-match-events="text" />
+  <stx:template match="escape">
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+    <element att="&quot;check&quot;">&lt;&amp;&gt;</element>
+  </stx:template>
+</stx:transform>

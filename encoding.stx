@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Output encoding test -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:options output-encoding="iso-8859-1"
+               no-match-events="text" />
+  <stx:template match="abc">
+    <ABC>áàâ<stx:process-children />&#xA5;&#xA3;&#xA9;&#xFF;</ABC>
+  </stx:template>
+</stx:transform>

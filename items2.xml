@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<items-a id="a1">
+  <item-a />
+  <item-b />
+  <items-a id="a2">
+    <item-a />
+    <item-a />
+    <item-b />
+  </items-a>
+  <items-b id="b1">
+    <item-b />
+  </items-b>
+  <item-a />
+  <item-b />
+  <items-b id="b2" />
+  <items-a id="a3">
+    <items-b id="b3">
+      <item-b />
+      <item-b />
+      <item-a />
+      <item-a />
+      <item-a />
+      <item-b />
+      <item-b />
+      <item-a />
+      <items-a id="a4">
+        <item-b />
+        <foo />
+      </items-a>
+      <item-b />
+    </items-b>
+  </items-a>
+  <item-b />
+</items-a>

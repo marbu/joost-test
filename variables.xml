@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<root>
+  <!-- this is a comment -->
+  <?pi this is a processing instruction?>
+  and this is text</root>

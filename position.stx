@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- test of positional predicates -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:options no-match-events="text" />
+
+  <stx:template match="el-a[2]">
+    <XXX>el-a[2]</XXX>
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  
+  <stx:template match="root//el2[2]/el3[1]">
+    <XXX>root//el2[2]/el3[1]</XXX>
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="*[5]">
+    <XXX>*[5]</XXX>
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+
+  <stx:template match="*">
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+</stx:transform>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<root>
+  <list id="1">
+    <li/>
+    <li/>
+    <li/>
+    <list id="2">
+      <li/>
+      <li/>
+      <li/>
+      <list id="3">
+	<li/>
+	<li/>
+	<li/>
+	<li/>
+      </list>
+      <li/>
+      <li/>
+      <li/>
+    </list>
+    <li/>
+    <li/>
+    <list id="4">
+      <li/>
+      <li/>
+      <li/>
+      <li/>
+      <li/>
+    </list>
+    <li/>
+    <li/>
+    <li/>
+  </list>
+</root>

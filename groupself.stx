@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!-- check stx:process-self with groups -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:template match="node()" priority="10">
+    <stx:text>node() 10&#xA;</stx:text>
+    <stx:process-self />
+    <stx:text>------ 10&#xA;</stx:text>
+  </stx:template>
+
+  <stx:group>
+    <stx:template match="node()" priority="8" visibility="public">
+      <stx:text>node() 8 - group A&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ 8 - group A&#xA;</stx:text>
+    </stx:template>
+    <stx:template match="*" priority="6" visibility="public">
+      <stx:text>     * 6 - group A&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ 6 - group A&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:group>
+    <stx:template match="node()" priority="4" visibility="public">
+      <stx:text>node() 4 - group B&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ 4 - group B&#xA;</stx:text>
+    </stx:template>
+    <stx:template match="text()" priority="2" visibility="public">
+      <stx:text>text() 2 - group B&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ 2 - group B&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:group>
+    <stx:template match="comment()"
+                  priority="5" visibility="public">
+      <stx:text>comm   5 - group C&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ 5 - group C&#xA;</stx:text>
+    </stx:template>
+    <stx:template match="processing-instruction()"
+                  priority="5" visibility="public">
+      <stx:text>pi     5 - group C&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ 5 - group C&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+  
+  <stx:group>
+    <stx:template match="node()" visibility="public">
+      <stx:text>node() default - group D, default rule&#xA;</stx:text>
+      <stx:process-self />
+      <stx:text>------ default - group D, default rule&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+
+  <stx:template match="/">
+    <stx:text>aloha&#xA;</stx:text>
+    <stx:process-self />
+    <stx:text>ahola&#xA;</stx:text>
+  </stx:template>
+  
+</stx:transform>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?pi with data?>
+<root xmlns="http://root.uri">
+  <foo:bar xmlns:foo="http://foo.uri" x="y">
+    <!-- a foo element -->
+    <a />
+    <b>
+      <foo:d />
+    </b>
+  </foo:bar>
+  <d>Text</d>
+</root>

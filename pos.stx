@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<transform xmlns="http://temporary.uri/2002/stx" version="1.0">
+  <options no-match-events="text" />
+
+  <template match="a">
+    "a" in the null namespace
+  </template>
+
+  <template xmlns:a="uri" match="a:a">
+    "a" in the "uri" namespace
+  </template>
+
+  <template xmlns:p="iru" match="p:*" priority="-0.1">
+    <copy>an element in the "iru" namespace</copy>
+    <process-children />
+  </template>
+
+  <template match="*:c">
+    <copy>"c" in any namespace</copy>
+  </template>
+
+  <template xmlns:p="http" match="p:*[7]">
+    <copy>the 7th element in the "http" namespace</copy>
+  </template>
+
+  <template match="*:e[3]">
+    <copy>the 3rd "e" in any namespace</copy>
+  </template>
+
+  <template xmlns:u="uri" match="u:root">
+    <root xmlns="">
+      <x:process-children xmlns:x="http://temporary.uri/2002/stx" />
+    </root>
+  </template>
+
+  <template match="*:e3 | *:e4 | *:e5 | *:e6">
+    <copy>any "e3" or "e4" or "e5" or "e6"</copy>
+  </template>
+</transform>

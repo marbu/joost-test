@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<groups>
+  <ul>
+    <li><b>first</b></li>
+    <li><i>second</i></li>
+    <li>third</li>
+  </ul>
+  text dazwischen
+  <ol>
+    <li><b>premier</b></li>
+    <li><i>deuxi&#232;me</i></li>
+    <li>troisi&#232;me</li>
+  </ol>
+</groups>

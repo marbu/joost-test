@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- global variables: recursive counting -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:variable name="counta" select="0" />
+  <stx:variable name="countb" select="0" />
+  
+  <stx:template match="items-a | items-b" recursion-entry-point="yes">
+    <stx:process-children />
+    <stx:value-of select="concat(name(), ' (', @id, ') had ', $counta,
+                                 ' A children and ', $countb,
+                                 ' B children&#xA;')" />
+  </stx:template>
+
+  <stx:template match="item-a">
+    <stx:assign name="counta" select="$counta + 1" />
+  </stx:template>
+
+  <stx:template match="item-b">
+    <stx:assign name="countb" select="$countb + 1" />
+  </stx:template>
+
+</stx:transform>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<?start?>
+<root><!--comment-->text<?pi data?><el>yeah<foo/></el></root>
+<!--end-->

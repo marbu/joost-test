@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- Test for node types (functions, variables) -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:variable name="node" />
+  
+  <stx:template match="/">
+    <stx:text />Root at level <stx:value-of select="level()" />,
+    <stx:process-children />
+    <stx:value-of select="concat(name($node), ' has ', $node/@aAtt1)" />
+  </stx:template>
+
+  <stx:template match="b" xmlns:bb="http://b">
+    <stx:if test="name() != name(get-node(level()))">oops</stx:if>
+    <stx:text />b at level <stx:value-of select="level()" />,
+    <stx:value-of select="name(.)" />,
+    <stx:value-of select="name(..)" />,
+    <stx:value-of select="name(../..)" />,
+    <stx:value-of select="name(../../..)" />,
+    <stx:value-of select="name(../../../..)" />,
+    <stx:value-of select="@bb:b" />,
+    <stx:value-of select="./@bb:b" />,
+    <stx:value-of select="../@aAtt2" />,
+    <stx:value-of select="../../@rootAtt" />,
+    <stx:value-of select="../../../@default" />,
+    <stx:value-of select="get-node(1)/@rootAtt" />,
+    <stx:value-of select="get-node(7)/@foo" />,
+    <stx:assign name="node" select=".." />
+  </stx:template>
+  
+</stx:transform>

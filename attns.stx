@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- add attributes in different namespaces -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:options default-stxpath-namespace="http://root" />
+
+  <stx:template xmlns="http://root" match="root">
+    <wurzel>
+      <stx:process-children />
+      <foo xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xsl:version="1.0" />
+    </wurzel>
+  </stx:template>
+
+  <stx:template xmlns:r="http://root" match="r:bar">
+    <baz a="a" b="b" r:r="ha" r:p="ho">
+      <stx:attribute name="a" select="'A'" />
+      <stx:attribute name="c" select="'c'" />
+      <stx:attribute name="r:r" select="''" />
+    </baz>
+  </stx:template>
+
+  <stx:template match="node()">
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+
+</stx:transform>

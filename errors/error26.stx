@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- multiple stx:options -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:options default-stxpath-namespace="http://foo" />
+  <stx:options output-encoding="utf-8" />
+</stx:transform>

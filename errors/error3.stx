@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- stx:template not as top-level element -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="bla">
+    <stx:template match="oops" />
+  </stx:template>
+</stx:transform>

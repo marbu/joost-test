@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  abc
+  <!-- comment -->
+  <xyz />
+  <a>text a</a>
+  <b><!-- comment b -->b</b>
+  <c><?pi c?>c</c>
+  <d><el name="d"/>d</d>
+  <e></e>
+  <f> </f>
+  <look1>one<!-- x --></look1>
+  <look2>two<?y?></look2>
+  <look3>three<here/></look3>
+  xyz
+  <dont-process />
+  <dont-process>processing</dont-process>
+  <dont-process><processing /></dont-process>
+  <dont-process>processing</dont-process>
+  <dont-process><!-- processing --></dont-process>
+  <dont-process><?processing?></dont-process>
+</root>

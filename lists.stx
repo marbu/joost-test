@@ -1,0 +1,42 @@
+<stx:transform version="1.0" 
+	       xmlns:stx="http://temporary.uri/2002/stx">
+
+  <stx:options strip-space="yes"/>
+
+  <stx:variable name="list" select="0"/>
+  <stx:variable name="li" select="0"/>
+
+  <stx:template match="/root">
+    <stx:copy>
+      <stx:text>&#xA;</stx:text>
+      <stx:process-children/>
+      <list-total count="{$list}"/>
+      <stx:text>&#xA;</stx:text>
+      <li-total count="{$li}"/>
+      <stx:text>&#xA;</stx:text>
+    </stx:copy>
+  </stx:template>
+
+  <stx:group>
+
+  <stx:variable name="li-in-list" select="0"/>
+  <stx:variable name="level" select="0" keep-value="yes"/>
+
+    <stx:template match="list" visibility="public" recursion-entry-point="yes">
+      <stx:assign name="list" select="$list + 1"/>
+      <stx:assign name="level" select="$level + 1"/>
+      <stx:variable name="list-no" select="$list"/>
+      <stx:process-children/>
+      <list order="{$list-no}" number-of-items="{$li-in-list}" 
+	    level="{$level}" id="{@id}"/>
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+
+    <stx:template match="li">
+      <stx:assign name="li" select="$li + 1"/>
+      <stx:assign name="li-in-list" select="$li-in-list + 1"/>
+    </stx:template>
+    
+  </stx:group>
+  
+</stx:transform>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- undefined variable in attribute AVT -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="/">
+    <root>
+      <stx:attribute name="{$x}" select="2" />
+    </root>
+  </stx:template>
+</stx:transform>

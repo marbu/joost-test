@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:variable name="sum" select="0" />
+
+  <stx:template match="/">
+    <stx:process-children />
+    <stx:text />Result: <stx:value-of select="$sum" />
+  </stx:template>
+
+  <stx:template match="entry/text()">
+    <stx:assign name="sum" select="$sum + ." />
+  </stx:template>
+
+</stx:transform>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:options no-match-events="text" />
+
+  <stx:variable name="day" select="'Monday'" />
+
+  <stx:template match="list">
+    <stx:copy>
+      <stx:attribute name="date" select="$day" />
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="item">
+    <item>
+      <id><stx:value-of select="@id" /></id>
+      <stx:if test="@id=2">
+        <note>the item we have been looking for</note>
+      </stx:if>
+      <stx:process-children />
+      <date><stx:value-of select="$day" /></date>
+    </item>
+  </stx:template>
+  
+  <stx:template match="item/text()">
+    <text><stx:copy /></text>
+  </stx:template>
+  
+</stx:transform>

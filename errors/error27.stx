@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- misplaced endtag in default copy action -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:options no-match-events="copy" />
+  <stx:template match="*/*">
+    <stx:element-start name="foo" />
+  </stx:template>
+</stx:transform>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- stx:children not empty -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="/">
+    <stx:process-children>
+      <oops />
+    </stx:process-children>
+  </stx:template>
+</stx:transform>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- group variables: local counting -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:group>
+
+    <stx:variable name="count" select="0" />
+    
+    <stx:template match="items-a" visibility="global"
+                  recursion-entry-point="yes">
+      <stx:process-children />
+      <stx:value-of select="concat('A (', @id, ') had ', $count,
+                                   ' children&#xA;')" />
+    </stx:template>
+
+    <stx:template match="item-a">
+      <stx:assign name="count" select="$count + 1" />
+    </stx:template>
+
+  </stx:group>
+
+  <stx:group>
+
+    <stx:variable name="count" select="0" />
+    
+    <stx:template match="items-b" visibility="global"
+                  recursion-entry-point="yes">
+      <stx:process-children />
+      <stx:value-of select="concat('B (', @id, ') had ', $count,
+                                   ' children&#xA;')" />
+    </stx:template>
+
+    <stx:template match="item-b">
+      <stx:assign name="count" select="$count + 1" />
+    </stx:template>
+
+  </stx:group>
+
+</stx:transform>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- keep-value for a local variable -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:variable name="a" keep-value="no" />
+  
+  <stx:template match="node()">
+    <stx:variable name="b" keep-value="yes" />
+  </stx:template>
+
+</stx:transform>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root xmlns="uri">
+  <a />
+  <b />
+  <c />
+  <nested xmlns="iru">
+    <a />
+    <b />
+    <c />
+  </nested>
+  <nested xmlns="http">
+    <a />
+    <b />
+    <c />
+    <d />
+    <e />
+    <e xmlns="0" />
+    <e xmlns="1" />
+    <e xmlns="2" />
+    <e xmlns="3" />
+    <e xmlns="4" />
+    <e1 />
+    <e2 />
+    <e3 />
+    <e4 />
+    <e4.5 />
+    <e5 />
+    <e5.5 />
+  </nested>
+</root>

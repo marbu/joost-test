@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- missing endtag -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="/">
+    <stx:element-start name="foo" />
+  </stx:template>
+</stx:transform>

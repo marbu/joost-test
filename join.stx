@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- join example -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:options no-match-events="text" />
+
+  <stx:template match="root">
+    <stx:copy>
+      <stx:text>&#xA;  </stx:text>
+      <data>
+        <stx:process-children />
+      </data>
+      <stx:text>&#xA;</stx:text>
+    </stx:copy>
+  </stx:template>
+
+  <stx:template match="root/text()" />
+  
+</stx:transform>

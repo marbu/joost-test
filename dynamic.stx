@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- Dynamic created elements and attributes -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  
+  <stx:template match="*">
+    <stx:copy>
+      <stx:text>&#xA;</stx:text>
+      <foo foo="foo">
+        <stx:attribute name="bar" select="'bar'" />
+        <stx:attribute name="{name()}:baz" namespace="http://{name()}"
+                       select="'baz'" />
+      </foo>
+      <stx:text>&#xA;</stx:text>
+      <stx:element-start name="{name()}" />
+      <stx:element-start name="x{name()}x" namespace="http://one" />
+      <stx:text>brz</stx:text>
+      <stx:element-end xmlns="http://one" name="{concat('x',name(),'x')}" />
+      <stx:element-end name="{name()}" />
+      <stx:text>&#xA;</stx:text>
+      <stx:element-start name="abc:xyz" namespace="abc" />
+      <stx:attribute name="abc:att" select="1" namespace="abc" />
+      <stx:element-end name="abc:xyz" namespace="abc" />
+      <stx:text>&#xA;</stx:text>
+      <stx:element-start xmlns:abc="abc" name="abc:xyz" />
+      <stx:attribute xmlns:abc="abc" name="abc:att" select="2" />
+      <stx:element-end name="abc:xyz" namespace="abc" />
+      <stx:text>&#xA;</stx:text>
+    </stx:copy>
+  </stx:template>
+</stx:transform>

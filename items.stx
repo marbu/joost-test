@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- counting on different levels -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:variable name="counta" select="0" />
+  <stx:variable name="countb" select="0" />
+
+  <stx:template match="items-a | items-b">
+    <stx:variable name="tmpa" select="$counta" />
+    <stx:variable name="tmpb" select="$countb" />
+    <stx:assign name="counta" select="0" />
+    <stx:assign name="countb" select="0" />
+    <stx:process-children />
+    <stx:if test="name()='items-a'">
+      <stx:value-of select="concat('A (', @id, ') had ', $counta,
+                                   ' descendants&#xA;')" />
+    </stx:if>
+    <stx:if test="name()='items-b'">
+      <stx:value-of select="concat('B (', @id, ') had ', $countb,
+                                   ' descendants&#xA;')" />
+    </stx:if>
+    <stx:assign name="counta" select="$counta + $tmpa" />
+    <stx:assign name="countb" select="$countb + $tmpb" />
+  </stx:template>
+
+  <stx:template match="items-a//item-a">
+    <stx:assign name="counta" select="$counta + 1" />
+  </stx:template>
+
+  <stx:template match="items-b//item-b">
+    <stx:assign name="countb" select="$countb + 1" />
+  </stx:template>
+
+</stx:transform>

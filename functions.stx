@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- Function test suite -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:template match="/">
+    <stx:value-of select="concat('Hello', ', ', 'world&#xA;')" />
+    <stx:value-of select="string-length(1234=5)" />, <!-- false -->
+    <stx:value-of select="normalize-space('   x    y  &#9;     z ')" />,
+    <stx:value-of select="string-length(normalize-space('  &#xA;   '))" />,
+    <stx:value-of select="not(true() and false())" />,
+    <stx:value-of select="not(true() or false())" />
+    <stx:text>&#xA;</stx:text>
+    <stx:process-children />
+  </stx:template>
+
+  <stx:variable name="n" />
+  
+  <stx:template match="node()">
+    <stx:assign name="n" select="." />
+    <stx:value-of select="concat(position(), ' ', name($n),' ')" />
+    <stx:if test="local-name()">
+      <stx:value-of select="concat('({', namespace-uri(.), '}, ',                             local-name(.), ')')" />
+    </stx:if>
+    <stx:if test="name()='' and normalize-space()=."> no whitespace!</stx:if>
+    <stx:text>&#xA;</stx:text>
+    <stx:if test="name()!=name(.) or local-name()!=local-name(.) or
+                  namespace-uri()!=namespace-uri(.)">
+      This should never be displayed!
+    </stx:if>
+    <stx:process-children />
+  </stx:template>
+
+  <stx:template match="text()" priority="-2" />
+</stx:transform>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- The identity transformation -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="node()">
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+</stx:transform>

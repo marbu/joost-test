@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>a
+  <a no="0">b
+    <b no="1" />c
+    <b no="2" />d
+    <c no="3" />e
+    <?baz 1?>
+    <b no="4" />f
+    <?baz 2?>
+    <!-- comment 0 -->
+  </a>g
+  <a no="5"><x/><y/><z/></a>h
+  <!-- comment 1 -->
+  <!-- comment 2 -->
+</root>
+<!-- comment 3 -->
+<!-- comment 4 -->
+<?foo pseudo-att="value"?>
+<?pi?>
+<?bar?>
+<!-- comment 5 -->
+<?pi foo?>
+<!-- comment 6 -->

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- redefined local variable -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="/">
+    <stx:variable name="foo" />
+    <stx:if test="true()">
+      <stx:variable name="foo" select="1" />
+    </stx:if>
+    <stx:value-of select="$foo" />
+  </stx:template>
+</stx:transform>

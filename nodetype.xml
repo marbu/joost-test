@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root rootAtt="1">
+  <a aAtt1="aaa" aAtt2="bbb">
+    <b b:b="123" xmlns:b="http://b">
+      Text
+    </b>
+  </a>
+</root>

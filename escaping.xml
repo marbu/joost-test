@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<escape att='"something" &amp; &lt;&#10;&#9;&gt;'>
+  <![CDATA[if (a<10 && a>0) ...]]>
+</escape>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- stx:attribute without opened element -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+  <stx:template match="/">
+    <root>
+      <stx:attribute name="foo" select="3" />
+      hoho
+      <stx:attribute name="bar" select="2" />
+    </root>
+  </stx:template>
+</stx:transform>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<root>
+  <abc>xyz</abc>
+  <!-- comment -->
+  <?pi data?>
+  <end really="yes" xmlns="urn:end-uri" />
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- Copy three times in combination with process-self, process-children -->
+<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+
+  <stx:template match="*/node()">
+    <stx:copy />
+    <stx:process-self />
+    <stx:copy />
+  </stx:template>
+
+  <stx:template match="node()">
+    <stx:copy>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+</stx:transform>
