@@ -4,8 +4,8 @@ c
      text() at position 2
 <b no="2"> * at position 2</b>
 <b no="2"> * :: position 2</b>
-<c no="3"> node() at position 6</c>
-<c no="3"> node() :: position 6</c>
+<c no="3" /> node() at position 6
+<c no="3" /> node() :: position 6
 <?baz 2?> pi at position 2
 g
    text() at position 2
