@@ -2,6 +2,6 @@
 <!-- missing endtag -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <stx:element-start name="foo" />
+    <stx:start-element name="foo" />
   </stx:template>
 </stx:transform>
