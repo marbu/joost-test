@@ -3,7 +3,14 @@
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
   version="1.0">
 
+  <stx:param name="p1" select="1" />
+  <stx:param name="p2" select="2" />
+  <stx:param name="n1" select="1" />
+  <stx:param name="n2" select="2" />
+  
   <stx:template match="/">
+    <stx:value-of select="concat('extern p: ', $p1, ', ', $p2, '&#xA;')" />
+    <stx:value-of select="concat('extern n: ', $n1, ', ', $n2, '&#xA;')" />
     <stx:text>process-children   </stx:text>
     <stx:process-children group="a">
       <stx:with-param name="fib1" select="1" />
@@ -12,10 +19,20 @@
   </stx:template>
 
   <stx:group name="a">
+
+    <stx:param name="p2" select="22" />
+    <stx:param name="p3" select="3" />
+    <stx:param name="n2" select="22" />
+    <stx:param name="n3" select="3" />
+    
     <stx:template match="*">
+      <stx:value-of select="name()" />: <stx:text />
       <stx:param name="fib1" required="yes" />
       <stx:param name="fib2" required="no" />
-      <stx:value-of select="concat(name(), ': ', $fib1, ' - ', $fib2,
+      <stx:value-of select="concat($fib1, ' - ', $fib2, '&#xA;')" />
+      <stx:value-of select="concat('extern p: ', $p1, ', ', $p2, ', ', $p3,
+                                   '&#xA;')" />
+      <stx:value-of select="concat('extern n: ', $n1, ', ', $n2, ', ', $n3,
                                    '&#xA;')" />
       <stx:buffer name="buf" />
       <stx:result-buffer name="buf">

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+extern p: a, b
+extern n: 1, 2
 process-children   foo: 1 - 1
+extern p: a, b, c
+extern n: 1, 22, 3
 process-buffer     adams: 1 - 2
 process-self       adams: 2 - 3
 process-attributes answer: 3 - 5
