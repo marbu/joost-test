@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- split play.xml into different files, one file per act -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+  version="1.0">
+
+  <stx:options no-match-events="copy" />
+
+  <stx:template match="/*" priority="-1">
+    <stx:process-document href="play.xml" base="#stylesheet" />
+  </stx:template>
+
+  <stx:template match="/PLAY">
+    <stx:copy attributes="@*">
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+  <stx:template match="ACT">
+    <include ref="act-{position()}.xml" />
+    <stx:result-document href="act-{position()}.xml">
+      <stx:copy>
+        <stx:process-children />
+      </stx:copy>
+    </stx:result-document>
+  </stx:template>
+  
+</stx:transform>
