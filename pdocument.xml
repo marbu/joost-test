@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <x>
   <doc href="errors/../flat.xml" />
-  <doc href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/joost/test/bubble.xml?rev=HEAD"/>
+  <doc base="http://cvs.sourceforge.net/viewcvs.py/*checkout*/joost/test/"
+       href="bubble.xml?rev=HEAD" />
 </x>
