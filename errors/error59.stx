@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- `stx:param' must be a top level element or a child of stx:template -->
+<!--
+8: `stx:param' must be a top level element or a child of stx:template or stx:procedure
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <foo>

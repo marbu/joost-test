@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- ambigous templates -->
+<!--
+7: Ambigous template rule with priority -0.5, found matching template rule already in line 6
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="*" />
   <stx:template match="node()" />

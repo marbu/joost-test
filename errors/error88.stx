@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<!-- errinc3.stx:4: Global procedure `p' already defined in line 4 of
-     file:.../errinc2.stx -->
+<!--
+4: Global procedure `p' already defined in line 4 of file:.../joost/test/errors/errinc2.stx
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <stx:group>

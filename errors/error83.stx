@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- Multiple group templates -->
+<!--
+11: Ambigous template rule with priority -0.5, found matching template rule already in line 13
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <stx:process-children group="target" />

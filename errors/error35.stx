@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- choose with elements after otherwise -->
+<!--
+11: `stx:choose' must not have more children after stx:otherwise
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <stx:template match="/">

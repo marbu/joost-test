@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- markup within PI -->
+<!--
+8: Can't create comment here (`stx:processing-instruction' started in line 7)
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <stx:processing-instruction name="foo">

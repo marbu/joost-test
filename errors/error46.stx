@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- process-children in global variables -->
+<!--
+8: `stx:process-children' must be a descendant of stx:template or stx:procedure
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:variable name="foo">
     <stx:if test="true()">

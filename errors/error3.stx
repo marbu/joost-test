@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- stx:template not as top-level element -->
+<!--
+7: `stx:template' must be a top level element or a child of stx:group
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="bla">
     <stx:template match="oops" />

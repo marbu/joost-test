@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- undefined variable in element-end AVT -->
+<!--
+9: Undeclared variable `x'
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <root>

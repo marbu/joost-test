@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- nested markup within pi -->
+<!--
+7: Can't create nested processing instruction here
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="*">
     <stx:processing-instruction name="pi">

@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- Empty choose -->
+<!--
+8: `stx:choose' must have at least one stx:when child
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <stx:template match="/">

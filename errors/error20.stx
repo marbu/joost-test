@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- forbidden toplevel element -->
+<!--
+6: `stx:text' not allowed as top level element
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:text> ha </stx:text>
 </stx:transform>

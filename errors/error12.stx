@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- stx:attribute with undefined namespace -->
+<!--
+8: Attempt to create attribute `x:foo' with undeclared prefix `x'
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <root>

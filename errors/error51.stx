@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- same group name for different groups -->
+<!--
+7: Group name `y:foo' already used
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:group name="x:foo" xmlns:x="uri" />
   <stx:group name="y:foo" xmlns:y="uri" />

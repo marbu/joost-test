@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- variable with select attribute and contents -->
+<!--
+6: `stx:variable' must be empty
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:variable name="foo" select="'foo'">foo</stx:variable>
 </stx:transform>

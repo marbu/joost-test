@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- Filter `foo' not available -->
+<!--
+7: Filter `foo' not available
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <stx:process-children filter="foo" />

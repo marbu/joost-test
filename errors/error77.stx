@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- error in expression -->
+<!--
+7: Syntax error. Couldn't repair and continue parse. Encountered end of expression after `)'.
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <stx:value-of select="1+(2*(3+position())" />

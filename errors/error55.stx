@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- unknown target group -->
+<!--
+7: Unknown target group `foo' specified for `stx:process-attributes'
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
     <stx:process-attributes group="foo" />

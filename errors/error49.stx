@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<!-- parameter with markup contained -->
+<!--
+7: Can't create element `foo' here (`stx:param' started in line 6)
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:param name="foo">
     <foo/>
