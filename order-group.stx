@@ -34,7 +34,9 @@
         <stx:if test="position() != 1">
           <stx:end-element name="ul" />
         </stx:if>
+        <stx:text>&#xA;</stx:text>
         <h3><stx:value-of select="$new-initial" /></h3>
+        <stx:text>&#xA;</stx:text>
         <stx:start-element name="ul" />
         <stx:assign name="current-initial" select="$new-initial" />
       </stx:if>
@@ -46,6 +48,7 @@
         <b><stx:value-of select="$name" /></b>
         <stx:value-of select="concat(': ', $quantity * $price)" />
       </li>
+      <stx:text>&#xA;</stx:text>
     </stx:template>
 
     <stx:template match="name">

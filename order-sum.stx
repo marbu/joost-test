@@ -10,9 +10,11 @@
     <html>
       <body>
         <table>
+          <stx:text>&#xA;</stx:text>
           <tr>
             <th colspan="5">Order Summary</th>
           </tr>
+          <stx:text>&#xA;</stx:text>
           <tr>
             <td>Line</td>
             <td>Item</td>
@@ -20,6 +22,7 @@
             <td>Unit Price</td>
             <td>Item Total</td>
           </tr>
+          <stx:text>&#xA;</stx:text>
           <stx:process-children />
           <tr>
             <td colspan="4">TOTAL:</td>
@@ -47,6 +50,7 @@
       <td><stx:value-of
         select="$quantity * $price" /></td>
     </tr>
+    <stx:text>&#xA;</stx:text>
   </stx:template>
 
   <stx:template match="name">
