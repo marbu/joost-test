@@ -18,8 +18,9 @@
     ../@foo 1
     position: 3
 
-    #namespace::* 5
-    #namespace::bar 2
+    #namespaces . 2
+    #namespaces .. 2
+    #namespaces /* 1
     #@* 5 - 135
     #@b:* 3 - 130
     #@foo 2 - 5
