@@ -7,56 +7,51 @@
   <stx:variable name="value" />
   <stx:variable name="changed" select="true()" />
 
-  <!-- need a group for recursion -->
-  <stx:group>
-    <stx:buffer name="sorted" />
+  <!-- the sort buffer -->
+  <stx:buffer name="sorted" />
 
-    <!-- store first value -->
-    <stx:template match="value[1]">
-      <stx:assign name="value" select="text()" />
-    </stx:template>
+  <!-- store first value -->
+  <stx:template match="value[1]">
+    <stx:assign name="value" select="text()" />
+  </stx:template>
 
-    <!-- compare current value with the stored one -->
-    <stx:template match="value">
+  <!-- compare current value with the stored one -->
+  <stx:template match="value">
+    <stx:copy>
+      <stx:if test="text() &lt; $value">
+        <stx:value-of select="text()" />
+        <stx:assign name="changed" select="true()" />
+      </stx:if>
+      <!-- else -->
+      <stx:if test="text() &gt;= $value">
+        <stx:value-of select="$value" />
+        <stx:assign name="value" select="text()" />
+      </stx:if>
+    </stx:copy>
+  </stx:template>
+    
+  <stx:template match="list[$changed]">
+    <stx:assign name="changed" select="false()" /> <!-- reset -->
+    <stx:result-buffer name="sorted" clear="yes">
       <stx:copy>
-        <stx:if test="text() &lt; $value">
-          <stx:value-of select="text()" />
-          <stx:assign name="changed" select="true()" />
-        </stx:if>
-        <!-- else -->
-        <stx:if test="text() &gt;= $value">
+        <stx:process-children />
+        <!-- output last stored value -->
+        <value>
           <stx:value-of select="$value" />
-          <stx:assign name="value" select="text()" />
-        </stx:if>
+        </value>
+      </stx:copy>
+    </stx:result-buffer>
+    <stx:process-buffer name="sorted" />
+  </stx:template>
+
+  <!-- a group for outputting the sorted result -->
+  <stx:group>
+    <!-- instantiated if $changed is false() -->
+    <stx:template match="list" visibility="public">
+      <stx:copy>
+        <stx:process-children /> <!-- copy children per default -->
       </stx:copy>
     </stx:template>
-    
-    <stx:template match="list[$changed]"
-                  recursion-entry-point="yes" visibility="public">
-      <stx:assign name="changed" select="false()" /> <!-- reset -->
-      <!-- There will be a new buffer for every recursion -->
-      <stx:result-buffer name="sorted"> <!-- clear doesn't matter -->
-        <stx:copy>
-          <stx:process-children />
-          <!-- output last stored value -->
-          <value>
-            <stx:value-of select="$value" />
-          </value>
-        </stx:copy>
-      </stx:result-buffer>
-      <stx:process-buffer name="sorted" />
-    </stx:template>
-
-    <!-- a group for outputting the sorted result -->
-    <stx:group>
-      <!-- instantiated if $changed is false() -->
-      <stx:template match="list" visibility="public">
-        <stx:copy>
-          <stx:process-children /> <!-- copy children per default -->
-        </stx:copy>
-      </stx:template>
-    </stx:group>
-    
   </stx:group>
-  
+    
 </stx:transform>
