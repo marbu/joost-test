@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- process-attributes in global variables -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:variable name="foo">
+    <stx:if test="true()">
+      <stx:process-attributes />
+    </stx:if>
+  </stx:variable>
+</stx:transform>
