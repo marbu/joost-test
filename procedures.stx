@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- procedures -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="*">
+    outer: <stx:copy />
+    <stx:call-procedure name="p1" group="g1" />
+  </stx:template>
+
+  <stx:group> 
+    <stx:group name="g1">
+      <stx:procedure name="p1">
+        in p1: <stx:copy />
+        <stx:call-procedure name="p2" />
+      </stx:procedure>
+      <stx:procedure name="p2">
+        in p2: <stx:copy />
+        <stx:process-children />
+      </stx:procedure>
+      <stx:template match="*">
+        template in g1: <stx:copy />
+        <stx:call-procedure name="p3">
+          <stx:with-param name="par" select="42" />
+        </stx:call-procedure>
+      </stx:template>
+    </stx:group>
+  </stx:group>
+
+  <stx:procedure name="p3" visibility="global">
+    <stx:param name="par" required="yes" />
+    in p3: <stx:copy><stx:value-of select="$par" /></stx:copy>
+    <stx:call-procedure name="p4" />
+    <stx:process-children />
+    <stx:call-procedure name="p4" />
+  </stx:procedure>
+
+  <stx:group>
+    <stx:procedure name="p4" visibility="public">
+      in p4: <stx:copy />
+    </stx:procedure>
+    <stx:template match="node()">
+      Never print this!
+    </stx:template>
+  </stx:group>
+
+  <stx:group>
+    <stx:template match="c" visibility="public">
+      template for c: <stx:copy />
+      <stx:call-procedure name="p3">
+        <stx:with-param name="par" select="'forty-two'" />
+      </stx:call-procedure>
+    </stx:template>
+  </stx:group>
+  
+</stx:transform>
