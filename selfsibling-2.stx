@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               version="1.0" strip-space="yes">
+
+  <stx:template match="a">
+     <aa><stx:process-children/></aa>
+  </stx:template>
+
+  <stx:template match="b">
+    <xx><stx:process-self group="foo"/></xx>
+  </stx:template>
+
+  <stx:group name="foo">
+    <stx:template match="b">
+      <bb/>
+      <stx:process-siblings while="b" group="foo"/>
+    </stx:template>
+    <stx:template match="c">
+      <stx:message>Processed c in group 'foo'</stx:message>
+    </stx:template>
+  </stx:group>
+
+  <stx:template match="c">
+    <cc/>
+  </stx:template>
+
+</stx:transform>
