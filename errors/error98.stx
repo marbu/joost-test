@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--
+7: Position 2.0 out of bounds in call to function `item-at'
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:value-of select="item-at('x',2)" />
+  </stx:template>
+</stx:transform>
