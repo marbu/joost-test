@@ -18,6 +18,9 @@
       <stx:attribute name="c">c</stx:attribute>
       <stx:attribute name="r:r" select="''" />
       <stx:attribute name="empty" />
+      <baz>
+        <stx:attribute name="x">yz</stx:attribute>
+      </baz>
     </baz>
   </stx:template>
 
