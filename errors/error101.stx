@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--
+6: Syntax error, encountered end of pattern within a comment.
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/ (: x" />
+</stx:transform>
