@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- else without if -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="/">
+    <stx:if test="true()">if true </stx:if>
+    <stx:else>else false </stx:else>
+    <stx:else>else true </stx:else>
+  </stx:template>
+
+</stx:transform>
