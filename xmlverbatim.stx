@@ -4,7 +4,7 @@
    XML to HTML Verbatim Formatter with Syntax Highlighting
    STX version of
    http://www.informatik.hu-berlin.de/~obecker/XSLT/xmlverbatim/xmlverbatim.xsl
-   MPL 1.1 (c) Oliver Becker, $Date: 2003/03/20 13:37:42 $
+   MPL 1.1 (c) Oliver Becker, $Date: 2003/04/29 11:42:35 $
    obecker@informatik.hu-berlin.de
 -->
 
@@ -48,25 +48,24 @@
       <stx:text>=&quot;&quot;</stx:text>
     </stx:if>
     <stx:variable name="par" select=".." />
-    <stx:for-each select="get-in-scope-namespaces(.)">
-      <stx:if test="not(get-namespace-uri-for-prefix($par, current-item()) =
-                        get-namespace-uri-for-prefix(., current-item())) and
-                    current-item() != 'xml'">
+    <stx:for-each-item name="ns" select="get-in-scope-namespaces(.)">
+      <stx:if test="not(get-namespace-uri-for-prefix($par, $ns) =
+                        get-namespace-uri-for-prefix(., $ns)) and
+                    $ns != 'xml'">
         <span class="xmlverb-ns-name">
           <stx:text> xmlns</stx:text>
-          <stx:if test="current-item() != ''">
+          <stx:if test="$ns != ''">
             <stx:text>:</stx:text>
           </stx:if>
-          <stx:value-of select="current-item()"/>
+          <stx:value-of select="$ns"/>
         </span>
         <stx:text>=&quot;</stx:text>
         <span class="xmlverb-ns-uri">
-          <stx:value-of
-               select="get-namespace-uri-for-prefix(., current-item())"/>
+          <stx:value-of select="get-namespace-uri-for-prefix(., $ns)"/>
         </span>
         <stx:text>&quot;</stx:text>
       </stx:if>
-    </stx:for-each>
+    </stx:for-each-item>
         
     <stx:process-attributes />
 

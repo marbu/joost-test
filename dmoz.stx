@@ -72,20 +72,22 @@
         <body>
           <h3>
             <stx:variable name="len" select="count($parent)" />
-            <stx:for-each select="$parent">
+            <stx:variable name="cnt" select="$len" />
+            <stx:for-each-item name="dummy" select="$parent">
+              
               <stx:variable name="item"
-                            select="item-at($parent,$len - position()+1)" />
-              <stx:if test="position() = 1">
+                            select="item-at($parent, $cnt)" />
+              <stx:if test="$len = $cnt">
                 <a href="{$item}/index.html">DMOZ</a>
                 <stx:text> | </stx:text>
               </stx:if>
               <stx:else>
                 <a href="../{$item}.html">
-                  <stx:value-of select="substring($item,
-                                                  ($len - position())*3+1)" />
+                  <stx:value-of select="substring($item, $cnt*3-2)" />
                 </a>: <stx:text />
               </stx:else>
-            </stx:for-each>
+              <stx:assign name="cnt" select="$cnt - 1" />
+            </stx:for-each-item>
             <stx:value-of select="$filename" />
           </h3>
           &nl;
@@ -107,10 +109,10 @@
           <stx:assign name="subtopics" select="false()" />
           <stx:variable name="id" select="concat(@r:id,'/')" />
           <stx:variable name="ppath" select="()" />
-          <stx:for-each select="$parent">
+          <stx:for-each-item name="p" select="$parent">
             <stx:assign name="ppath"
-                        select="($ppath, concat('../', current-item()))" />
-          </stx:for-each>
+                        select="($ppath, concat('../', $p))" />
+          </stx:for-each-item>
           <stx:process-siblings
                until="od:Topic[not(starts-with(@r:id,$id))]">
             <stx:with-param name="base" select="concat(@r:id, '/')" />

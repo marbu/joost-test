@@ -2,47 +2,37 @@
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <stx:template match="a">
-    <stx:for-each select="//a">
-      <stx:if test="current-item()/@x = count(//a)">[<stx:process-children />]</stx:if>
-      <stx:value-of select="concat(current-item()/@x,
-                                   ' (', position(), ')')" />, <stx:text />
-    </stx:for-each>
+    <stx:variable name="pos" select="0" />
+    <stx:for-each-item name="a" select="//a">
+      <stx:assign name="pos" select="$pos + 1" />
+      <stx:if test="$a/@x = count(//a)">[<stx:process-children />]</stx:if>
+      <stx:value-of select="concat($a/@x, ' (', $pos, ')')" />, <stx:text />
+    </stx:for-each-item>
     <stx:text>&#xA;</stx:text>
     <in-a xml:space="preserve">
-      <stx:for-each select="/a">
-        <stx:value-of select="concat('current-item()/@x: ',
-                                     current-item()/@x)" />
+      <stx:for-each-item name="a" select="/a">
+        <stx:value-of select="concat('$a/@x: ', $a/@x)" />
         <stx:value-of select="concat('@x: ', @x)" />
-        <stx:call-procedure name="p">
-          <stx:with-param name="x" select="current-item()/@x" />
-        </stx:call-procedure>
-      </stx:for-each>
+      </stx:for-each-item>
     </in-a>
     <stx:value-of select="concat('@x: ', @x)" />
   </stx:template>
-
-  <stx:procedure name="p">
-    <stx:param name="x" />
-    <stx:value-of select="concat('p: ', $x, ' - ', current-item()/@x)" />
-  </stx:procedure>
 
   <stx:template match="/">
     <!-- simple multiplication table -->
     <stx:variable name="numbers" select="(1,2,3,4,5,6,7,8,9,10)" />
     <table border="1" cellpadding="3" cellspacing="0">
-      <stx:for-each select="$numbers">
-        <stx:variable name="line" select="position()" />
+      <stx:for-each-item name="line" select="$numbers">
         <tr>
-          <stx:for-each select="$numbers">
-            <td><stx:value-of select="$line * current-item()" /></td>
-          </stx:for-each>
+          <stx:for-each-item name="col" select="$numbers">
+            <td><stx:value-of select="$line * $col" /></td>
+          </stx:for-each-item>
           <th>
-            <stx:value-of select="concat(current-item(), ' / ',
-                                         position())" />
+            <stx:value-of select="$line" />
           </th>
         </tr>
         <stx:text>&#xA;</stx:text>
-      </stx:for-each>
+      </stx:for-each-item>
     </table>
     <stx:text>&#xA;&#xA;</stx:text>
     <stx:process-children />

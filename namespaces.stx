@@ -7,12 +7,15 @@
   <stx:template match="*:test">
     <stx:copy attributes="@*">
       <stx:text>&#xA;</stx:text>
-      <stx:for-each select="get-in-scope-namespaces(.)">
-        <stx:if test="position() != 1">, </stx:if>
+      <stx:variable name="first" select="true()" />
+      <stx:for-each-item name="ns" select="get-in-scope-namespaces(.)">
+        <stx:if test="$first">
+          <stx:assign name="first" select="false()" />
+        </stx:if>
+        <stx:else>, </stx:else>
         <stx:value-of select=
-          "concat(current-item(), '=',
-                  get-namespace-uri-for-prefix(., current-item()))" />
-      </stx:for-each>
+             "concat($ns, '=', get-namespace-uri-for-prefix(., $ns))" />
+      </stx:for-each-item>
       <stx:if test="has-child-nodes()">
         <stx:text>&#xA;</stx:text>
         <new xmlns:foo="foo" prop="foo:value"><foo:foo xmlns="bar"/></new>
