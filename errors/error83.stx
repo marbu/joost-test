@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Multiple group templates -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:process-children group="target" />
+  </stx:template>
+  
+  <stx:group>
+    <stx:template match="*" visibility="group" />
+    <stx:group>
+      <stx:template match="*" visibility="group" />
+      <stx:group name="target" />
+    </stx:group>
+  </stx:group>
+
+</stx:transform>
