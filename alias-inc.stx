@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:dummy="urn:dummy"
+               version="1.0">
+
+  <stx:namespace-alias stylesheet-prefix="dummy" result-prefix="stx" />
+
+</stx:transform>
