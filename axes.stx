@@ -5,9 +5,12 @@
 
   <stx:template match="b">
     <stx:value-of select="concat($cnt, ' ', name(), ': ')" />
+    position: <stx:value-of select="position()" />
     /a/b/@foo: <stx:value-of select="/a/b/@foo" />
     b/@foo <stx:value-of select="b/@foo" />
     ../@foo <stx:value-of select="../@foo" />
+    <stx:variable name="dummy" select="/a" />
+    position: <stx:value-of select="position()" />
     <stx:text>&#xA;</stx:text>
     <stx:assign name="cnt" select="$cnt + 1" />
     <stx:process-children />
