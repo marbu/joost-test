@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- only the options from the base group take effect -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               recognize-cdata="no" strip-space="yes">
+
+  <stx:group recognize-cdata="yes" strip-space="no">
+    <stx:template match="cdata()" visibility="public" priority="2">
+      cdata section
+    </stx:template>
+    <stx:template match="text()[normalize-space()='']" visibility="public">
+      white space
+    </stx:template>
+  </stx:group>
+
+</stx:transform>

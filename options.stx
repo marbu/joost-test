@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- options on group level -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:buffer name="input" />
+
+  <stx:group pass-through="all">
+    <stx:template match="/" visibility="public">
+      <stx:result-buffer name="input">
+        <stx:process-children />
+      </stx:result-buffer>
+      <group name="a">
+        <stx:process-buffer name="input" group="a" />
+      </group>
+      <stx:text>&#xA;</stx:text>
+      <group name="b">
+        <stx:process-buffer name="input" group="b" />
+      </group>
+      <stx:text>&#xA;</stx:text>
+      <group name="c">
+        <stx:process-buffer name="input" group="c" />
+      </group>
+      <stx:text>&#xA;</stx:text>
+      <group name="d">
+        <stx:process-buffer name="input" group="d" />
+      </group>
+      <stx:text>&#xA;</stx:text>
+      <group name="e">
+        <stx:process-buffer name="input" group="e" />
+      </group>
+      <stx:text>&#xA;</stx:text>
+      <group name="ff">
+        <stx:process-buffer name="input" group="ff" />
+      </group>
+    </stx:template>
+  </stx:group>
+
+  <stx:group name="a" />
+  <stx:group name="b" pass-through="text" />
+  <stx:group name="c" pass-through="all" />
+  <stx:group name="d" strip-space="yes" pass-through="all" />
+  <stx:group name="e" recognize-cdata="no" pass-through="all" />
+  <stx:group name="f" recognize-cdata="no" strip-space="yes"
+                      pass-through="all">
+    <stx:group strip-space="inherit" recognize-cdata="inherit"
+               pass-through="inherit">
+      <stx:group name="ff" /><!-- inherited per default -->
+    </stx:group>
+  </stx:group>
+
+</stx:transform>
