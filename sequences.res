@@ -46,7 +46,7 @@
     count(//*/@bar): 2
     sum(//*/@bar): 15
 
-    value-of seq3: (0)
+    value-of seq3: (0 1 2 3 4 5 6 7 8 9 10)
     value-of seq3 with |: (0|1|2|3|4|5|6|7|8|9|10)
     value-of seq3 with : (012345678910)
     value-of empty: ()
