@@ -5,6 +5,7 @@
     count(seq2): 2
     count(seq3): 11
     sum(seq3): 55
+    sum(NaNs): 3
     empty(empty): true
     empty(seq1): false
     item-at(seq1,1): 1

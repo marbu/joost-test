@@ -14,6 +14,7 @@
     count(seq2): <stx:value-of select="count($seq2)" />
     count(seq3): <stx:value-of select="count($seq3)" />
     sum(seq3): <stx:value-of select="sum($seq3)" />
+    sum(NaNs): <stx:value-of select="sum((1, 'NaN', 2))" />
     empty(empty): <stx:value-of select="empty($empty)" />
     empty(seq1): <stx:value-of select="empty($seq1)" />
     item-at(seq1,1): <stx:value-of select="item-at($seq1,1)" />
