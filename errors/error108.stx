@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+9: Target object (first parameter) in the function call to `toString' is null
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:sys="java:java.lang.System"
+               version="1.0">
+  <stx:template match="/">
+    <stx:value-of select="sys:to-string(sys:gc())" />
+  </stx:template>
+</stx:transform>
