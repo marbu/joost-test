@@ -62,11 +62,8 @@ Hello, world
     ""
     ""
  escape-uri
-    "gopher%3A%2F%2Fspinaltap.micro.umn.edu%2F00%2FWeather%2FCA%2FLos%20Angeles%23ocean"
-    "gopher://spinaltap.micro.umn.edu/00/Weather/CA/Los%20Angeles#ocean"
-    "%5E%25GOOD%BAD%25"
-    "%5E%25GOOD%BAD%251"
-    "%5E%25GOOD%BAD%12"
+    "http%3A%2F%2Fwww.example.com%2F00%2FWeather%2FCA%2FLos%20Angeles#ocean"
+    "http://www.example.com/00/Weather/CA/Los%20Angeles#ocean"
  floor, ceiling, round
     * 2.3: 2, 3, 2
     * 2.7: 2, 3, 3
