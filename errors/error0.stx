@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--
+6: The content beginning "< " is not legal markup. Perhaps the " " (&#20;) character should be a letter.
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  if (a < 0 && b < 0) break;
+</stx:transform>
