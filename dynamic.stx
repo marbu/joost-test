@@ -2,7 +2,7 @@
 <!-- Dynamic created elements and attributes -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   
-  <stx:template match="*">
+  <stx:template match="/*">
     <stx:copy>
       <stx:text>&#xA;</stx:text>
       <foo foo="foo">
@@ -25,6 +25,15 @@
       <stx:attribute xmlns:abc="abc" name="abc:att" select="2" />
       <stx:element-end name="abc:xyz" namespace="abc" />
       <stx:text>&#xA;</stx:text>
+      <stx:process-children />
+      <stx:text>&#xA;</stx:text>
     </stx:copy>
+  </stx:template>
+
+  <stx:template match="*">
+    <stx:element name="{local-name()}" />
+    <stx:element name="{name()}" namespace="{namespace-uri()}-new">
+      <stx:process-children />
+    </stx:element>
   </stx:template>
 </stx:transform>

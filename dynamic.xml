@@ -1,2 +1,4 @@
 <?xml version="1.0"?>
-<empty />
+<empty>
+  <foo:bar xmlns:foo="foo" xmlns:bar="bar"><bar:foo/></foo:bar>
+</empty>
