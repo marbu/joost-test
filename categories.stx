@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!-- precedence categories -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="/">
+    <stx:process-children group="initial" />
+  </stx:template>
+
+
+  <stx:group>
+    <stx:group>
+      <stx:group name="initial">
+        <stx:template match="a">
+          <stx:text />init: <stx:value-of select="name()" />
+          <stx:text>&#xA;</stx:text>
+          <stx:process-children />
+          <stx:call-procedure name="p1" />
+          <stx:call-procedure name="p2" />
+          <stx:call-procedure name="p3" />
+          <stx:call-procedure name="p4" />
+        </stx:template>
+        <stx:group>
+          <stx:template match="b" public="yes">ok, b&#xA;</stx:template>
+          <stx:template match="h">no, h&#xA;</stx:template>
+          <stx:procedure name="p2" public="no">no, p2&#xA;</stx:procedure>
+        </stx:group>
+        <stx:group>
+          <stx:template match="b" public="no">no, b&#xA;</stx:template>
+          <stx:procedure name="p2" public="yes">ok, p2&#xA;</stx:procedure>
+        </stx:group>
+        <stx:template match="h">ok, h&#xA;</stx:template>
+        <stx:procedure name="p1" public="no">ok, p1&#xA;</stx:procedure>
+      </stx:group>
+      <stx:template match="b" visibility="group">no, b&#xA;</stx:template>
+      <stx:template match="c" visibility="group">ok, c&#xA;</stx:template>
+      <stx:template match="e" visibility="group">no, e&#xA;</stx:template>
+      <stx:template match="h" visibility="group">no, h&#xA;</stx:template>
+      <stx:procedure name="p1" visibility="group">no, p1&#xA;</stx:procedure>
+      <stx:procedure name="p2" visibility="global">no, p2&#xA;</stx:procedure>
+    </stx:group>
+    <stx:template match="d" visibility="group">ok, d&#xA;</stx:template>
+    <stx:template match="e" visibility="group"
+                  priority="2">ok, e&#xA;</stx:template>
+    <stx:template match="c">no, c&#xA;</stx:template>
+    <stx:template match="g" visibility="global">ok, g&#xA;</stx:template>
+    <stx:procedure name="p3" visibility="group">ok, p3&#xA;</stx:procedure>
+  </stx:group>
+
+  <stx:group>
+    <stx:template match="b" visibility="global">no, b&#xA;</stx:template>
+    <stx:template match="c" visibility="global">no, c&#xA;</stx:template>
+    <stx:template match="f" visibility="global">ok, f&#xA;</stx:template>
+    <stx:template match="g" visibility="global">no, g&#xA;</stx:template>
+    <stx:procedure name="p3" visibility="global">no, p3&#xA;</stx:procedure>
+    <stx:procedure name="p4" visibility="global">ok, p4&#xA;</stx:procedure>
+  </stx:group>
+
+
+  
+</stx:transform>
