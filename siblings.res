@@ -51,4 +51,9 @@ y at 52
 <sibs><y att="3" /><x att="3" /><z att="3" /></sibs>
 y at 56
 <sibs />
+
+<xs><x att="1" /><xs><x att="2" /></xs>
+<ys /></xs>
+<ys><y att="2" /><y att="3" /></ys><xs><x att="3" /></xs>
+<ys /><z att="3" /><y att="3" />
 </root><top><!-- after --></top></top>

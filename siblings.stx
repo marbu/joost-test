@@ -34,6 +34,9 @@
       <stx:process-buffer name="input" group="f" />
       <stx:text>&#xA;</stx:text>
       <stx:process-buffer name="input" group="g" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="h" />
+      <stx:text>&#xA;</stx:text>
     </root>
   </stx:template>
 
@@ -138,6 +141,19 @@
         <stx:copy attributes="@*" />
       </stx:template>
     </stx:group>
+  </stx:group>
+
+  <stx:group name="h">
+    <stx:template match="x">
+      <xs>
+        <stx:copy attributes="@*" />
+        <stx:process-siblings while="x" />
+      </xs>
+      <stx:text>&#xA;</stx:text>
+      <ys>
+        <stx:process-siblings while="y" />
+      </ys>
+    </stx:template>
   </stx:group>
   
   <stx:template match="node()">
