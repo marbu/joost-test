@@ -5,7 +5,7 @@
                pass-through="all">
 
   <stx:template match="/*" priority="-1">
-    <stx:process-document href="'play.xml'" base="#stylesheet" />
+    <stx:process-document href="'play.xml'" base="#sheet" />
     <!-- Berliner Klopsgeschichte -->
     <stx:result-document href="klops.txt"
                          output-method="text" output-encoding="iso-8859-1">
