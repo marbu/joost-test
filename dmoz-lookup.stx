@@ -6,7 +6,9 @@
                xmlns:d="http://purl.org/dc/elements/1.0/"  
                xmlns:od="http://dmoz.org/rdf"
                xmlns="http://www.w3.org/1999/xhtml"
-               version="1.0">
+               version="1.0"
+               exclude-result-prefixes="#all"
+  >
 
   <!-- Parameter for identifying the requested category -->
   <stx:param name="catid" />

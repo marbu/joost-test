@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns:od="http://dmoz.org/rdf" xmlns:r="http://www.w3.org/TR/RDF/" xmlns:d="http://purl.org/dc/elements/1.0/" xmlns="http://www.w3.org/1999/xhtml"><body>
+<html xmlns="http://www.w3.org/1999/xhtml"><body>
 <h3>Resources in Top/Shopping</h3>
 <dl><dt><a href="http://www.esmarts.com/">eSmarts</a></dt>
 <dd>eSmarts helps consumers find the lowest possible prices on the web. They compare prices at different Internet stores, list coupons (including many $10 off coupons), discuss sales and share great shopping tips.</dd>
