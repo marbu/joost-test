@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
-<!-- node can't be converted -->
+<!-- atomic value can't be converted to node -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <stx:value-of select="." />
+    <stx:variable name="x" select="1" />
+    <stx:value-of select="$x/@a" />
   </stx:template>
 </stx:transform>
