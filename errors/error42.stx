@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- nested markup within comment -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="*">
+    <stx:comment>
+      <stx:process-children />
+    </stx:comment>
+  </stx:template>
+</stx:transform>
