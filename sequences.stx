@@ -56,6 +56,15 @@
     count(//*/@bar): <stx:value-of select="count(//*/@bar)" />
     sum(//*/@bar): <stx:value-of select="sum(//*/@bar)" />
 
+    min(//*/@bar): <stx:value-of select="min(//*/@bar)" />
+    min(//*/@baz): <stx:value-of select="min(//*/@baz)" />
+    min('foo'): <stx:value-of select="min('foo')" />
+    max(//*/@bar): <stx:value-of select="max(//*/@bar)" />
+    max(//*/@baz): <stx:value-of select="max(//*/@baz)" />
+    avg((//*/@foo,//*/@bar)): <stx:value-of select="avg((//*/@foo,//*/@bar))" />
+    avg(//*/@baz): <stx:value-of select="avg(//*/@baz)" />
+    avg(('bar','baz')): <stx:value-of select="avg(('bar','baz'))" />
+    
     value-of seq3: (<stx:value-of select="$seq3" />)
     value-of seq3 with |: (<stx:value-of select="$seq3"
                                 separator="{translate(name(/*),'a','|')}" />)

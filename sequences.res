@@ -47,6 +47,15 @@
     count(//*/@bar): 2
     sum(//*/@bar): 15
 
+    min(//*/@bar): 5
+    min(//*/@baz): 
+    min('foo'): 
+    max(//*/@bar): 10
+    max(//*/@baz): 
+    avg((//*/@foo,//*/@bar)): 4.166666666666667
+    avg(//*/@baz): 
+    avg(('bar','baz')): 
+    
     value-of seq3: (0 1 2 3 4 5 6 7 8 9 10)
     value-of seq3 with |: (0|1|2|3|4|5|6|7|8|9|10)
     value-of seq3 with : (012345678910)
