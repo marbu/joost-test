@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- namespace handling -->
+<root>
+  <test xmlns:x="x-uri" att="x:value">
+    <x:test xmlns="other-uri"/>
+  </test>
+  <skip><x:all xmlns:x="x"><contained/> text </x:all></skip>
+  <or>
+    <perform xmlns:one="one">
+      <default xmlns:two="two">
+        <one:test t="two:processing" xmlns:three="three"/>
+      </default>
+    </perform>
+  </or>
+  <default:test xmlns:default="d" />
+</root>

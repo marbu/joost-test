@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- namespace handling -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:options no-match-events="text" />
+
+  <stx:template match="*:test">
+    <stx:copy attributes="@*">
+      <stx:if test="has-child-nodes()">
+        <new xmlns:foo="foo" prop="foo:value"><foo:foo xmlns="bar"/></new>
+      </stx:if>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+
+  <stx:template match="default:test" xmlns:default="d">
+    <default xmlns="defaultURI">
+      <stx:copy />
+    </default>
+  </stx:template>
+  
+  <stx:template match="skip" />
+</stx:transform>
