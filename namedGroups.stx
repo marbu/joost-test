@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!-- Test for named groups -->
+<stx:transform version="1.0"
+               xmlns:stx="http://stx.sourceforge.net/2002/ns">
+
+  <stx:buffer name="buf" />
+  
+  <stx:template match="/">
+    <stx:process-children group="a" />
+    <stx:result-buffer name="buf">
+      <foo/>
+    </stx:result-buffer>
+    <stx:process-buffer name="buf" group="buf" />
+  </stx:template>
+
+  <stx:group>
+    <stx:group name="a">
+      <stx:template match="*">
+        <stx:text>A: </stx:text>
+        <stx:value-of select="name()" />
+        <stx:text>&#xA;</stx:text>
+        <stx:process-attributes group="atts" />
+        <stx:process-children group="b" />
+      </stx:template>
+
+      <stx:template match="@*">
+        Atts: this line mustn't be printed
+      </stx:template>
+    </stx:group>
+
+    <stx:group name="b">
+      <stx:template match="*" priority="3">
+        <stx:text>B: </stx:text>
+        <stx:value-of select="name()" />
+        <stx:text>&#xA;</stx:text>
+        <stx:process-self group="b" />
+      </stx:template>
+
+      <stx:group name="local">
+        <stx:template match="*" visibility="public" priority="2">
+          <stx:text>B/local&#xA;</stx:text>
+          <stx:process-self group="local" />
+        </stx:template>
+
+        <stx:template match="*">
+          <stx:text />second local: <stx:value-of select="name()" />
+          <stx:text>&#xA;</stx:text>
+          <stx:process-children group="c" />
+        </stx:template>
+      </stx:group>
+
+      <stx:template match="*">
+        Elements: this line mustn't be printed
+      </stx:template>
+    </stx:group>
+  </stx:group>
+
+  <stx:group name="c">
+    <stx:template match="*">
+      <stx:text>C: </stx:text>
+        <stx:value-of select="name()" />
+        <stx:text>&#xA;</stx:text>
+      <stx:process-children group="a" />
+    </stx:template>
+  </stx:group>
+
+  <stx:group name="atts">
+    <stx:template match="@*">
+      <stx:text />  Att: <stx:value-of select="name()" />
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+  
+  <stx:template match="*">
+    This line mustn't be printed
+    <stx:process-children group="stx:bliblabl" />
+  </stx:template>
+  
+  <stx:group name="stx:foo">
+    <stx:template match="*" priority="10">
+      This line mustn't be printed
+    </stx:template>
+
+    <stx:group>
+      <stx:group name="buf">
+        <stx:template match="*">
+          <stx:text />buf: <stx:value-of select="name()" />
+        </stx:template>
+      </stx:group>
+    </stx:group>
+  </stx:group>
+  
+</stx:transform>
