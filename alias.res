@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <bar:result xmlns:bar="urn:default" xmlns:dummy="http://stx.sourceforge.net/2002/ns" xmlns:foo="urn:bar" xmlns="urn:foo">
+    <bar:result xmlns:bar="urn:default" xmlns:dummy="http://stx.sourceforge.net/2002/ns" xmlns="urn:foo" xmlns:foo="urn:bar">
       <alias xmlns="" xmlns:foo="urn:foo" />
       <default />
       <foo:transform version="2.0" />
