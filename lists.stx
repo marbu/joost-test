@@ -21,7 +21,7 @@
   <stx:variable name="li-in-list" select="0"/>
   <stx:variable name="level" select="0" keep-value="yes"/>
 
-    <stx:template match="list" visibility="public" new-scope="yes">
+    <stx:template match="list" public="yes" new-scope="yes">
       <stx:assign name="list" select="$list + 1"/>
       <stx:assign name="level" select="$level + 1"/>
       <stx:variable name="list-no" select="$list"/>

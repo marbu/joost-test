@@ -24,7 +24,7 @@
     <stx:variable name="item-no" select="0" />
     
     <stx:template match="order[$item-no=0]"
-                  visibility="public" new-scope="yes">
+                  public="yes" new-scope="yes">
       <ul>
         <stx:process-self group="orders" />
         <stx:process-siblings until="*[$item-no=$group-size]" group="orders"/>

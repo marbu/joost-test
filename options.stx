@@ -5,7 +5,7 @@
   <stx:buffer name="input" />
 
   <stx:group pass-through="all">
-    <stx:template match="/" visibility="public">
+    <stx:template match="/" public="yes">
       <stx:result-buffer name="input">
         <stx:process-children />
       </stx:result-buffer>

@@ -129,7 +129,7 @@
   <stx:group name="g">
     <stx:group>
       <stx:variable name="pos" select="0" />
-      <stx:template match="*[$pos &lt; position()]" visibility="public">
+      <stx:template match="*[$pos &lt; position()]" public="yes">
         <stx:value-of select="concat(name(), ' at ', position())" />
         <stx:text>&#xA;</stx:text>
         <sibs>

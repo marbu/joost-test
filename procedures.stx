@@ -36,7 +36,7 @@
   </stx:procedure>
 
   <stx:group>
-    <stx:procedure name="p4" visibility="public">
+    <stx:procedure name="p4" public="yes">
       in p4: <stx:copy />
     </stx:procedure>
     <stx:template match="node()">
@@ -45,7 +45,7 @@
   </stx:group>
 
   <stx:group>
-    <stx:template match="c" visibility="public">
+    <stx:template match="c" public="yes">
       template for c: <stx:copy />
       <stx:call-procedure name="p3">
         <stx:with-param name="par" select="'forty-two'" />

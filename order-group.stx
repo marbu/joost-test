@@ -26,7 +26,7 @@
     <stx:variable name="price" />
     <stx:variable name="current-initial" />
   
-    <stx:template match="order" visibility="public">
+    <stx:template match="order" public="yes">
       <stx:assign name="quantity" select="1" />
       <stx:process-children /> <!-- collect data -->
       <stx:variable name="new-initial" select="substring($name,1,1)" />

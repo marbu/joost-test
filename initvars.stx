@@ -17,7 +17,7 @@
     <stx:variable name="v1" select="name()" />
     <stx:variable name="v2" select="name(..)" />
 
-    <stx:template match="*" visibility="public" new-scope="yes">
+    <stx:template match="*" public="yes" new-scope="yes">
       <stx:value-of select="concat('this: ', name(),
                                    '   v1: ', $v1,
                                    '   v2: ', $v2, '&#xA;')" />

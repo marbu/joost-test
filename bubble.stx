@@ -46,7 +46,7 @@
   <!-- a group for outputting the sorted result -->
   <stx:group>
     <!-- instantiated if $changed is false() -->
-    <stx:template match="list" visibility="public">
+    <stx:template match="list" public="yes">
       <stx:copy>
         <stx:process-children /> <!-- copy children per default -->
       </stx:copy>

@@ -40,7 +40,7 @@
       </stx:template>
 
       <stx:group name="local">
-        <stx:template match="*" visibility="public" priority="2">
+        <stx:template match="*" public="yes" priority="2">
           <stx:text>B/local&#xA;</stx:text>
           <stx:process-self group="local" />
         </stx:template>

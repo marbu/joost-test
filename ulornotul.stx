@@ -11,7 +11,7 @@
 
   <stx:group name="li">
 
-    <stx:template match="li" visibility="public">
+    <stx:template match="li" public="yes">
       <ul>
         <stx:process-self />
         <stx:process-siblings while="li|text()" />

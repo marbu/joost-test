@@ -4,19 +4,19 @@
 
   <stx:group name="parent">
     
-  <stx:template match="node()" priority="10" visibility="public">
+  <stx:template match="node()" priority="10" public="yes">
     <stx:text>node() 10&#xA;</stx:text>
     <stx:process-self />
     <stx:text>------ 10&#xA;</stx:text>
   </stx:template>
 
   <stx:group>
-    <stx:template match="node()" priority="8" visibility="public">
+    <stx:template match="node()" priority="8" public="yes">
       <stx:text>node() 8 - group A&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ 8 - group A&#xA;</stx:text>
     </stx:template>
-    <stx:template match="*" priority="6" visibility="public">
+    <stx:template match="*" priority="6" public="yes">
       <stx:text>     * 6 - group A&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ 6 - group A&#xA;</stx:text>
@@ -24,12 +24,12 @@
   </stx:group>
 
   <stx:group>
-    <stx:template match="node()" priority="4" visibility="public">
+    <stx:template match="node()" priority="4" public="yes">
       <stx:text>node() 4 - group B&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ 4 - group B&#xA;</stx:text>
     </stx:template>
-    <stx:template match="text()" priority="2" visibility="public">
+    <stx:template match="text()" priority="2" public="yes">
       <stx:text>text() 2 - group B&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ 2 - group B&#xA;</stx:text>
@@ -38,13 +38,13 @@
 
   <stx:group>
     <stx:template match="comment()"
-                  priority="5" visibility="public">
+                  priority="5" public="yes">
       <stx:text>comm   5 - group C&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ 5 - group C&#xA;</stx:text>
     </stx:template>
     <stx:template match="processing-instruction()"
-                  priority="5" visibility="public">
+                  priority="5" public="yes">
       <stx:text>pi     5 - group C&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ 5 - group C&#xA;</stx:text>
@@ -52,7 +52,7 @@
   </stx:group>
   
   <stx:group>
-    <stx:template match="node()" visibility="public">
+    <stx:template match="node()" public="yes">
       <stx:text>node() default - group D, default rule&#xA;</stx:text>
       <stx:process-self group="parent" />
       <stx:text>------ default - group D, default rule&#xA;</stx:text>
