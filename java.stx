@@ -5,7 +5,7 @@
                xmlns:m="java:java.lang.Math"
                xmlns:v="java:java.util.Vector"
                xmlns:e="java:java.util.Enumeration"
-               xmlns:joost="http://joost.sf.net/functions"
+               xmlns:joost="http://joost.sf.net/extension"
                version="1.0">
 
   <stx:template match="init">
