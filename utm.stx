@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- | $Id: utm.stx,v 1.1 2002/11/17 16:50:48 obecker Exp $
+ | $Id: utm.stx,v 1.2 2003/01/15 14:28:59 obecker Exp $
  |
  | The contents of this file are subject to the Mozilla Public License
  | Version 1.1 (the "License"); you may not use this file except in
@@ -36,7 +36,7 @@
 <stx:transform version="1.0"
                xmlns:stx="http://stx.sourceforge.net/2002/ns">
 
-  <stx:options no-match-events="ignore" strip-space="yes" />
+  <stx:options pass-through="none" strip-space="yes" />
 
   <!-- initial tape (input) -->
   <stx:param name="tape" />

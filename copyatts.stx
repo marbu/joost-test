@@ -2,7 +2,7 @@
 <!-- Test for stx:copy with an attributes attribute -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
-  <stx:options no-match-events="text" />
+  <stx:options pass-through="text" />
   
   <stx:template match="a">
     <stx:copy>  <!-- no "attributes" attribute -->

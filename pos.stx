@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <transform xmlns="http://stx.sourceforge.net/2002/ns" version="1.0">
-  <options no-match-events="text" />
+  <options pass-through="text" />
 
   <template match="a">
     "a" in the null namespace

@@ -2,7 +2,7 @@
 <!-- Output encoding test -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:options output-encoding="iso-8859-1"
-               no-match-events="text" />
+               pass-through="text" />
   <stx:template match="abc">
     <ABC>бав<stx:process-children />&#xA5;&#xA3;&#xA9;&#xFF;</ABC>
   </stx:template>

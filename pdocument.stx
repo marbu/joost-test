@@ -2,7 +2,7 @@
 <!-- test for stx:process-document -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
-  <stx:options no-match-events="ignore" />
+  <stx:options pass-through="none" />
 
   <stx:template match="/">
     <stx:text>principal source document</stx:text>

@@ -2,7 +2,7 @@
 <!-- rename example -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
-  <stx:options no-match-events="text" />
+  <stx:options pass-through="text" />
 
   <stx:template match="root">
     <stx:copy>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Escape test -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-  <stx:options no-match-events="text" recognize-cdata="no" />
+  <stx:options pass-through="text" recognize-cdata="no" />
   <stx:template match="escape">
     <stx:copy attributes="@*">
       <stx:process-children />

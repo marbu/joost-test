@@ -2,7 +2,7 @@
 <!-- test for stx:comment and stx:processing-instruction -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
-  <stx:options no-match-events="text" strip-space="yes" />
+  <stx:options pass-through="text" strip-space="yes" />
   
   <stx:template match="comment">
     <stx:comment>comments</stx:comment>
