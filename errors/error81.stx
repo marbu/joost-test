@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
-<!-- The parameter passed to the namespace-uri function must be a node
-     (got number 1.0) -->
+<!--
+  Invalid src value `bar'. Expect url(...) or buffer(...) specification.
+-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <stx:for-each select="(1,2)">
-      <stx:value-of select="namespace-uri()" />
-    </stx:for-each>
+    <stx:process-children filter="foo" src="bar" />
   </stx:template>
 </stx:transform>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!-- Missing `filter' attribute in `stx:process-children' (`src' is present) -->
+<!-- Filter `foo' not available -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <stx:process-children src="url(error80.stx)" />
+    <stx:process-children filter="foo" />
   </stx:template>
 </stx:transform>
