@@ -18,6 +18,10 @@
     <stx:text>&#xA;</stx:text>
     <stx:comment />
     <stx:text>&#xA;</stx:text>
+    <stx:comment select="position()" />
+    <stx:text>&#xA;</stx:text>
+    <stx:comment select="concat('-','--')" />
+    <stx:text>&#xA;</stx:text>
   </stx:template>
 
   <stx:template match="pi">
@@ -30,6 +34,10 @@
     <stx:processing-instruction name="check">?></stx:processing-instruction>
     <stx:text>&#xA;</stx:text>
     <stx:processing-instruction name="empty" />
+    <stx:text>&#xA;</stx:text>
+    <stx:processing-instruction name="pos" select="position()" />
+    <stx:text>&#xA;</stx:text>
+    <stx:processing-instruction name="checks" select="'?!>!?>!?'" />
     <stx:text>&#xA;</stx:text>
   </stx:template>    
 </stx:transform>
