@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- | $Id: utm.stx,v 1.5 2003/06/23 08:18:38 obecker Exp $
+ | $Id: utm.stx,v 1.6 2003/12/03 07:21:49 obecker Exp $
  |
  | The contents of this file are subject to the Mozilla Public License
  | Version 1.1 (the "License"); you may not use this file except in
@@ -34,7 +34,7 @@
  | http://www.unidex.com/turing/tmml.htm
  +-->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
-               version="1.0"
+               version="1.0" output-method="text"
                pass-through="none" strip-space="yes">
 
   <!-- initial tape (input) -->
@@ -49,9 +49,9 @@
 
   <!-- the set of known symbols -->
   <stx:variable name="symbols" />
-  
+
   <!-- the current symbol -->
-  <stx:variable name="symbol" select="substring($tape,$pos,1)" />
+  <stx:variable name="symbol" select="substring($tape, $pos, 1)" />
 
   <!-- the blank symbol -->
   <stx:variable name="blank" select="' '" />
@@ -59,139 +59,120 @@
   <!-- the current state of the turing machine -->
   <stx:variable name="state" />
 
-  
-  <!-- a mode replacement for STX: store, process, halt -->
-  <stx:variable name="mode" />
-
-  <!-- a buffer which contains the nodes of our turing machine -->  
-  <stx:buffer name="turing" />
+  <!-- halt condition -->
+  <stx:variable name="run" select="true()" />
 
 
-  
-  <!-- ************************* init ************************* -->
-  
+
+  <!-- ************************* main ************************* -->
+
   <stx:template match="turing-machine">
-    <stx:assign name="mode" select="'store'" />
-    <stx:result-buffer name="turing">
-      <turing>
-        <stx:process-children />
-      </turing>
-    </stx:result-buffer>
-    <stx:assign name="mode" select="'process'" />
-    <stx:if test="$tape=''">
+    <stx:if test="$tape = ''">
       <stx:text>Missing input tape&#xA;</stx:text>
-      <stx:assign name="mode" select="'halt'" />
+      <stx:assign name="run" select="false()" />
     </stx:if>
-    <stx:while test="$mode='process'">
-      <stx:process-buffer name="turing" />
+    <!-- a buffer which contains the instructions of our turing machine -->  
+    <stx:buffer name="turing">
+      <stx:process-self group="store"/>
+    </stx:buffer>
+    <stx:while test="$run">
+      <stx:process-buffer name="turing" group="process" />
     </stx:while>
-    <stx:value-of select="concat('Result: ', $tape,'&#xA;')" />
+    <stx:value-of select="concat('Result: ', $tape, '&#xA;')" />
   </stx:template>
 
-  
-  
+
   <!-- *********************** storing ************************ -->
 
-  <stx:template match="symbols[$mode='store']">
-    <stx:assign name="symbols" select="." />
-    <stx:if test="@blank-symbol">
-      <stx:assign name="blank" select="@blank-symbol" />
-    </stx:if>
-  </stx:template>
+  <stx:group name="store" pass-through="all">
 
-  
-  <stx:template match="state[$mode='store']">
-    <stx:copy attributes="@*">
-      <stx:value-of select="." />
-    </stx:copy>
-    <stx:if test="@start='yes'">
-      <stx:assign name="state" select="." />
-    </stx:if>
-  </stx:template>
+    <stx:template match="symbols">
+      <stx:assign name="symbols" select="." />
+      <stx:if test="@blank-symbol">
+        <stx:assign name="blank" select="@blank-symbol" />
+      </stx:if>
+    </stx:template>
 
-  
-  <stx:template match="node()[$mode='store']" priority="-2">
-    <stx:copy attributes="@*">
-      <stx:process-children />
-    </stx:copy>
-  </stx:template>
+    <stx:template match="state">
+      <stx:if test="@start = 'yes'">
+        <stx:assign name="state" select="." />
+      </stx:if>
+      <stx:process-self />
+    </stx:template>
 
-  
+  </stx:group>
+
 
   <!-- ********************** processing ********************** -->
 
-  <!-- indicates whether the next state of the TM has been found -->
-  <stx:variable name="found" select="'done'" />
+  <stx:group name="process">
 
-  <stx:template match="turing[$mode='process']">
-    <!-- test for error conditions -->
-    <stx:if test="not(contains($symbols,$symbol)) and $symbol != $blank">
-      <stx:text>Found unknown symbol: "</stx:text>
-      <stx:value-of select="$symbol" />
-      <stx:text>"&#xA;</stx:text>
-      <stx:assign name="mode" select="'halt'" />
-    </stx:if>
-    <stx:if test="$found!='done'">
-      <stx:text>No action found for symbol "</stx:text>
-      <stx:value-of select="$symbol" />
-      <stx:text>" and state "</stx:text>
-      <stx:value-of select="$state" />
-      <stx:text>"&#xA;</stx:text>
-      <stx:assign name="mode" select="'halt'" />
-    </stx:if>
+    <!-- indicates whether the next state of the TM has been found -->
+    <stx:variable name="found" />
 
-    <stx:assign name="found" select="'no'" />
-    <stx:process-children />
-  </stx:template>
-
-  
-  <stx:template match="state[$mode='process']">
-    <stx:if test=".=$state and @halt='yes'">
-      <stx:assign name="mode" select="'halt'" />
-    </stx:if>
-  </stx:template>
-
-  
-  <stx:template match="mapping[$mode='process']">
-    <stx:if test="$found='no'">
+    <stx:template match="turing-machine">
+      <!-- test for error conditions -->
+      <stx:if test="not(contains($symbols, $symbol)) and $symbol != $blank">
+        <stx:text>Found unknown symbol: "</stx:text>
+        <stx:value-of select="$symbol" />
+        <stx:text>"&#xA;</stx:text>
+        <stx:assign name="run" select="false()" />
+      </stx:if>
+      <stx:assign name="found" select="'no'" />
       <stx:process-children />
-    </stx:if>
-  </stx:template>
+      <stx:if test="$found = 'no'">
+        <stx:text>No action found for symbol "</stx:text>
+        <stx:value-of select="$symbol" />
+        <stx:text>" and state "</stx:text>
+        <stx:value-of select="$state" />
+        <stx:text>"&#xA;</stx:text>
+        <stx:assign name="run" select="false()" />
+      </stx:if>
+    </stx:template>
 
-  
-  <stx:template match="from[$mode='process' and 
-                            @current-state=$state and
-                            @current-symbol=$symbol]">
-    <stx:assign name="found" select="'yes'" />
-  </stx:template>
+    <stx:template match="state">
+      <stx:if test=". = $state and @halt = 'yes'">
+        <stx:assign name="run" select="false()" />
+        <stx:assign name="found" select="'done'" />
+      </stx:if>
+    </stx:template>
 
-  
-  <stx:template match="to[$mode='process' and $found='yes']">
-    <stx:assign name="state" select="@next-state" />
-    <stx:assign name="tape" select="concat(substring($tape,1,$pos - 1),
+    <stx:template match="mapping">
+      <stx:if test="$found = 'no'">
+        <stx:process-children />
+      </stx:if>
+    </stx:template>
+
+    <stx:template match="from[@current-state = $state and
+                              @current-symbol = $symbol]">
+      <stx:assign name="found" select="'yes'" />
+    </stx:template>
+
+    <stx:template match="to[$found='yes']">
+      <stx:assign name="state" select="@next-state" />
+      <stx:assign name="tape" select="concat(substring($tape, 1, $pos - 1),
                                              @next-symbol,
-                                             substring($tape,$pos + 1))" />
-    <stx:if test="@movement='right'">
-      <stx:assign name="pos" select="$pos + 1" />
-      <stx:assign name="symbol" select="substring($tape,$pos,1)" />
-      <stx:if test="$symbol = ''">
-        <stx:assign name="symbol" select="$blank" />
-        <stx:assign name="tape" select="concat($tape, $blank)" />
+                                             substring($tape, $pos + 1))" />
+      <stx:if test="@movement = 'right'">
+        <stx:assign name="pos" select="$pos + 1" />
+        <stx:assign name="symbol" select="substring($tape, $pos, 1)" />
+        <stx:if test="$symbol = ''">
+          <stx:assign name="symbol" select="$blank" />
+          <stx:assign name="tape" select="concat($tape, $blank)" />
+        </stx:if>
       </stx:if>
-    </stx:if>
-    <stx:if test="@movement='left'">
-      <stx:assign name="pos" select="$pos - 1" />
-      <stx:assign name="symbol" select="substring($tape,$pos,1)" />
-      <stx:if test="$symbol = ''">
-        <stx:assign name="symbol" select="$blank" />
-        <stx:assign name="pos" select="1" />
-        <stx:assign name="tape" select="concat($blank,$tape)" />
+      <stx:if test="@movement = 'left'">
+        <stx:assign name="pos" select="$pos - 1" />
+        <stx:assign name="symbol" select="substring($tape, $pos, 1)" />
+        <stx:if test="$symbol = ''">
+          <stx:assign name="symbol" select="$blank" />
+          <stx:assign name="pos" select="1" />
+          <stx:assign name="tape" select="concat($blank, $tape)" />
+        </stx:if>
       </stx:if>
-      <stx:if test="$pos &lt; 1">
-      </stx:if>
-    </stx:if>
-    <stx:assign name="found" select="'done'" />
-  </stx:template>
+      <stx:assign name="found" select="'done'" />
+    </stx:template>
+
+  </stx:group>
 
 </stx:transform>
-
