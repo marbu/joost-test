@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:variable name="empty" />
+  <stx:variable name="seq1" select="(1,2,3)" />
+  <stx:variable name="seq2" select="(5,6)" />
+  <stx:variable name="seq3"
+                select="(0, (), $seq1, (4, $seq2), ((7, 8), 9), 10)" />
+
+  
+  <stx:template match="d">
+    count(empty): <stx:value-of select="count($empty)" />
+    count(seq1): <stx:value-of select="count($seq1)" />
+    count(seq2): <stx:value-of select="count($seq2)" />
+    count(seq3): <stx:value-of select="count($seq3)" />
+    sum(seq3): <stx:value-of select="sum($seq3)" />
+    empty(empty): <stx:value-of select="empty($empty)" />
+    empty(seq1): <stx:value-of select="empty($seq1)" />
+    item-at(seq1,1): <stx:value-of select="item-at($seq1,1)" />
+    count(item-at(seq1,1)): <stx:value-of select="count(item-at($seq1,1))" />
+    item-at(seq1,3): <stx:value-of select="item-at($seq1,3)" />
+    item-at(empty,2): <stx:value-of select="item-at($empty,2)" />
+    count(subsequence(seq3,3,5)): <stx:value-of select="count(subsequence($seq3,3,5))" />
+    sum(subsequence(seq3,3,5)): <stx:value-of select="sum(subsequence($seq3,3,5))" />
+    count(subsequence(seq3,1,1)): <stx:value-of select="count(subsequence($seq3,1,1))" />
+    count(subsequence(seq3,2,1)): <stx:value-of select="count(subsequence($seq3,2,1))" />
+    count(subsequence(seq3,3,1)): <stx:value-of select="count(subsequence($seq3,3,1))" />
+    count(subsequence(seq3,2,0)): <stx:value-of select="count(subsequence($seq3,2,0))" />
+    count(subsequence(seq3,2,-1)): <stx:value-of select="count(subsequence($seq3,2,-1))" />
+    count(subsequence(seq3,8,5)): <stx:value-of select="count(subsequence($seq3,8,5))" />
+    count(subsequence(seq3,-2,5)): <stx:value-of select="count(subsequence($seq3,-2,5))" />
+    count(subsequence(seq3,1)): <stx:value-of select="count(subsequence($seq3,1))" />
+    count(subsequence(seq3,8)): <stx:value-of select="count(subsequence($seq3,8))" />
+    count(subsequence(seq3,0)): <stx:value-of select="count(subsequence($seq3,0))" />
+    count(subsequence(seq3,-2)): <stx:value-of select="count(subsequence($seq3,-2))" />
+    empty=empty: <stx:value-of select="$empty = $empty" />
+    empty!=empty: <stx:value-of select="$empty != $empty" />
+    empty='': <stx:value-of select="$empty=''" />
+    string(empty)='': <stx:value-of select="string($empty)=''" />
+    number(empty): <stx:value-of select="number($empty)" />
+    boolean(empty): <stx:value-of select="boolean($empty)" />
+    boolean(seq1): <stx:value-of select="boolean($seq1)" />
+    boolean(seq3): <stx:value-of select="boolean($seq3)" />
+    seq1=seq2: <stx:value-of select="$seq1 = $seq2" />
+    seq2=seq3: <stx:value-of select="$seq2 = $seq3" />
+    seq2!=seq3: <stx:value-of select="$seq2 != $seq3" />
+    seq2!=seq2: <stx:value-of select="$seq2 != $seq2" />
+    seq2+seq3: <stx:value-of select="$seq2 + $seq3" />
+    seq2+empty: <stx:value-of select="$seq2 + $empty" />
+    empty+seq3: <stx:value-of select="$empty + $seq3" />
+
+    count(//*/@*): <stx:value-of select="count(//*/@*)" />
+    sum(//*/@*): <stx:value-of select="sum(//*/@*)" />
+    count(//*/@bar): <stx:value-of select="count(//*/@bar)" />
+    sum(//*/@bar): <stx:value-of select="sum(//*/@bar)" />
+  </stx:template>
+
+</stx:transform>

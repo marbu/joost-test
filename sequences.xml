@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<a foo="1" bar="10"><b foo="2"><c foo="3"><d foo="4" bar="5"/></c></b></a>
