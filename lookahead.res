@@ -70,6 +70,22 @@ Element here has children: false
 Element here had children: false
 Element look3 had children: true
 Value was "three"
+Element look4 has children: true
+Value is "four"
+Text "four" on level 3 has children: false
+Node on level 3 had children: false
+Text "4" on level 3 has children: false
+Node on level 3 had children: false
+Element look4 had children: true
+Value was "four"
+Element look5 has children: true
+Value is "five"
+Text "five" on level 3 has children: false
+Node on level 3 had children: false
+Text "5" on level 3 has children: false
+Node on level 3 had children: false
+Element look5 had children: true
+Value was "five"
 Text "
   xyz
   " on level 2 has children: false

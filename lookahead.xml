@@ -12,6 +12,8 @@
   <look1>one<!-- x --></look1>
   <look2>two<?y?></look2>
   <look3>three<here/></look3>
+  <look4><![CDATA[four]]>4</look4>
+  <look5>five<![CDATA[5]]></look5>
   xyz
   <dont-process />
   <dont-process>processing</dont-process>
