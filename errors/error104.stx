@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!--
+6: Value of attribute `output-method' must be `xml', `text', or a qualified name. Found `foo'
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               version="1.0" output-method="foo" />
