@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root>
+<root xmlns:u="uri">
   
     "a" in the "uri" namespace
   

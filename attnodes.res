@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Test for stx:process-attributes and attribute patterns --><a b="c">
+<!-- Test for stx:process-attributes and attribute patterns --><a xmlns:xlink="http://www.w3.org/1999/xlink" b="c">
     Found b, value: "c"
-  <d xmlns:xlink="http://www.w3.org/1999/xlink" e="f" xlink:href="uri" xlink:type="simple">
+  <d e="f" xlink:href="uri" xlink:type="simple">
     Found e="f"
     Found xlink:href with an "uri" value
     Found xlink attribute type="simple"</d>
