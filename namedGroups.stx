@@ -15,11 +15,14 @@
 
   <stx:group>
     <stx:group name="a">
+      <stx:variable name="avar" />
       <stx:template match="*">
         <stx:text>A: </stx:text>
         <stx:value-of select="name()" />
         <stx:text>&#xA;</stx:text>
+        <stx:assign name="avar" select="position()" />
         <stx:process-attributes group="atts" />
+        <stx:if test="$avar != position()">bug!</stx:if>
         <stx:process-children group="b" />
       </stx:template>
 
