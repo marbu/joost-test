@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <!--
-8: `stx:param' instructions must always occur as first children of `stx:template'
+7: Invalid attribute value template: found unmatched `}' at position 7
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <foo />
-    <stx:param name="foo" />
+    <foo att="1{{{2}}3}4"/>
   </stx:template>
 </stx:transform>
