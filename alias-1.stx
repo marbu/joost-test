@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:bar="urn:bar"
+               xmlns:dummy="urn:dummy"
+               xmlns:axml="urn:xml-alias"
+               version="1.0">
+
+  <stx:namespace-alias stylesheet-prefix="#default"
+                       result-prefix="bar" />
+  <stx:namespace-alias stylesheet-prefix="bar"
+                       result-prefix="#default" />
+  <stx:namespace-alias stylesheet-prefix="axml"
+                       result-prefix="xml" />
+
+  <stx:template match="*" xml:space="preserve">
+    <bar:result axml:space="preserve">
+      <stx:copy />
+      <default />
+      <dummy:d dummy:d="d" foo="foo" bar:bar="bar" />
+      <axml:forbidden />
+    </bar:result>
+  </stx:template>
+
+</stx:transform>
