@@ -28,11 +28,11 @@
   </stx:template>
 
   <stx:template match="node()" priority="-2">
-    <stx:text />on level <stx:value-of select="level()" />
+    <stx:text />on level <stx:value-of select="count(//node())" />
     <stx:text /> has children: <stx:value-of select="has-child-nodes()" />
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
-    <stx:text />Node on level <stx:value-of select="level()" />
+    <stx:text />Node on level <stx:value-of select="count(//node())" />
     <stx:text /> had children: <stx:value-of select="has-child-nodes()" />
     <stx:text>&#xA;</stx:text>
   </stx:template>

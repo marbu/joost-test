@@ -18,12 +18,12 @@
   </stx:template>
 
   <stx:template match="*">
-    <stx:value-of select="concat('in  level ', level(), ': ')" />
+    <stx:value-of select="concat('in  level ', count(//node()), ': ')" />
     <stx:value-of select="$var" />
     <stx:assign name="var" select="concat('.', $var)" />
     <stx:variable name="var" select="'nested local&#xA;'" />
     <stx:process-children />
-    <stx:value-of select="concat('out level ', level(), ': ')" />
+    <stx:value-of select="concat('out level ', count(//node()), ': ')" />
     <stx:value-of select="$var" />
   </stx:template>
 
