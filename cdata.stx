@@ -16,7 +16,8 @@
 
   <stx:template match="*">
     <stx:copy attributes="@*">
-      <cdata><stx:cdata>a&lt;b&amp;c&gt;d</stx:cdata><stx:cdata/></cdata>
+      <cdata><stx:cdata>a&lt;b&amp;c&gt;d</stx:cdata><stx:cdata/>
+      <stx:cdata>]]&gt;&lt;[[]]&gt;</stx:cdata></cdata>
       <stx:text>&#xA;</stx:text>
       <stx:process-children />
     </stx:copy>

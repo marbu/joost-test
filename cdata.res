@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<text><cdata><![CDATA[a<b&c>d]]><![CDATA[]]></cdata>
+<text><cdata><![CDATA[a<b&c>d]]><![CDATA[]]><![CDATA[]]]]><![CDATA[><[[]]]]><![CDATA[>]]></cdata>
 text: "
   this is text with an " on position 1.
 cdata: "<![CDATA[ section containing < and > and & ]]>" on position 1.
