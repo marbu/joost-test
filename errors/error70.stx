@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Public procedure `stx:foo' conflicts with the procedure -->
+<!-- definition in the parent group in line 9 -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:group>
+    <stx:template match="*" />
+    <stx:procedure name="stx:foo" visibility="public" />
+  </stx:group>
+  <stx:procedure name="stx:foo" />
+</stx:transform>

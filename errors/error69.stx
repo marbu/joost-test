@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Global procedure `foo' already defined in line 5 -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:group>
+    <stx:procedure name="foo" visibility="global" />
+  </stx:group>
+  <stx:group>
+    <stx:template match="*" />
+    <stx:group>
+      <stx:procedure name="foo" visibility="global" />
+    </stx:group>
+  </stx:group>
+</stx:transform>

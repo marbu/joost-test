@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- Procedure `foo' already defined in line 4 -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:procedure name="foo" />
+  <stx:template match="*" />
+  <stx:procedure name="foo" />
+</stx:transform>
