@@ -4,7 +4,7 @@
    XML to HTML Verbatim Formatter with Syntax Highlighting
    STX version of
    http://www.informatik.hu-berlin.de/~obecker/XSLT/xmlverbatim/xmlverbatim.xsl
-   MPL 1.1 (c) Oliver Becker, $Date: 2003/06/23 06:53:59 $
+   MPL 1.1 (c) Oliver Becker, $Date: 2003/12/09 12:37:13 $
    obecker@informatik.hu-berlin.de
 -->
 
@@ -40,16 +40,16 @@
     <span class="xmlverb-element-name">
       <stx:value-of select="local-name()"/>
     </span>
-    <stx:if test="get-namespace-uri-for-prefix(.., '') and
-                  not(get-namespace-uri-for-prefix(., ''))">
+    <stx:if test="get-namespace-uri-for-prefix('', ..) and
+                  not(get-namespace-uri-for-prefix('', .))">
       <span class="xmlverb-ns-name">
         <stx:text> xmlns</stx:text>
       </span>
       <stx:text>=&quot;&quot;</stx:text>
     </stx:if>
-    <stx:for-each-item name="ns" select="get-in-scope-namespaces(.)">
-      <stx:if test="not(get-namespace-uri-for-prefix(.., $ns) =
-                        get-namespace-uri-for-prefix(., $ns)) and
+    <stx:for-each-item name="ns" select="get-in-scope-prefixes(.)">
+      <stx:if test="not(get-namespace-uri-for-prefix($ns, ..) =
+                        get-namespace-uri-for-prefix($ns, .)) and
                     $ns != 'xml'">
         <span class="xmlverb-ns-name">
           <stx:text> xmlns</stx:text>
@@ -60,7 +60,7 @@
         </span>
         <stx:text>=&quot;</stx:text>
         <span class="xmlverb-ns-uri">
-          <stx:value-of select="get-namespace-uri-for-prefix(., $ns)"/>
+          <stx:value-of select="get-namespace-uri-for-prefix($ns, .)"/>
         </span>
         <stx:text>&quot;</stx:text>
       </stx:if>

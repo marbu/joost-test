@@ -17,9 +17,9 @@
   </stx:template>
 
   <stx:template match="c" xmlns:b="urn:bar">
-    #namespaces . <stx:value-of select="count(get-in-scope-namespaces(.))" />
-    #namespaces .. <stx:value-of select="count(get-in-scope-namespaces(..))" />
-    #namespaces /* <stx:value-of select="count(get-in-scope-namespaces(/*))" />
+    #namespaces . <stx:value-of select="count(get-in-scope-prefixes(.))" />
+    #namespaces .. <stx:value-of select="count(get-in-scope-prefixes(..))" />
+    #namespaces /* <stx:value-of select="count(get-in-scope-prefixes(/*))" />
     <stx:variable name="n" select="//*/@*" />
     #@* <stx:value-of select="concat(count($n), ' - ', sum($n))" />
     <stx:assign name="n" select="//*/@b:*" />
@@ -28,9 +28,9 @@
     #@foo <stx:value-of select="concat(count($n), ' - ', sum($n))" />
     <stx:assign name="n" select="//*/@*:foo" />
     #@*:foo <stx:value-of select="concat(count($n), ' - ', sum($n))" />
-    xml: <stx:value-of select="get-namespace-uri-for-prefix(.,'xml')" />
-    bar: <stx:value-of select="get-namespace-uri-for-prefix(.,'bar')" />
-    baz: <stx:value-of select="get-namespace-uri-for-prefix(.,'baz')" />
+    xml: <stx:value-of select="get-namespace-uri-for-prefix('xml', .)" />
+    bar: <stx:value-of select="get-namespace-uri-for-prefix('bar', .)" />
+    baz: <stx:value-of select="get-namespace-uri-for-prefix('baz', .)" />
     /a/@foo: <stx:value-of select="/a/@foo" />
     /a/b/@foo: <stx:value-of select="/a/b/@foo" />
     /a/b/@b:foo: <stx:value-of select="/a/b/@b:foo" />

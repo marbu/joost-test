@@ -7,16 +7,16 @@
     <stx:copy attributes="@*">
       <stx:text>&#xA;</stx:text>
       <stx:variable name="first" select="true()" />
-      <stx:for-each-item name="ns" select="get-in-scope-namespaces(.)">
+      <stx:for-each-item name="ns" select="get-in-scope-prefixes(.)">
         <stx:if test="$first">
           <stx:assign name="first" select="false()" />
         </stx:if>
         <stx:else>, </stx:else>
         <stx:value-of select=
-             "concat($ns, '=', get-namespace-uri-for-prefix(., $ns))" />
+             "concat($ns, '=', get-namespace-uri-for-prefix($ns, .))" />
       </stx:for-each-item>
       <stx:text>&#xA;</stx:text>
-      <stx:value-of select="get-in-scope-namespaces(.)" separator=", " />
+      <stx:value-of select="get-in-scope-prefixes(.)" separator=", " />
       <stx:if test="has-child-nodes()">
         <stx:text>&#xA;</stx:text>
         <new xmlns:foo="foo" prop="foo:value"><foo:foo xmlns="bar"/></new>

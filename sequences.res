@@ -5,7 +5,8 @@
     count(seq2): 2
     count(seq3): 11
     sum(seq3): 55
-    sum(NaNs): 3
+    sum(empty): 0
+    sum(NaNs): NaN
     empty(empty): true
     empty(seq1): false
     exists(empty): false
@@ -72,12 +73,14 @@
 
     min(//*/@bar): 5
     min(//*/@baz): 
-    min('foo'): 
+    min((3,'foo')): NaN
     max(//*/@bar): 10
     max(//*/@baz): 
+    max((3,'foo')): NaN
     avg((//*/@foo,//*/@bar)): 4.166666666666667
     avg(//*/@baz): 
-    avg(('bar','baz')): 
+    avg(('bar','baz')): NaN
+    avg((3,'foo')): NaN
     
     value-of seq3: (0 1 2 3 4 5 6 7 8 9 10)
     value-of seq3 with |: (0|1|2|3|4|5|6|7|8|9|10)
