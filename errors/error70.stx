@@ -4,7 +4,7 @@
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:group>
     <stx:template match="*" />
-    <stx:procedure name="stx:foo" visibility="public" />
+    <stx:procedure name="stx:foo" public="yes" />
   </stx:group>
   <stx:procedure name="stx:foo" />
 </stx:transform>
