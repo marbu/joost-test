@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- unknown target group -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:buffer name="buf" />
+    <stx:process-buffer name="buf" group="foo" />
+  </stx:template>
+</stx:transform>
