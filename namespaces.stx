@@ -9,9 +9,9 @@
       <stx:text>&#xA;</stx:text>
       <stx:for-each select="get-in-scope-namespaces(.)">
         <stx:if test="position() != 1">, </stx:if>
-        <stx:value-of
-            select="concat(., '=',
-                           get-namespace-uri-for-prefix(current(), .))" />
+        <stx:value-of select=
+          "concat(current-item(), '=',
+                  get-namespace-uri-for-prefix(., current-item()))" />
       </stx:for-each>
       <stx:if test="has-child-nodes()">
         <stx:text>&#xA;</stx:text>

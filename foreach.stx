@@ -3,16 +3,18 @@
 
   <stx:template match="a">
     <stx:for-each select="//a">
-      <stx:if test="@x = count(//a)">[<stx:process-children />]</stx:if>
-      <stx:value-of select="concat(@x, ' (', position(), ')')" />, <stx:text />
+      <stx:if test="current-item()/@x = count(//a)">[<stx:process-children />]</stx:if>
+      <stx:value-of select="concat(current-item()/@x,
+                                   ' (', position(), ')')" />, <stx:text />
     </stx:for-each>
     <stx:text>&#xA;</stx:text>
     <in-a xml:space="preserve">
       <stx:for-each select="/a">
+        <stx:value-of select="concat('current-item()/@x: ',
+                                     current-item()/@x)" />
         <stx:value-of select="concat('@x: ', @x)" />
-        <stx:value-of select="concat('current()/@x: ', current()/@x)" />
         <stx:call-procedure name="p">
-          <stx:with-param name="x" select="@x" />
+          <stx:with-param name="x" select="current-item()/@x" />
         </stx:call-procedure>
       </stx:for-each>
     </in-a>
@@ -21,7 +23,7 @@
 
   <stx:procedure name="p">
     <stx:param name="x" />
-    <stx:value-of select="concat('p: ', $x, ' - ', @x)" />
+    <stx:value-of select="concat('p: ', $x, ' - ', current-item()/@x)" />
   </stx:procedure>
 
   <stx:template match="/">
@@ -32,9 +34,12 @@
         <stx:variable name="line" select="position()" />
         <tr>
           <stx:for-each select="$numbers">
-            <td><stx:value-of select="$line * ." /></td>
+            <td><stx:value-of select="$line * current-item()" /></td>
           </stx:for-each>
-          <th><stx:value-of select="concat(., ' / ', position())" /></th>
+          <th>
+            <stx:value-of select="concat(current-item(), ' / ',
+                                         position())" />
+          </th>
         </tr>
         <stx:text>&#xA;</stx:text>
       </stx:for-each>

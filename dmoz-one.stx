@@ -113,7 +113,8 @@
           <stx:variable name="id" select="concat(@r:id,'/')" />
           <stx:variable name="ppath" select="()" />
           <stx:for-each select="$parent">
-            <stx:assign name="ppath" select="($ppath, concat('../',.))" />
+            <stx:assign name="ppath"
+                        select="($ppath, concat('../', current-item()))" />
           </stx:for-each>
           <stx:process-siblings
                until="od:Topic[not(starts-with(@r:id,$id))]">

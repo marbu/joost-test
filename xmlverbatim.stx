@@ -4,7 +4,7 @@
    XML to HTML Verbatim Formatter with Syntax Highlighting
    STX version of
    http://www.informatik.hu-berlin.de/~obecker/XSLT/xmlverbatim/xmlverbatim.xsl
-   MPL 1.1 (c) Oliver Becker, $Date: 2003/02/24 14:26:25 $
+   MPL 1.1 (c) Oliver Becker, $Date: 2003/03/20 13:37:42 $
    obecker@informatik.hu-berlin.de
 -->
 
@@ -29,7 +29,7 @@
     <stx:text>&lt;</stx:text>
 
     <stx:variable name="ns-prefix"
-                  select="substring-before(name(),':')" />
+                  select="substring-before(name(), ':')" />
 
     <stx:if test="$ns-prefix != ''">
       <span class="xmlverb-element-nsprefix">
@@ -40,8 +40,8 @@
     <span class="xmlverb-element-name">
       <stx:value-of select="local-name()"/>
     </span>
-    <stx:if test="get-namespace-uri-for-prefix(..,'') and
-                  not(get-namespace-uri-for-prefix(.,''))">
+    <stx:if test="get-namespace-uri-for-prefix(.., '') and
+                  not(get-namespace-uri-for-prefix(., ''))">
       <span class="xmlverb-ns-name">
         <stx:text> xmlns</stx:text>
       </span>
@@ -49,19 +49,20 @@
     </stx:if>
     <stx:variable name="par" select=".." />
     <stx:for-each select="get-in-scope-namespaces(.)">
-      <stx:if test="not(get-namespace-uri-for-prefix($par,.) =
-                        get-namespace-uri-for-prefix(current(), .)) and
-                    . != 'xml'">
+      <stx:if test="not(get-namespace-uri-for-prefix($par, current-item()) =
+                        get-namespace-uri-for-prefix(., current-item())) and
+                    current-item() != 'xml'">
         <span class="xmlverb-ns-name">
           <stx:text> xmlns</stx:text>
-          <stx:if test=".!=''">
+          <stx:if test="current-item() != ''">
             <stx:text>:</stx:text>
           </stx:if>
-          <stx:value-of select="."/>
+          <stx:value-of select="current-item()"/>
         </span>
         <stx:text>=&quot;</stx:text>
         <span class="xmlverb-ns-uri">
-          <stx:value-of select="get-namespace-uri-for-prefix(current(),.)"/>
+          <stx:value-of
+               select="get-namespace-uri-for-prefix(., current-item())"/>
         </span>
         <stx:text>&quot;</stx:text>
       </stx:if>
@@ -209,12 +210,12 @@
     <stx:param name="from" />
     <stx:param name="to" />
     <stx:choose>
-      <stx:when test="contains($value,$from)">
-        <stx:value-of select="substring-before($value,$from)" />
+      <stx:when test="contains($value, $from)">
+        <stx:value-of select="substring-before($value, $from)" />
         <stx:value-of select="$to" />
         <stx:call-procedure name="replace-substring">
           <stx:with-param name="value" 
-                          select="substring-after($value,$from)" />
+                          select="substring-after($value, $from)" />
           <stx:with-param name="from" select="$from" />
           <stx:with-param name="to" select="$to" />
         </stx:call-procedure>
@@ -232,7 +233,7 @@
     <stx:variable name="v1">
       <stx:call-procedure name="replace-substring">
         <stx:with-param name="value"
-                        select="translate($text,' ','&#xA0;')" />
+                        select="translate($text, ' ', '&#xA0;')" />
         <stx:with-param name="from" select="'&#9;'" />
         <stx:with-param name="to" 
                         select="'&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;'" />
@@ -247,13 +248,13 @@
   <stx:procedure name="output-nl">
     <stx:param name="text" />
     <stx:choose>
-      <stx:when test="contains($text,'&#xA;')">
-        <stx:value-of select="substring-before($text,'&#xA;')" />
+      <stx:when test="contains($text, '&#xA;')">
+        <stx:value-of select="substring-before($text, '&#xA;')" />
         <br />
         <stx:text>&#xA;</stx:text>
         <stx:call-procedure name="output-nl">
           <stx:with-param name="text" 
-                          select="substring-after($text,'&#xA;')" />
+                          select="substring-after($text, '&#xA;')" />
         </stx:call-procedure>
       </stx:when>
       <stx:otherwise>

@@ -14,22 +14,22 @@
 [1 (1), [1 (1), 2 (2), []3 (3), 
 <in-a xml:space="preserve">
       
-        @x: 1
-        current()/@x: 3
+        current-item()/@x: 1
+        @x: 3
         p: 1 - 1
       
     </in-a>@x: 3]2 (2), 
 <in-a xml:space="preserve">
       
-        @x: 1
-        current()/@x: 2
+        current-item()/@x: 1
+        @x: 2
         p: 1 - 1
       
     </in-a>@x: 2]1 (1), 
 <in-a xml:space="preserve">
       
+        current-item()/@x: 1
         @x: 1
-        current()/@x: 1
         p: 1 - 1
       
     </in-a>@x: 1
