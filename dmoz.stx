@@ -56,7 +56,7 @@
       </a>
     </li>
     &nl;
-    <stx:result-document href="concat(@r:id, '.html')">
+    <stx:result-document href="{concat(@r:id, '.html')}">
       <html>
         &nl;
         <head>

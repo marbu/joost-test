@@ -16,7 +16,7 @@
   
   <stx:template match="ACT">
     <include ref="act-{position()}.xml" />
-    <stx:result-document href="concat('act-', position(), '.xml')">
+    <stx:result-document href="{concat('act-', position(), '.xml')}">
       <stx:copy>
         <stx:process-children />
       </stx:copy>
