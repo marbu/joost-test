@@ -1,2 +1,9 @@
 <?xml version="1.0"?>
-<example>this is text--<emph>character data</emph>--for a comment</example>
+<test>
+  <comment>
+    <example>this is text--<emph>character data</emph>--for a comment</example>
+  </comment>
+  <comment>c</comment>
+  <pi><something>for the <b>pi</b> as data</something></pi>
+  <pi>p</pi>
+</test>

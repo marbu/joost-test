@@ -2,9 +2,9 @@
 <!-- test for stx:comment and stx:processing-instruction -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
-  <stx:options no-match-events="text" />
+  <stx:options no-match-events="text" strip-space="yes" />
   
-  <stx:template match="/">
+  <stx:template match="comment">
     <stx:comment>comments</stx:comment>
     <stx:text>&#xA;</stx:text>
     <stx:comment>
@@ -18,6 +18,19 @@
     <stx:comment>bar--baz</stx:comment>
     <stx:text>&#xA;</stx:text>
     <stx:comment />
+    <stx:text>&#xA;</stx:text>
   </stx:template>
 
+  <stx:template match="pi">
+    <stx:processing-instruction name="pi">data</stx:processing-instruction>
+    <stx:text>&#xA;</stx:text>
+    <stx:processing-instruction name="foo">
+      <stx:process-children />
+    </stx:processing-instruction>
+    <stx:text>&#xA;</stx:text>
+    <stx:processing-instruction name="check">?></stx:processing-instruction>
+    <stx:text>&#xA;</stx:text>
+    <stx:processing-instruction name="empty" />
+    <stx:text>&#xA;</stx:text>
+  </stx:template>    
 </stx:transform>
