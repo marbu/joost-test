@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <auto-indent>
+  <!--test-->
   <line1>
     <x>
       <y />
@@ -27,4 +28,5 @@
     <b>Everything </b>
     <i>is a test</i>
   </p>
+  <?stop this?>
 </auto-indent>
