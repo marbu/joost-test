@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <!-- namespace handling -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-
-  <stx:options pass-through="none" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="none">
 
   <stx:template match="*:test">
     <stx:copy attributes="@*">

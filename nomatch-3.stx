@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
 <!-- default: ignore -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-  <stx:options pass-through="none" />
-</stx:transform>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="none" />

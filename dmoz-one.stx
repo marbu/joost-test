@@ -7,9 +7,8 @@
                xmlns:d="http://purl.org/dc/elements/1.0/"  
                xmlns:od="http://dmoz.org/rdf"
                xmlns="http://www.w3.org/1999/xhtml"
-               version="1.0">
-
-  <stx:options strip-space="yes" />
+               version="1.0"
+               strip-space="yes">
 
   <stx:param name="css" select="'dmoz.css'" />
 

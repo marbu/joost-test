@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <!-- finite state machine, states simulated by groups -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-
-  <stx:options pass-through="text" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="text">
     
   <stx:template match="text">
     <stx:process-children group="none" />

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Test for stx:copy with an attributes attribute -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-
-  <stx:options pass-through="text" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="text">
   
   <stx:template match="a">
     <stx:copy>  <!-- no "attributes" attribute -->

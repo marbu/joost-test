@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <!-- test for CDATA processing -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
-               version="1.0">
-
-  <stx:options recognize-cdata="yes" />
+               version="1.0"
+               recognize-cdata="yes">
   
   <stx:template match="text()">
     <stx:text />text: "<stx:value-of select="." />" on position <stx:value-of select="position()" />.

@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <!-- groups -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
-               version="1.0">
-
-  <stx:options output-encoding="iso-8859-1" />
+               version="1.0" output-encoding="iso-8859-1">
 
   <stx:group>
     <stx:template match="ul" visibility="public">

@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <!-- add attributes in different namespaces -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-
-  <stx:options default-stxpath-namespace="http://root" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               default-stxpath-namespace="http://root">
 
   <stx:template xmlns="http://root" match="root">
     <wurzel>

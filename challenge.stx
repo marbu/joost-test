@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- test for recursive stx:process-siblings -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-  <stx:options pass-through="all" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="all">
 
   <stx:variable name="level" select="0" />
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- | $Id: utm.stx,v 1.3 2003/01/29 08:13:00 obecker Exp $
+ | $Id: utm.stx,v 1.4 2003/04/30 15:26:46 obecker Exp $
  |
  | The contents of this file are subject to the Mozilla Public License
  | Version 1.1 (the "License"); you may not use this file except in
@@ -33,10 +33,9 @@
  | Turing Machine Markup Language (TMML), see
  | http://www.unidex.com/turing/tmml.htm
  +-->
-<stx:transform version="1.0"
-               xmlns:stx="http://stx.sourceforge.net/2002/ns">
-
-  <stx:options pass-through="none" strip-space="yes" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               version="1.0"
+               pass-through="none" strip-space="yes">
 
   <!-- initial tape (input) -->
   <stx:param name="tape" />

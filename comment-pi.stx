@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- test for stx:comment and stx:processing-instruction -->
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-
-  <stx:options pass-through="text" strip-space="yes" />
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               pass-through="text" strip-space="yes">
   
   <stx:template match="comment">
     <stx:comment>comments</stx:comment>
