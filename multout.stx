@@ -5,7 +5,19 @@
                pass-through="all">
 
   <stx:template match="/*" priority="-1">
-    <stx:process-document href="play.xml" base="#stylesheet" />
+    <stx:process-document href="'play.xml'" base="#stylesheet" />
+    <!-- Berliner Klopsgeschichte -->
+    <stx:result-document href="klops.txt"
+                         output-method="text" output-encoding="iso-8859-1">
+<out>Ick sitz an' Tisch und esse Klops
+uff eenmal klopts.
+Ick kieke, staune, wundre mir,
+Uff eenmal jeht se uff, die T&#xFC;r!
+Nanu, denk ick, ick denk nanu,
+Jetz is se uff, erst war se zu.
+Ick jehe raus und kieke
+Und wer steht drau&#xDF;en? - Icke.&#xA;</out>
+    </stx:result-document>
   </stx:template>
 
   <stx:template match="/PLAY">
