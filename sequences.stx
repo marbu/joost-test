@@ -5,7 +5,8 @@
   <stx:variable name="seq1" select="(1,2,3)" />
   <stx:variable name="seq2" select="(5,6)" />
   <stx:variable name="seq3"
-                select="(0, (), $seq1, (4, $seq2), ((7, 8), 9), 10)" />
+                select="(0, (), $seq1, (4, $seq2), ((7, 8), 9),
+                       (: 9.5 :) (: a (: nested :) comment :) 10)" />
 
   
   <stx:template match="d">
