@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- Encountered `stx:process-children' after stx:process-siblings -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/*/*">
+    <stx:process-siblings />
+    <stx:process-children />
+  </stx:template>
+</stx:transform>
