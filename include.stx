@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:include href="inc1.stx" />
+
+  <stx:group>
+    <stx:include href="inc2.stx" />
+  </stx:group>
+  
+</stx:transform>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:include href="include/inc3.stx" />
+
+  <stx:template match="/">
+    <stx:call-procedure name="p4" />
+    <stx:process-children />
+  </stx:template>
+
+  <stx:procedure name="p1" visibility="group">
+    <stx:text>Greetings from inc1.stx&#xA;</stx:text>
+  </stx:procedure>
+
+</stx:transform>

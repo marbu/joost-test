@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:procedure name="p4" visibility="global">
+    <stx:text>Greetings from inc4.stx&#xA;</stx:text>
+    <stx:call-procedure name="p1" />
+  </stx:procedure>
+
+  <stx:template match="*">
+    <stx:text />in inc4.stx: <stx:copy />
+    <stx:text>&#xA;</stx:text>
+  </stx:template>
+</stx:transform>
