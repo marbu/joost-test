@@ -68,6 +68,12 @@
     "<stx:value-of select="string-pad('STX',1)" />"
     "<stx:value-of select="string-pad('STX',0)" />"
     "<stx:value-of select="string-pad((),20)" />"
+ escape-uri
+    "<stx:value-of select='escape-uri("gopher://spinaltap.micro.umn.edu/00/Weather/CA/Los%20Angeles#ocean", true())' />"
+    "<stx:value-of select='escape-uri("gopher://spinaltap.micro.umn.edu/00/Weather/CA/Los%20Angeles#ocean", false())' />"
+    "<stx:value-of select="escape-uri('^%GOOD%BAD%', true())" />"
+    "<stx:value-of select="escape-uri('^%GOOD%BAD%1', true())" />"
+    "<stx:value-of select="escape-uri('^%GOOD%BAD%12', true())" />"
  floor, ceiling, round<stx:text/>
     <stx:variable name="n" select="2.3" />
     * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
