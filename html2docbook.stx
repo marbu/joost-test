@@ -39,7 +39,7 @@
   <stx:template match="h2">
     <sect2>
       <title><stx:value-of select="." /></title>
-      <stx:process-siblings until="h2" />
+      <stx:process-siblings until="h2 | h1" />
     </sect2>
   </stx:template>
 
