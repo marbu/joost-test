@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- | $Id: utm.stx,v 1.2 2003/01/15 14:28:59 obecker Exp $
+ | $Id: utm.stx,v 1.3 2003/01/29 08:13:00 obecker Exp $
  |
  | The contents of this file are subject to the Mozilla Public License
  | Version 1.1 (the "License"); you may not use this file except in
@@ -91,7 +91,7 @@
   <!-- *********************** storing ************************ -->
 
   <stx:template match="symbols[$mode='store']">
-    <stx:assign name="symbols" select="text()" />
+    <stx:assign name="symbols" select="." />
     <stx:if test="@blank-symbol">
       <stx:assign name="blank" select="@blank-symbol" />
     </stx:if>
@@ -100,10 +100,10 @@
   
   <stx:template match="state[$mode='store']">
     <stx:copy attributes="@*">
-      <stx:value-of select="text()" />
+      <stx:value-of select="." />
     </stx:copy>
     <stx:if test="@start='yes'">
-      <stx:assign name="state" select="text()" />
+      <stx:assign name="state" select="." />
     </stx:if>
   </stx:template>
 
@@ -147,7 +147,7 @@
 
   
   <stx:template match="state[$mode='process']">
-    <stx:if test="text()=$state and @halt='yes'">
+    <stx:if test=".=$state and @halt='yes'">
       <stx:assign name="mode" select="'halt'" />
     </stx:if>
   </stx:template>

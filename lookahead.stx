@@ -16,14 +16,14 @@
     <stx:text /> has children: <stx:value-of select="has-child-nodes()" />
     <stx:text>&#xA;</stx:text>
     <stx:if test="has-child-nodes()">
-      <stx:text />Value is "<stx:value-of select="text()" />"&#xA;<stx:text />
+      <stx:text />Value is "<stx:value-of select="." />"&#xA;<stx:text />
     </stx:if>
     <stx:process-children />
     <stx:text />Element <stx:value-of select="name()" />
     <stx:text /> had children: <stx:value-of select="has-child-nodes()" />
     <stx:text>&#xA;</stx:text>
     <stx:if test="has-child-nodes()">
-      <stx:text />Value was "<stx:value-of select="text()" />"&#xA;<stx:text />
+      <stx:text />Value was "<stx:value-of select="." />"&#xA;<stx:text />
     </stx:if>
   </stx:template>
 

@@ -3,12 +3,11 @@
 
   <stx:template match="node()">
     <stx:value-of select="name()" />:
-    text() '<stx:value-of select="text()" />'
     . '<stx:value-of select="." />'
-    parent '<stx:value-of select="../text()" />'
+    parent '<stx:value-of select=".." />'
     .. '<stx:value-of select=".." />'
     /a/b '<stx:value-of select="/a/b" />'
-    count() = <stx:value-of select="count(//*/text())" />
+    count() = <stx:value-of select="count(//*)" />
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
   </stx:template>

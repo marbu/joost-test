@@ -12,19 +12,19 @@
 
   <!-- store first value -->
   <stx:template match="value[1]">
-    <stx:assign name="value" select="text()" />
+    <stx:assign name="value" select="." />
   </stx:template>
 
   <!-- compare current value with the stored one -->
   <stx:template match="value">
     <stx:copy>
-      <stx:if test="text() &lt; $value">
-        <stx:value-of select="text()" />
+      <stx:if test=". &lt; $value">
+        <stx:value-of select="." />
         <stx:assign name="changed" select="true()" />
       </stx:if>
       <stx:else>
         <stx:value-of select="$value" />
-        <stx:assign name="value" select="text()" />
+        <stx:assign name="value" select="." />
       </stx:else>
     </stx:copy>
   </stx:template>

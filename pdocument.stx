@@ -23,7 +23,7 @@
 
     <stx:template match="/*/*">
       <stx:if test="position() != 1">, </stx:if>
-      <stx:value-of select="normalize-space(text())" />
+      <stx:value-of select="normalize-space(.)" />
     </stx:template>
 
 
