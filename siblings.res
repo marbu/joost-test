@@ -18,12 +18,12 @@
 <y att="3" />
 
 <d><x att="1">x1</x>
-<datt><x att="2" /></datt>
-</d>
+<datt><x att="2" />2</datt>
+1</d>
 
-<datt><y att="2" /></datt>
+<datt><y att="2" />2</datt>
 <y att="3" />
-<d><x att="3" /></d>
+<d><x att="3" />1</d>
 <z att="3" /><y att="3" />
 
 <e><x att="1">x1</x><x att="2" /><y att="2" /></e>
@@ -53,7 +53,7 @@ y at 56
 <sibs />
 
 <xs><x att="1" /><xs><x att="2" /></xs>
-<ys /></xs>
-<ys><y att="2" /><y att="3" /></ys><xs><x att="3" /></xs>
-<ys /><z att="3" /><y att="3" />
+<ys />3</xs>
+<ys><y att="2" /><y att="3" /></ys>3<xs><x att="3" /></xs>
+<ys />3<z att="3" /><y att="3" />
 </root><top><!-- after --></top></top>

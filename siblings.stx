@@ -82,8 +82,10 @@
     <stx:template match="x">
       <stx:text>&#xA;</stx:text>
       <d>
+        <stx:variable name="var" select="1" />
         <stx:process-self group="copy" />
         <stx:process-siblings while="x" />
+        <stx:value-of select="$var" />
       </d>
       <stx:text>&#xA;</stx:text>
     </stx:template>
@@ -91,8 +93,10 @@
     <stx:template match="*[@att='2']">
       <stx:text>&#xA;</stx:text>
       <datt>
+        <stx:variable name="var" select="2" />
         <stx:process-self group="copy" />
         <stx:process-siblings while="*[@att='2']" group="copy" />
+        <stx:value-of select="$var" />
       </datt>
       <stx:text>&#xA;</stx:text>
     </stx:template>
@@ -145,14 +149,18 @@
 
   <stx:group name="h">
     <stx:template match="x">
+      <stx:variable name="x" select="1" />
       <xs>
         <stx:copy attributes="@*" />
         <stx:process-siblings while="x" />
       </xs>
+      <stx:variable name="y" select="2" />
+      <stx:assign name="x" select="$x + $y" />
       <stx:text>&#xA;</stx:text>
       <ys>
-        <stx:process-siblings while="y" />
+        <stx:process-siblings while="y[$y=2]" />
       </ys>
+      <stx:value-of select="$x" />
     </stx:template>
   </stx:group>
   
