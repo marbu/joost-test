@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- test for CDATA processing -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               version="1.0">
+
+  <stx:options recognize-cdata="yes" />
+  
+  <stx:template match="text()">
+    <stx:text />text: "<stx:value-of select="." />" on position <stx:value-of select="position()" />.
+</stx:template>
+
+  <stx:template match="cdata()">
+    <stx:text />cdata: "<stx:copy />" on position <stx:value-of select="position()" />.&#xA;<stx:text/>
+    <stx:process-self />
+</stx:template>
+
+  <stx:template match="*">
+    <stx:copy attributes="@*">
+      <cdata><stx:cdata>a&lt;b&amp;c&gt;d</stx:cdata><stx:cdata/></cdata>
+      <stx:text>&#xA;</stx:text>
+      <stx:process-children />
+    </stx:copy>
+  </stx:template>
+  
+</stx:transform>

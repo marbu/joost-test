@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- test for CDATA processing -->
+<text>
+  this is text with an <![CDATA[ section containing < and > and & ]]>
+  more text <![CDATA[more cdata]]> even more text
+  <![CDATA[]]><![CDATA[]]]]>>
+</text>
