@@ -56,7 +56,8 @@
     sum(//*/@bar): <stx:value-of select="sum(//*/@bar)" />
 
     value-of seq3: (<stx:value-of select="$seq3" />)
-    value-of seq3 with |: (<stx:value-of select="$seq3" separator="|" />)
+    value-of seq3 with |: (<stx:value-of select="$seq3"
+                                separator="{translate(name(/*),'a','|')}" />)
     value-of seq3 with : (<stx:value-of select="$seq3" separator="" />)
     value-of empty: (<stx:value-of select="$empty" />)
     value-of empty with |: (<stx:value-of select="$empty" separator="|" />)
