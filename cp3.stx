@@ -10,7 +10,9 @@
 
   <stx:template match="node()">
     <stx:copy>
-      <stx:process-children />
+      <COPY>
+        <stx:process-children />
+      </COPY>
     </stx:copy>
   </stx:template>
   
