@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- test for stx:comment and stx:processing-instruction -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options no-match-events="text" />
+  
+  <stx:template match="/">
+    <stx:comment>comments</stx:comment>
+    <stx:text>&#xA;</stx:text>
+    <stx:comment>
+      <stx:process-children />
+    </stx:comment>
+    <stx:text>&#xA;</stx:text>
+    <stx:comment>--</stx:comment>
+    <stx:text>&#xA;</stx:text>
+    <stx:comment>-foo-</stx:comment>
+    <stx:text>&#xA;</stx:text>
+    <stx:comment>bar--baz</stx:comment>
+    <stx:text>&#xA;</stx:text>
+    <stx:comment />
+  </stx:template>
+
+</stx:transform>
