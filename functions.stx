@@ -28,11 +28,19 @@
     "<stx:value-of select="substring('abcde',2,3)" />"
     "<stx:value-of select="substring('abcde',6)" />"
     "<stx:value-of select="substring('abcde',-3)" />"
-    "<stx:value-of select="substring('abcde',-3,5)" />"
+    "<stx:value-of select="substring('abcde',-3,6)" />"
     "<stx:value-of select="substring('abcde',1.7,1.3)" />"
     "<stx:value-of select="substring('abcde',1 div 0)" />"
     "<stx:value-of select="substring('abcde',3,0)" />"
     "<stx:value-of select="substring('abcde',3,5)" />"
+    "<stx:value-of select="substring('12345',1.5,2.6)" />"
+    "<stx:value-of select="substring('12345',0,3)" />"
+    "<stx:value-of select="substring('12345',0 div 0, 3)" />"
+    "<stx:value-of select="substring('12345',1, 0 div 0)" />"
+    "<stx:value-of select="substring('12345',-42, 1 div 0)" />"
+    "<stx:value-of select="substring('12345',-1 div 0, 1 div 0)" />"
+    "<stx:value-of select="substring('12345',-1 div 0)" />"
+    
  substring-before
     "<stx:value-of select="substring-before('abcdeabcde','cd')" />"
     "<stx:value-of select="substring-before('abcdeabcde','')" />"
@@ -51,7 +59,9 @@
     <stx:assign name="n" select="." />
     <stx:value-of select="concat(position(), ' ', name($n),' ')" />
     <stx:if test="local-name()">
-      <stx:value-of select="concat('({', namespace-uri(.), '}, ',                             local-name(.), ')')" />
+      <stx:value-of select="concat('({', namespace-uri(.), ' | ',
+                                   prefix(.), '}, ',
+                                   local-name(.), ')')" />
     </stx:if>
     <stx:if test="name()='' and normalize-space()=."> no whitespace!</stx:if>
     <stx:text>&#xA;</stx:text>
@@ -64,3 +74,4 @@
 
   <stx:template match="text()" priority="-2" />
 </stx:transform>
+

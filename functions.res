@@ -23,12 +23,20 @@ Hello, world
     "abcde"
     "bcd"
     ""
-    ""
-    ""
+    "abcde"
+    "ab"
     "b"
     ""
     ""
+    "cde"
+    "234"
+    "12"
     ""
+    ""
+    "12345"
+    ""
+    "12345"
+    
  substring-before
     "ab"
     ""
@@ -38,22 +46,22 @@ Hello, world
     "abcdeabcde"
     ""
     
-1 pi ({}, pi)
-2 root ({http://root.uri}, root)
+1 pi ({ | }, pi)
+2 root ({http://root.uri | }, root)
 1  
-2 foo:bar ({http://foo.uri}, bar)
+2 foo:bar ({http://foo.uri | foo}, bar)
 1  
 2  
 3  
-4 a ({http://root.uri}, a)
+4 a ({http://root.uri | }, a)
 5  
-6 b ({http://root.uri}, b)
+6 b ({http://root.uri | }, b)
 1  
-2 foo:d ({http://foo.uri}, d)
+2 foo:d ({http://foo.uri | foo}, d)
 3  
 7  
 3  
-4 d ({http://root.uri}, d)
+4 d ({http://root.uri | }, d)
 1   no whitespace!
 5  
 
