@@ -39,7 +39,11 @@
          the Joost extension function "sequence"
          (stx:value-of select="v:to-array($vec)" would output a stringified
          reference of an array, e.g. "[Ljava.lang.Object;@62dae9") -->
-    <stx:value-of select="joost:sequence(v:to-array($vec))" separator=", "/>
+    <stx:value-of select="joost:sequence(v:to-array($vec))" separator=", " />
+    <stx:text>&#xA;</stx:text>
+    <!-- convert the Vector object directly
+         (it implements the java.util.List interface) -->
+    <stx:value-of select="joost:sequence($vec)" separator=", " />
     <stx:text />&#xA;min: <stx:value-of select="$min" />
     <stx:text />&#xA;max: <stx:value-of select="$max" />
   </stx:template>
