@@ -30,6 +30,8 @@
       <stx:process-buffer name="input" group="d" />
       <stx:text>&#xA;</stx:text>
       <stx:process-buffer name="input" group="e" />
+      <stx:text>&#xA;</stx:text>
+      <stx:process-buffer name="input" group="f" />
     </root>
   </stx:template>
 
@@ -102,6 +104,20 @@
     </stx:template>
   </stx:group>
 
+  <stx:group name="f">
+    <stx:variable name="cnt" select="0" />
+    <stx:template match="*">
+      <stx:assign name="cnt" select="$cnt + 1" />
+      <stx:value-of select="name()" /> is <stx:value-of select="$cnt" />
+      <stx:text>&#xA;</stx:text>
+      <stx:variable name="local" select="$cnt" />
+      <stx:process-siblings />
+      <stx:copy attributes="@*" />
+      <stx:value-of select="concat(' was ', $local, '/', $cnt)" />
+      <stx:text>&#xA;</stx:text>
+    </stx:template>
+  </stx:group>
+  
   <stx:template match="node()">
     Caught: <stx:copy/>
   </stx:template>
