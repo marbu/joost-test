@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               version="1.0">
+
+  <stx:options no-match-events="copy" />
+  
+  <stx:template match="/">
+    <stx:text markup="serialize">
+      <a b="c">
+        <x:y xmlns:x="z" />
+        <stx:element name="stx:foo" />
+      </a>
+      <stx:comment> comment from the stylesheet </stx:comment>
+      <stx:processing-instruction
+      name="pi">pseudo-att="data"</stx:processing-instruction>
+      <stx:process-children />
+    </stx:text>
+    <stx:text markup="ignore"><a>x<b c="d"/>y</a></stx:text>
+  </stx:template>
+  
+</stx:transform>
