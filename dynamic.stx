@@ -11,19 +11,19 @@
                        select="'baz'" />
       </foo>
       <stx:text>&#xA;</stx:text>
-      <stx:element-start name="{name()}" />
-      <stx:element-start name="x{name()}x" namespace="http://one" />
+      <stx:start-element name="{name()}" />
+      <stx:start-element name="x{name()}x" namespace="http://one" />
       <stx:text>brz</stx:text>
-      <stx:element-end xmlns="http://one" name="{concat('x',name(),'x')}" />
-      <stx:element-end name="{name()}" />
+      <stx:end-element xmlns="http://one" name="{concat('x',name(),'x')}" />
+      <stx:end-element name="{name()}" />
       <stx:text>&#xA;</stx:text>
-      <stx:element-start name="abc:xyz" namespace="abc" />
+      <stx:start-element name="abc:xyz" namespace="abc" />
       <stx:attribute name="abc:att" select="1" namespace="abc" />
-      <stx:element-end name="abc:xyz" namespace="abc" />
+      <stx:end-element name="abc:xyz" namespace="abc" />
       <stx:text>&#xA;</stx:text>
-      <stx:element-start xmlns:abc="abc" name="abc:xyz" />
+      <stx:start-element xmlns:abc="abc" name="abc:xyz" />
       <stx:attribute xmlns:abc="abc" name="abc:att" select="2" />
-      <stx:element-end name="abc:xyz" namespace="abc" />
+      <stx:end-element name="abc:xyz" namespace="abc" />
       <stx:text>&#xA;</stx:text>
       <stx:process-children />
       <stx:text>&#xA;</stx:text>

@@ -21,8 +21,8 @@
 
   <stx:template match="entry">
     <stx:if test="position() mod $cols = 1 and position() != 1">
-      <stx:element-end name="tr" />
-      <stx:element-start name="tr" />
+      <stx:end-element name="tr" />
+      <stx:start-element name="tr" />
       <stx:attribute name="class" select="'even'" />
       <stx:if test="position() mod (2*$cols) = 1">
         <!-- overwrite attribute -->

@@ -7,7 +7,7 @@
   <stx:template match="PLAY">
     <html>
       <stx:process-children />
-      <stx:element-end name="body" />
+      <stx:end-element name="body" />
     </html>
   </stx:template>
   
@@ -25,7 +25,7 @@
         <stx:value-of select="$title" />
       </title>
     </head>
-    <stx:element-start name="body" />
+    <stx:start-element name="body" />
     <h1 style="text-align: center">
       <stx:value-of select="$title" />
     </h1>
@@ -72,7 +72,7 @@
     <table>
       <tr>
         <stx:process-children />
-        <stx:element-end name="td" />
+        <stx:end-element name="td" />
       </tr>
     </table>
   </stx:template>
@@ -83,7 +83,7 @@
   
   <stx:template match="SPEAKER">
     <stx:if test="position() = 1">
-      <stx:element-start name="td" />
+      <stx:start-element name="td" />
       <stx:attribute name="valign" select="'top'" />
       <stx:attribute name="width" select="'210px'" />
     </stx:if>
@@ -96,9 +96,9 @@
   
   <stx:template match="LINE">
     <stx:if test="position()=1">
-      <stx:element-end name="td" />
+      <stx:end-element name="td" />
       <stx:text>&#xA;</stx:text>
-      <stx:element-start name="td" />
+      <stx:start-element name="td" />
     </stx:if>
     <stx:if test="position()!=1">
       <br />
