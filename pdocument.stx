@@ -11,7 +11,7 @@
   
   <stx:template match="doc">
     <stx:value-of select="concat('&#xA;Processing ', @href)" />
-    <stx:process-document href="{@href}" base="#input" group="other" />
+    <stx:process-document href="@href" group="other" />
   </stx:template>
 
   
