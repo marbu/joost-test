@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- error in pattern -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="a[#" />
+</stx:transform>

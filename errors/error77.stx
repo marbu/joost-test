@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- error in expression -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:value-of select="1+(2*(3+position())" />
+  </stx:template>
+</stx:transform>
