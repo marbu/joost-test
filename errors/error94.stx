@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--
+6: Undeclared namespace prefix `foo' found in the `stylesheet-prefix' attribute
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:namespace-alias stylesheet-prefix="foo" result-prefix="bar" />
+</stx:transform>
