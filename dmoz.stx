@@ -25,7 +25,7 @@
         <h2>The Open Directory</h2>
         <p>
           This page was created from the RDF content dump (see
-          <a href="http://dmoz.org/rdf.html">http://dmoz.org/rdf.html</a>).
+          <a href="http://rdf.dmoz.org/">http://rdf.dmoz.org/</a>).
         </p>
         <ul class="topics">
           <stx:process-children />

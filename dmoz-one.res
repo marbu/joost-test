@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns:od="http://dmoz.org/rdf" xmlns:r="http://www.w3.org/TR/RDF/" xmlns:d="http://purl.org/dc/elements/1.0/" xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="dmoz.css" /><title>The Open Directory</title></head><body><h2>The Open Directory</h2><p>
           This page was created from the RDF content dump (see
-          <a href="http://dmoz.org/rdf.html">http://dmoz.org/rdf.html</a>).
+          <a href="http://rdf.dmoz.org/">http://rdf.dmoz.org/</a>).
         </p><ul class="topics"><li><a href="./Top.html">Top</a></li>
 <result-document href="Top.html"><html>
 <head><title>DMOZ: Top</title>
