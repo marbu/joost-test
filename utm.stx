@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
- | $Id: utm.stx,v 1.4 2003/04/30 15:26:46 obecker Exp $
+ | $Id: utm.stx,v 1.5 2003/06/23 08:18:38 obecker Exp $
  |
  | The contents of this file are subject to the Mozilla Public License
  | Version 1.1 (the "License"); you may not use this file except in
@@ -82,7 +82,10 @@
       <stx:text>Missing input tape&#xA;</stx:text>
       <stx:assign name="mode" select="'halt'" />
     </stx:if>
-    <stx:process-buffer name="turing" />
+    <stx:while test="$mode='process'">
+      <stx:process-buffer name="turing" />
+    </stx:while>
+    <stx:value-of select="concat('Result: ', $tape,'&#xA;')" />
   </stx:template>
 
   
@@ -139,9 +142,6 @@
 
     <stx:assign name="found" select="'no'" />
     <stx:process-children />
-
-    <!-- next round -->
-    <stx:process-buffer name="turing" />
   </stx:template>
 
   
@@ -191,14 +191,6 @@
       </stx:if>
     </stx:if>
     <stx:assign name="found" select="'done'" />
-  </stx:template>
-
-  
-
-  <!-- ************************* halt ************************* -->
-
-  <stx:template match="turing[$mode='halt']">
-    <stx:value-of select="concat('Result: ', $tape,'&#xA;')" />
   </stx:template>
 
 </stx:transform>
