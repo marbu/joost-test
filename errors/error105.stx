@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!--
-8: Value of attribute `method' must be `xml', `text', or a qualified name. Found `foo'
+8: Value of attribute `output-method' must be `xml', `text', or a qualified name. Found `foo'
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                version="1.0" >
   <stx:template match="/">
-    <stx:result-document href="foo.xml" method="foo" />
+    <stx:result-document href="foo.xml" output-method="foo" />
   </stx:template>
 </stx:transform>
