@@ -7,5 +7,9 @@
     <stx:process-self />
     <stx:call-procedure name="p2" />
   </stx:template>
+
+  <stx:procedure name="p3">    <!-- public visible by default -->
+    <stx:text>Greetings from inc3.stx&#xA;</stx:text>
+  </stx:procedure>
   
 </stx:transform>

@@ -4,6 +4,7 @@
   <stx:include href="include/inc3.stx" />
 
   <stx:template match="/">
+    <stx:call-procedure name="p3" />
     <stx:call-procedure name="p4" />
     <stx:process-children />
   </stx:template>
