@@ -13,6 +13,18 @@
       <stx:when test="2=2">third when</stx:when>
       <stx:otherwise>otherwise</stx:otherwise>
     </stx:choose>
+    <stx:if test="true()">if true </stx:if>
+    <stx:else>else false </stx:else>
+    <stx:if test="false()">if false </stx:if>
+    <stx:else>else true </stx:else>
+    <stx:if test="true()">
+      <stx:if test="false()">no 1</stx:if>
+      <stx:else>yes&#xA;</stx:else>
+    </stx:if>
+    <stx:else>
+      <stx:if test="true()">no 2</stx:if>
+      <stx:else>no 3</stx:else>
+    </stx:else>
     <stx:text>root finished</stx:text>
   </stx:template>
 

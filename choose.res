@@ -6,4 +6,5 @@ a finished
 d: Attribute e
 d ok
 root ok
+if true else true yes
 root finished
