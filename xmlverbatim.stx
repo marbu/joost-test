@@ -4,7 +4,7 @@
    XML to HTML Verbatim Formatter with Syntax Highlighting
    STX version of
    http://www.informatik.hu-berlin.de/~obecker/XSLT/xmlverbatim/xmlverbatim.xsl
-   MPL 1.1 (c) Oliver Becker, $Date: 2003/04/29 11:42:35 $
+   MPL 1.1 (c) Oliver Becker, $Date: 2003/06/23 06:53:59 $
    obecker@informatik.hu-berlin.de
 -->
 
@@ -47,9 +47,8 @@
       </span>
       <stx:text>=&quot;&quot;</stx:text>
     </stx:if>
-    <stx:variable name="par" select=".." />
     <stx:for-each-item name="ns" select="get-in-scope-namespaces(.)">
-      <stx:if test="not(get-namespace-uri-for-prefix($par, $ns) =
+      <stx:if test="not(get-namespace-uri-for-prefix(.., $ns) =
                         get-namespace-uri-for-prefix(., $ns)) and
                     $ns != 'xml'">
         <span class="xmlverb-ns-name">
