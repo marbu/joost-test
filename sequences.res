@@ -33,6 +33,7 @@
     count(subsequence(seq3,8)): 4
     count(subsequence(seq3,0)): 11
     count(subsequence(seq3,-2)): 11
+    count(subsequence(seq3,20)): 0
     insert-before(seq3,0,(99,88)): 99 88 0 1 2 3 4 5 6 7 8 9 10
     insert-before(seq3,1,(99,88)): 99 88 0 1 2 3 4 5 6 7 8 9 10
     insert-before(seq3,2,(99,88)): 0 99 88 1 2 3 4 5 6 7 8 9 10

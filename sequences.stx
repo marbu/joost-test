@@ -43,6 +43,7 @@
     count(subsequence(seq3,8)): <stx:value-of select="count(subsequence($seq3,8))" />
     count(subsequence(seq3,0)): <stx:value-of select="count(subsequence($seq3,0))" />
     count(subsequence(seq3,-2)): <stx:value-of select="count(subsequence($seq3,-2))" />
+    count(subsequence(seq3,20)): <stx:value-of select="count(subsequence($seq3,20))" />
     insert-before(seq3,0,(99,88)): <stx:value-of select="insert-before($seq3,0,(99,88))" />
     insert-before(seq3,1,(99,88)): <stx:value-of select="insert-before($seq3,1,(99,88))" />
     insert-before(seq3,2,(99,88)): <stx:value-of select="insert-before($seq3,2,(99,88))" />
