@@ -9,12 +9,30 @@
     <stx:value-of select="string-length(normalize-space('  &#xA;   '))" />,
     <stx:value-of select="not(true() and false())" />,
     <stx:value-of select="not(true() or false())" />,
+ starts-with
     <stx:value-of select="starts-with('abcd', 'ab')" />,
     <stx:value-of select="starts-with('abcd', 'abcd')" />,
     <stx:value-of select="starts-with('abcd', '')" />,
     <stx:value-of select="starts-with('abcd', 'xyz')" />,
     <stx:value-of select="starts-with('', 'xyz')" />,
-    <stx:value-of select="starts-with('', '')" />
+    <stx:value-of select="starts-with('', '')" />,
+ contains
+    <stx:value-of select="contains('abcd','bc')" />,
+    <stx:value-of select="contains('abcd','abcd')" />,
+    <stx:value-of select="contains('abcd','')" />,
+    <stx:value-of select="contains('','')" />,
+    <stx:value-of select="contains('','x')" />,
+ substring
+    "<stx:value-of select="substring('abcde',1,1)" />"
+    "<stx:value-of select="substring('abcde',1)" />"
+    "<stx:value-of select="substring('abcde',2,3)" />"
+    "<stx:value-of select="substring('abcde',6)" />"
+    "<stx:value-of select="substring('abcde',-3)" />"
+    "<stx:value-of select="substring('abcde',-3,5)" />"
+    "<stx:value-of select="substring('abcde',1.7,1.3)" />"
+    "<stx:value-of select="substring('abcde',1 div 0)" />"
+    "<stx:value-of select="substring('abcde',3,0)" />"
+    "<stx:value-of select="substring('abcde',3,5)" />"
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
   </stx:template>

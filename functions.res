@@ -5,12 +5,31 @@ Hello, world
     0,
     true,
     false,
+ starts-with
     true,
     true,
     true,
     false,
     false,
-    true
+    true,
+ contains
+    true,
+    true,
+    true,
+    true,
+    false,
+ substring
+    "a"
+    "abcde"
+    "bcd"
+    ""
+    ""
+    ""
+    "b"
+    ""
+    ""
+    ""
+    
 1 pi ({}, pi)
 2 root ({http://root.uri}, root)
 1  
