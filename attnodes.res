@@ -8,7 +8,7 @@
     Found e="f"
     Found xlink:href with an "uri" value
     Found xlink attribute type="simple"
-  <g xmlns:g="g-uri" xmlns="g-uri" h="h-value" g:h="g:h-value" g:b="bbb">
+  <g xmlns="g-uri" xmlns:g="g-uri" h="h-value" g:h="g:h-value" g:b="bbb">
     Found h="h-value"
     Found {g-uri}h, value: "g:h-value"
     Found qualified b, value: "bbb"

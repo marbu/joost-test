@@ -8,7 +8,7 @@ x=uri:x, xml=http://www.w3.org/XML/1998/namespace, =uri:other
 x, xml, 
 
 </x:test>
-</test><one:test xmlns:two="uri:two" xmlns:one="uri:one" xmlns:three="uri:three" t="two:processing">
+</test><one:test xmlns:one="uri:one" xmlns:two="uri:two" xmlns:three="uri:three" t="two:processing">
 two=uri:two, xml=http://www.w3.org/XML/1998/namespace, one=uri:one, three=uri:three
 two, xml, one, three
 
