@@ -5,11 +5,11 @@
                xmlns:axml="urn:xml-alias"
                version="1.0">
 
-  <stx:namespace-alias stylesheet-prefix="#default"
+  <stx:namespace-alias sheet-prefix="#default"
                        result-prefix="bar" />
-  <stx:namespace-alias stylesheet-prefix="bar"
+  <stx:namespace-alias sheet-prefix="bar"
                        result-prefix="#default" />
-  <stx:namespace-alias stylesheet-prefix="axml"
+  <stx:namespace-alias sheet-prefix="axml"
                        result-prefix="xml" />
 
   <stx:template match="*" xml:space="preserve">

@@ -3,7 +3,7 @@
                xmlns:alias="urn:stx-alias"
                version="1.0" output-method="text">
 
-  <stx:namespace-alias stylesheet-prefix="alias" result-prefix="stx" />
+  <stx:namespace-alias sheet-prefix="alias" result-prefix="stx" />
   
   <stx:buffer name="code" />
   

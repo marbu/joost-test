@@ -3,6 +3,6 @@
                xmlns:dummy="urn:dummy"
                version="1.0">
 
-  <stx:namespace-alias stylesheet-prefix="dummy" result-prefix="stx" />
+  <stx:namespace-alias sheet-prefix="dummy" result-prefix="stx" />
 
 </stx:transform>

@@ -6,11 +6,11 @@
                xmlns="urn:default"
                version="1.0">
 
-  <stx:namespace-alias stylesheet-prefix="#default"
+  <stx:namespace-alias sheet-prefix="#default"
                        result-prefix="foo" />
-  <stx:namespace-alias stylesheet-prefix="foo"
+  <stx:namespace-alias sheet-prefix="foo"
                        result-prefix="bar" />
-  <stx:namespace-alias stylesheet-prefix="bar"
+  <stx:namespace-alias sheet-prefix="bar"
                        result-prefix="#default" />
 
   <stx:include href="alias-inc.stx" />

@@ -3,6 +3,6 @@
 7: Namespace alias for prefix `stx' already declared as `#default'
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
-  <stx:namespace-alias stylesheet-prefix="stx" result-prefix="#default" />
-  <stx:namespace-alias stylesheet-prefix="stx" result-prefix="stx" />
+  <stx:namespace-alias sheet-prefix="stx" result-prefix="#default" />
+  <stx:namespace-alias sheet-prefix="stx" result-prefix="stx" />
 </stx:transform>
