@@ -5,6 +5,7 @@ Hello, world
     0,
     true,
     false,
+    true - false,
  starts-with
     true,
     true,

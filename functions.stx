@@ -9,6 +9,8 @@
     <stx:value-of select="string-length(normalize-space('  &#xA;   '))" />,
     <stx:value-of select="not(true() and false())" />,
     <stx:value-of select="not(true() or false())" />,
+    <stx:value-of select="fn:concat(fn:true(), ' - ', fn:false())"
+                  xmlns:fn="http://stx.sourceforge.net/2003/functions" />,
  starts-with
     <stx:value-of select="starts-with('abcd', 'ab')" />,
     <stx:value-of select="starts-with('abcd', 'abcd')" />,
