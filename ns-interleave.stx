@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:abc="xyz"
+               version="1.0" pass-through="text">
+
+  <stx:template match="*" xmlns="urn:default">
+    <wombat att="abc:data" xml:space="preserve">
+      <stx:copy attributes="@*">
+        <quux att="abc:data">
+          <stx:process-children />
+        </quux>
+      </stx:copy>
+    </wombat>
+  </stx:template>
+
+  <stx:template match="/" xml:space="preserve">
+    <stx:process-children />
+    <abc:a>
+      <stx:element name="abc:b" namespace="urn:b">
+        <c att="abc:something" />
+      </stx:element>
+    </abc:a>
+  </stx:template>
+  
+</stx:transform>
