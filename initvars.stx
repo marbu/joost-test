@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <!-- no events available -->
+  <stx:variable name="n" select="name()" />
+  <stx:variable name="e" select="." />
+
+  <stx:template match="/">
+    <stx:text />|<stx:value-of select="$n" />|<stx:text />
+    <stx:value-of select="string-length($e)" />
+    <stx:text>&#xA;</stx:text>
+    <stx:process-children />
+  </stx:template>
+  
+  <stx:group>
+
+    <stx:variable name="v1" select="name()" />
+    <stx:variable name="v2" select="name(..)" />
+
+    <stx:template match="*" visibility="public" recursion-entry-point="yes">
+      <stx:value-of select="concat('this: ', name(),
+                                   '   v1: ', $v1,
+                                   '   v2: ', $v2, '&#xA;')" />
+      <stx:process-children />
+    </stx:template>
+
+    <stx:template match="d">
+      <stx:value-of select="concat('this: ', name(),
+                                   '   v1: ', $v1,
+                                   '   v2: ', $v2, '&#xA;')" />
+      <stx:process-children />
+    </stx:template>
+
+  </stx:group>
+  
+</stx:transform>
