@@ -6,8 +6,7 @@
 
     <stx:variable name="count" select="0" />
     
-    <stx:template match="items-a" visibility="global"
-                  recursion-entry-point="yes">
+    <stx:template match="items-a" visibility="global" new-scope="yes">
       <stx:process-children />
       <stx:value-of select="concat('A (', @id, ') had ', $count,
                                    ' children&#xA;')" />
@@ -23,8 +22,7 @@
 
     <stx:variable name="count" select="0" />
     
-    <stx:template match="items-b" visibility="global"
-                  recursion-entry-point="yes">
+    <stx:template match="items-b" visibility="global" new-scope="yes">
       <stx:process-children />
       <stx:value-of select="concat('B (', @id, ') had ', $count,
                                    ' children&#xA;')" />
