@@ -22,11 +22,10 @@
         <stx:value-of select="text()" />
         <stx:assign name="changed" select="true()" />
       </stx:if>
-      <!-- else -->
-      <stx:if test="text() &gt;= $value">
+      <stx:else>
         <stx:value-of select="$value" />
         <stx:assign name="value" select="text()" />
-      </stx:if>
+      </stx:else>
     </stx:copy>
   </stx:template>
     
