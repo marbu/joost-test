@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-      &lt;a b="c"&gt;&lt;x:y xmlns:x="z" /&gt;&lt;stx:foo xmlns:stx="http://stx.sourceforge.net/2002/ns" /&gt;&lt;/a&gt;
+      &lt;a b="c"&gt;
+        &lt;x:y xmlns:x="z" /&gt;
+        &lt;stx:foo xmlns:stx="http://stx.sourceforge.net/2002/ns" /&gt;
+      &lt;/a&gt;
       &lt;!-- comment from the stylesheet --&gt;
       &lt;?pi pseudo-att="data"?&gt;
       &lt;root&gt;
