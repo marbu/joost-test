@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!--
+6: No default namespace declared to be excluded by using the value `#default' in the `exclude-result-prefixes' attribute
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0"
+               exclude-result-prefixes="#default" />
