@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="node()">
+    <stx:value-of select="name()" />:
+    text() '<stx:value-of select="text()" />'
+    . '<stx:value-of select="." />'
+    parent '<stx:value-of select="../text()" />'
+    .. '<stx:value-of select=".." />'
+    /a/b '<stx:value-of select="/a/b" />'
+    count() = <stx:value-of select="count(//*/text())" />
+    <stx:text>&#xA;</stx:text>
+    <stx:process-children />
+  </stx:template>
+
+</stx:transform>
