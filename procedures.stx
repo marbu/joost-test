@@ -32,6 +32,7 @@
     <stx:call-procedure name="p4" />
     <stx:process-children />
     <stx:call-procedure name="p4" />
+    still in p3: <stx:copy><stx:value-of select="$par" /></stx:copy>
   </stx:procedure>
 
   <stx:group>

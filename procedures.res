@@ -13,4 +13,6 @@
         in p1: <d />
         in p2: <d />
       in p4: <c />
+    still in p3: <c>forty-two</c>
       in p4: <b />
+    still in p3: <b>42</b>
