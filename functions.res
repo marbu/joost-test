@@ -48,7 +48,14 @@ Hello, world
     "THIS IS A NEW FOO FOR ALL BARS"
     "1299.50"
     "xyzde"
-    
+ floor, ceiling, round
+    * 2.3: 2, 3, 2
+    * 2.7: 2, 3, 3
+    * 10.5: 10, 11, 11
+    * -10.5: -11, -10, -10
+    * NaN: NaN, NaN, NaN
+    * Infinity: Infinity, Infinity, Infinity
+    * -Infinity: -Infinity, -Infinity, -Infinity
 1 pi ({ | }, pi)
 2 root ({http://root.uri | }, root)
 1  

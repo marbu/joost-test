@@ -53,7 +53,23 @@
                                      'abcdefghijklmnopqrstuvwxyz',
                                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ')" />"
     "<stx:value-of select="translate('1.299,50', ',.', '.')" />"
-    "<stx:value-of select="translate('abcde', 'abcabc', 'xyz1234')" />"
+    "<stx:value-of select="translate('abcde', 'abcabc', 'xyz1234')"
+    />"
+ floor, ceiling, round<stx:text/>
+    <stx:variable name="n" select="2.3" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
+    <stx:assign name="n" select="2.7" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
+    <stx:assign name="n" select="10.5" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
+    <stx:assign name="n" select="-10.5" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
+    <stx:assign name="n" select="0 div 0" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
+    <stx:assign name="n" select="1 div 0" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
+    <stx:assign name="n" select="-1 div 0" />
+    * <stx:value-of select="$n" />: <stx:value-of select="floor($n)" />, <stx:value-of select="ceiling($n)" />, <stx:value-of select="round($n)" />
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
   </stx:template>
