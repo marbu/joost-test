@@ -4,7 +4,7 @@
    XML to HTML Verbatim Formatter with Syntax Highlighting
    STX version of
    http://www.informatik.hu-berlin.de/~obecker/XSLT/xmlverbatim/xmlverbatim.xsl
-   MPL 1.1 (c) Oliver Becker, $Date: 2003/02/23 14:01:39 $
+   MPL 1.1 (c) Oliver Becker, $Date: 2003/02/24 14:26:25 $
    obecker@informatik.hu-berlin.de
 -->
 
@@ -89,7 +89,7 @@
         <stx:text> /&gt;</stx:text>
       </stx:otherwise>
     </stx:choose>
-    <stx:if test="level()=1"><br /><stx:text>&#xA;</stx:text></stx:if>
+    <stx:if test="not(../..)"><br /><stx:text>&#xA;</stx:text></stx:if>
   </stx:template>
 
   <!-- attribute nodes -->
@@ -131,7 +131,7 @@
       </stx:call-procedure>
     </span>
     <stx:text>--&gt;</stx:text>
-    <stx:if test="level()=1"><br /><stx:text>&#xA;</stx:text></stx:if>
+    <stx:if test="not(../..)"><br /><stx:text>&#xA;</stx:text></stx:if>
   </stx:template>
 
   <!-- processing instructions -->
@@ -147,7 +147,7 @@
       </span>
     </stx:if>
     <stx:text>?&gt;</stx:text>
-    <stx:if test="level()=1"><br /><stx:text>&#xA;</stx:text></stx:if>
+    <stx:if test="not(../..)"><br /><stx:text>&#xA;</stx:text></stx:if>
   </stx:template>
 
 
