@@ -6,7 +6,7 @@
   <stx:buffer name="buf1" />
   <stx:buffer name="buf2" />
   
-  <stx:template match="/">
+  <stx:template match="root">
     <stx:result-buffer name="buf1">
       <inside>
         <abc>xyz <![CDATA[<>]]></abc>
@@ -39,4 +39,9 @@
     <stx:text>&#xA;finished&#xA;</stx:text>
   </stx:template>
 
+  <stx:template match="root/inside">touche</stx:template>
+
+  <stx:template match="/">
+    <stx:text/>{<stx:process-children/>}<stx:text/>
+  </stx:template>
 </stx:transform>
