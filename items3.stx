@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- global variables: recursive counting -->
-<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <stx:variable name="counta" select="0" />
   <stx:variable name="countb" select="0" />

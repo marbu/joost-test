@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- groups -->
-<stx:transform xmlns:stx="http://temporary.uri/2002/stx"
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                strict-mode="yes" version="1.0">
 
   <stx:options output-encoding="iso-8859-1" />

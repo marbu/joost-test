@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Test for stx:process-attributes and attribute patterns -->
-<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <!-- copy template -->
   <stx:template match="node()">

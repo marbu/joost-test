@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- variable test suite -->
-<stx:transform xmlns:stx="http://temporary.uri/2002/stx"
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                xmlns:bar="http://bar" version="1.0">
 
   <stx:variable name="foo" select="1" />

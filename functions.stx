@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Function test suite -->
-<stx:transform xmlns:stx="http://temporary.uri/2002/stx" version="1.0">
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
   <stx:template match="/">
     <stx:value-of select="concat('Hello', ', ', 'world&#xA;')" />

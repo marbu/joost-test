@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<transform xmlns="http://temporary.uri/2002/stx" version="1.0">
+<transform xmlns="http://stx.sourceforge.net/2002/ns" version="1.0">
   <options no-match-events="text" />
 
   <template match="a">
@@ -29,7 +29,7 @@
 
   <template xmlns:u="uri" match="u:root">
     <root xmlns="">
-      <x:process-children xmlns:x="http://temporary.uri/2002/stx" />
+      <x:process-children xmlns:x="http://stx.sourceforge.net/2002/ns" />
     </root>
   </template>
 
