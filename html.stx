@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE stx:transform [
+<!ENTITY nl "<stx:text>&#xA;</stx:text>">
+]>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:joost="http://joost.sf.net/extension"
+               version="1.0" output-method="joost:html"
+               output-encoding="ascii">
+
+  <stx:template match="/">
+    <html>
+      &nl;
+      <stx:cdata>&lt;jsp:setProperty name="user" property="id" value='&lt;%= "id" + idValue %>'/></stx:cdata>
+      &nl;
+      <head>
+        &nl;
+        <meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+        &nl;
+        <link rel="stylesheet" type="text/css" href="default.css" />
+        &nl;
+      </head>
+      &nl;
+      <body>
+        <p>
+          Line 1
+          <br />
+          Line 2
+          <hr size="2" />
+          Space&#xA0;Space
+          <stx:cdata>&amp;</stx:cdata>auml;
+        </p>
+        &nl;
+        <p />
+        &nl;
+        <img src="something.jpg" alt="äöü" />
+        &nl;
+      </body>
+    </html>
+  </stx:template>
+
+</stx:transform>
