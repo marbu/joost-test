@@ -4,42 +4,34 @@
                version="1.0" output-encoding="iso-8859-1">
 
   <stx:group>
-    <stx:template match="ul" visibility="public">
+    <stx:template match="ul" public="yes">
       <stx:process-children />
     </stx:template>
 
-    <stx:group>
-      <stx:template match="li" visibility="public">
+    <stx:group pass-through="text">
+      <stx:template match="li" public="yes">
         <stx:text>-  </stx:text>
         <stx:process-children />
         <stx:text>&#xA;</stx:text>
       </stx:template>
-      
-      <stx:template match="text()">
-        <stx:copy />
-      </stx:template>
     </stx:group>
   </stx:group>
 
   <stx:group>
-    <stx:template match="ol" visibility="public">
+    <stx:template match="ol" public="yes">
       <stx:process-children />
     </stx:template>
 
-    <stx:group>
-      <stx:template match="li" visibility="public">
+    <stx:group pass-through="text">
+      <stx:template match="li" public="yes">
         <stx:value-of select="concat(position(), '. ')" />
         <stx:process-children />
         <stx:text>&#xA;</stx:text>
       </stx:template>
-      
-      <stx:template match="text()">
-        <stx:copy />
-      </stx:template>
     </stx:group>
   </stx:group>
 
-  <stx:group>
+  <stx:group pass-through="text">
     <stx:template match="b" visibility="global">
       <stx:text>*</stx:text>
       <stx:process-children />
@@ -50,10 +42,6 @@
       <stx:text>_</stx:text>
       <stx:process-children />
       <stx:text>_</stx:text>
-    </stx:template>
-
-    <stx:template match="text()">
-      <stx:copy />
     </stx:template>
   </stx:group>
     
