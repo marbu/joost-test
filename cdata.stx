@@ -20,6 +20,8 @@
       <stx:cdata>]]&gt;&lt;[[]]&gt;</stx:cdata></cdata>
       <stx:text>&#xA;</stx:text>
       <stx:process-children />
+      <stx:variable name="v" select="'variable content'" />
+      <stx:cdata>{<stx:value-of select="$v" />}</stx:cdata>
     </stx:copy>
   </stx:template>
   

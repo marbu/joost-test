@@ -16,4 +16,4 @@ cdata: "<![CDATA[]]]]>" on position 4.
 text: "]]" on position 7.
 text: "&gt;
 " on position 8.
-</text>
+<![CDATA[{variable content}]]></text>
