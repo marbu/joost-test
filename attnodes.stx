@@ -4,7 +4,7 @@
 
   <!-- copy template -->
   <stx:template match="node()">
-    <stx:copy>
+    <stx:copy attributes="@*">
       <stx:process-attributes />
       <stx:process-children />
     </stx:copy>

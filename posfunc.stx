@@ -21,10 +21,10 @@
   </stx:template>
   
   <stx:template match="*[2]">
-    <stx:copy> * at position <stx:value-of select="position()" /></stx:copy>
+    <stx:copy attributes="@*"> * at position <stx:value-of select="position()" /></stx:copy>
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
-    <stx:copy> * :: position <stx:value-of select="position()" /></stx:copy>
+    <stx:copy attributes="@*"> * :: position <stx:value-of select="position()" /></stx:copy>
     <stx:text>&#xA;</stx:text>
   </stx:template>
   
@@ -41,11 +41,11 @@
   </stx:template>
 
   <stx:template match="node()[6]">
-    <stx:copy> node() at position <stx:value-of select="position()" />
+    <stx:copy attributes="@*"> node() at position <stx:value-of select="position()" />
     </stx:copy>
     <stx:text>&#xA;</stx:text>
     <stx:process-children />
-    <stx:copy> node() :: position <stx:value-of select="position()" />
+    <stx:copy attributes="@*"> node() :: position <stx:value-of select="position()" />
     </stx:copy>
     <stx:text>&#xA;</stx:text>
   </stx:template>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-  <a x="1" y="2" z="3" ok="ok" misc="ok" />
+  <a />
   <b x="1" y="2" z="3" ok="ok" misc="ok" />
   <c />
   <d />

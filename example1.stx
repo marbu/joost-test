@@ -6,7 +6,7 @@
   <stx:variable name="day" select="'Monday'" />
 
   <stx:template match="list">
-    <stx:copy>
+    <stx:copy attributes="@*">
       <stx:attribute name="date" select="$day" />
       <stx:process-children />
     </stx:copy>

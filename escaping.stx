@@ -3,7 +3,7 @@
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:options no-match-events="text" />
   <stx:template match="escape">
-    <stx:copy>
+    <stx:copy attributes="@*">
       <stx:process-children />
     </stx:copy>
     <element att="&quot;check&quot;">&lt;&amp;&gt;</element>
