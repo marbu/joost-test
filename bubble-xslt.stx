@@ -12,8 +12,8 @@
        postprocessing step -->
   <stx:template match="list">
     <stx:buffer name="result">
-      <stx:process-self filter="http://www.w3.org/1999/XSL/Transform"
-                        src="buffer(xslt-sort)" />
+      <stx:process-self filter-method="http://www.w3.org/1999/XSL/Transform"
+                        filter-src="buffer(xslt-sort)" />
     </stx:buffer>
     <stx:process-buffer name="result" group="postprocess" />
   </stx:template>

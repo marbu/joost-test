@@ -15,12 +15,13 @@
   
   <stx:template match="/">
     <stx:if test="filter-available($xsltns)">
-      <stx:process-buffer name="data" src=" url( ' xslt.xsl ' )"
-                          filter="{$xsltns}">
+      <stx:process-buffer name="data" filter-src=" url( ' xslt.xsl ' )"
+                          filter-method="{$xsltns}">
         <stx:with-param name="ns:p" select="'bear'" xmlns:ns="urn:ext" />
       </stx:process-buffer>
       <stx:text>&#xA;</stx:text>
-      <stx:process-buffer name="data" src="buffer(code)" filter="{$xsltns}">
+      <stx:process-buffer name="data" filter-src="buffer(code)"
+                          filter-method="{$xsltns}">
         <stx:with-param name="answer" select="42" />
       </stx:process-buffer>
     </stx:if>

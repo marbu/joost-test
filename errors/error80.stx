@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!--
-7: Missing `filter' attribute in `stx:process-children' (`src' is present)
+7: Missing `filter-method' attribute in `stx:process-children' (`filter-src' is present)
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <stx:process-children src="url(error80.stx)" />
+    <stx:process-children filter-src="url(error80.stx)" />
   </stx:template>
 </stx:transform>
