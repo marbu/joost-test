@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
+  <!-- these two will be shadowed in inc3.stx -->
+  <stx:param name="par" select="0" />
+  <stx:variable name="var" select="-1" />
+  
   <stx:include href="inc1.stx" />
 
   <stx:group>

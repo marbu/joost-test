@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
+  <!-- Shadow $var from the principal module -->
+  <stx:variable name="var" select="1" />
+
+  <!-- Shadow $par from the principal module -->
+  <stx:param name="par" />
+  
   <stx:include href="inc4.stx" />
 
   <stx:template match="*">
@@ -9,7 +15,9 @@
   </stx:template>
 
   <stx:procedure name="p3">    <!-- public visible by default -->
-    <stx:text>Greetings from inc3.stx&#xA;</stx:text>
+    <stx:text />Greetings from inc3.stx: <stx:value-of select="$var" />
+    <stx:text /> | <stx:value-of select="$par" />
+    <stx:text>&#xA;</stx:text>
   </stx:procedure>
   
 </stx:transform>
