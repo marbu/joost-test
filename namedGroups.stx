@@ -73,7 +73,7 @@
   
   <stx:template match="*">
     This line mustn't be printed
-    <stx:process-children group="stx:bliblabl" />
+    <stx:process-children />
   </stx:template>
   
   <stx:group name="stx:foo">
