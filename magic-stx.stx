@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                xmlns:alias="urn:stx-alias"
-               version="1.0">
+               version="1.0" output-method="text">
 
   <stx:namespace-alias stylesheet-prefix="alias" result-prefix="stx" />
   
