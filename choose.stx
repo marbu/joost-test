@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!-- test of choose/when/otherwise -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="root">
+    <stx:choose>
+      <stx:when test="1=2">first when</stx:when>
+      <stx:when test="1=1">
+        <stx:text>second when&#xA;</stx:text>
+        <stx:process-children />
+        <stx:text>root ok&#xA;</stx:text>
+      </stx:when>
+      <stx:when test="2=2">third when</stx:when>
+      <stx:otherwise>otherwise</stx:otherwise>
+    </stx:choose>
+    <stx:text>root finished</stx:text>
+  </stx:template>
+
+  <stx:template match="a">
+    <stx:choose>
+      <stx:when test="1=2">first when</stx:when>
+      <stx:otherwise>
+        <stx:text>otherwise&#xA;</stx:text>
+        <stx:process-self />
+        <stx:text>a ok&#xA;</stx:text>
+      </stx:otherwise>
+    </stx:choose>
+    <stx:text>a finished&#xA;</stx:text>
+  </stx:template>
+
+  <stx:template match="*" priority="10">
+    <stx:value-of select="concat(name(), ': ')" />
+    <stx:process-self />
+  </stx:template>
+
+  <stx:template match="*">
+    <stx:process-children />
+  </stx:template>
+
+  <stx:template match="d">
+    <stx:choose>
+      <stx:when test="1=1">
+        <stx:process-attributes />
+        <stx:text>d ok&#xA;</stx:text>
+      </stx:when>
+    </stx:choose>
+  </stx:template>
+
+  <stx:template match="@*">
+    <stx:text/>Attribute <stx:value-of select="." />
+    <stx:text>&#xA;</stx:text>
+  </stx:template>
+  
+</stx:transform>
