@@ -5,6 +5,7 @@
     <root>
       <stx:text>hello</stx:text>
       <stx:text>
+        <hello/>
         <stx:process-children />
       </stx:text>
     </root>
