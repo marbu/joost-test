@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- test for stx:process-document -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options no-match-events="ignore" />
+
+  <stx:template match="/">
+    <stx:text>principal source document</stx:text>
+    <stx:process-children />
+  </stx:template>
+  
+  <stx:template match="doc">
+    <stx:value-of select="concat('&#xA;Processing ', @href)" />
+    <stx:process-document href="{@href}" group="other" />
+  </stx:template>
+
+  
+  <stx:group name="other">
+    <stx:template match="/">
+      <stx:text>&#xA;other document&#xA;</stx:text>
+      <stx:process-children />
+    </stx:template>
+
+    <stx:template match="/*/*">
+      <stx:if test="position() != 1">, </stx:if>
+      <stx:value-of select="normalize-space(text())" />
+    </stx:template>
+
+
+  </stx:group>
+
+</stx:transform>
