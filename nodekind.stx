@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:options strip-space="yes" />
+  
+  <stx:template match="/|node()">
+    <stx:copy />: <stx:value-of select="node-kind(.)" />
+    <stx:text>&#xA;</stx:text>
+    <stx:process-attributes />
+    <stx:process-children />
+  </stx:template>
+
+  <stx:template match="@*">
+    <stx:value-of select="name()" />: <stx:value-of select="node-kind(.)" />
+    <stx:text>&#xA;</stx:text>
+  </stx:template>
+</stx:transform>
