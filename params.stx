@@ -18,6 +18,7 @@
     </stx:process-children>
   </stx:template>
 
+
   <stx:group name="a">
 
     <stx:param name="p2" select="22" />
@@ -26,7 +27,7 @@
     <stx:param name="n3" select="3" />
     
     <stx:template match="*">
-      <stx:value-of select="name()" />: <stx:text />
+      <stx:value-of select="concat('[a] ', name())" />: <stx:text />
       <stx:param name="fib1" required="yes" />
       <stx:param name="fib2" required="no" />
       <stx:value-of select="concat($fib1, ' - ', $fib2, '&#xA;')" />
@@ -44,14 +45,29 @@
         <stx:with-param name="fib1" select="$fib2" />
         <stx:with-param name="fib2" select="$fib1 + $fib2" />
       </stx:process-buffer>
+      <stx:call-procedure name="proc">
+        <stx:with-param name="foo" select="'bar'" />
+      </stx:call-procedure>
+      <stx:call-procedure name="proc">
+        <stx:with-param name="fib2" select="500" />
+      </stx:call-procedure>
     </stx:template>
+    
+    <stx:procedure name="proc">
+      <stx:param name="foo" />
+      <stx:param name="fib1" select="100" />
+      <stx:param name="fib2" />
+      <stx:value-of select="concat('proc: ', $foo, ' - ', $fib1, ' - ', $fib2,
+                                   '&#xA;')" />
+    </stx:procedure>
+
   </stx:group>
 
   <stx:group name="b">
     <stx:template match="*">
       <stx:param name="fib1" />
       <stx:param name="fib2" />
-      <stx:value-of select="concat(name(), ': ', $fib1, ' - ', $fib2,
+      <stx:value-of select="concat('[b] ', name(), ': ', $fib1, ' - ', $fib2,
                                    '&#xA;')" />
       <stx:text>process-self       </stx:text>
       <stx:process-self group="c">
@@ -67,7 +83,7 @@
     <stx:template match="*">
       <stx:param name="fib1" />
       <stx:param name="fib2" />
-      <stx:value-of select="concat(name(), ': ', $fib1, ' - ', $fib2,
+      <stx:value-of select="concat('[c1] ', name(), ': ', $fib1, ' - ', $fib2,
                                    '&#xA;')" />
       <stx:text>process-attributes </stx:text>
       <stx:process-attributes>
@@ -79,7 +95,7 @@
     <stx:template match="@*">
       <stx:param name="fib1" />
       <stx:param name="fib2" />
-      <stx:value-of select="concat(name(), ': ', $fib1, ' - ', $fib2,
+      <stx:value-of select="concat('[c2] ', name(), ': ', $fib1, ' - ', $fib2,
                                    '&#xA;')" />
       <stx:text>process-document   </stx:text>
       <stx:process-document href="'params.xml'" base="#input" group="d">
@@ -90,13 +106,33 @@
   </stx:group>
 
   <stx:group name="d">
-    <!-- note: we skip the root / -->
-    <stx:template match="*">
+    <!-- note: we skip the root / and the document element -->
+    <stx:template match="*/*">
       <stx:param name="fib1" required="yes" />
       <stx:param name="fib2" required="yes" />
-      <stx:value-of select="concat(name(), ': ', $fib1, ' - ', $fib2,
+      <stx:value-of select="concat('[d] ', name(), ': ', $fib1, ' - ', $fib2,
                                    '&#xA;')" />
+      <stx:text>process-siblings 1 </stx:text>
+      <stx:process-siblings group="e" until="baz">
+        <stx:with-param name="fib1" select="$fib2" />
+        <stx:with-param name="fib2" select="$fib1 + $fib2" />
+      </stx:process-siblings>
+      <stx:text>process-siblings 2 </stx:text>
+      <stx:process-siblings group="e" while="baz">
+        <stx:with-param name="fib1" select="$fib1 + $fib2" />
+        <stx:with-param name="fib2" select="$fib2" />
+      </stx:process-siblings>
     </stx:template>
   </stx:group>
 
+  <stx:group name="e">
+    <stx:template match="*">
+      <stx:param name="fib1" required="yes" />
+      <stx:param name="fib2" required="yes" />
+      <stx:value-of select="concat('[e] ', name(), ': ', $fib1, ' - ', $fib2,
+                                   '&#xA;')" />
+    </stx:template>
+  </stx:group>
+  
+  
 </stx:transform>
