@@ -39,6 +39,7 @@
     seq2+seq3: 5
     seq2+empty: 
     empty+seq3: 
+    count(seq2+seq3): 1
 
     count(//*/@*): 6
     sum(//*/@*): 25

@@ -48,6 +48,7 @@
     seq2+seq3: <stx:value-of select="$seq2 + $seq3" />
     seq2+empty: <stx:value-of select="$seq2 + $empty" />
     empty+seq3: <stx:value-of select="$empty + $seq3" />
+    count(seq2+seq3): <stx:value-of select="count($seq2 + $seq3)" />
 
     count(//*/@*): <stx:value-of select="count(//*/@*)" />
     sum(//*/@*): <stx:value-of select="sum(//*/@*)" />
