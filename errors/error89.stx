@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- error89:7: Group procedure `p' conflicts with the procedure definition
+     in line 4 of file:.../errinc4.stx -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:group>
+    <stx:procedure name="p" visibility="group" />
+    <stx:group>
+      <stx:include href="errinc4.stx" />
+    </stx:group>
+  </stx:group>
+
+    
+</stx:transform>

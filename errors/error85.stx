@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- errinc2.stx:4: Public procedure `p' conflicts with the procedure
+     definition in line 4 of file:.../errinc1.stx -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:include href="errinc1.stx" />
+  <stx:include href="errinc2.stx" />
+
+</stx:transform>
