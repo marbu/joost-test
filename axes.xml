@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<a foo="1">
+  <b foo="2"/>
+  <b foo="3"/>
+  <b xmlns:bar="urn:bar" bar:x="10" bar:y="20" bar:foo="100">
+    <c foo="4"><d/></c>
+  </b>
+</a>

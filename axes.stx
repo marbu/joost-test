@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:variable name="cnt" select="1" />
+
+  <stx:template match="b">
+    <stx:value-of select="concat($cnt, ' ', name(), ': ')" />
+    /a/b/@foo: <stx:value-of select="/a/b/@foo" />
+    b/@foo <stx:value-of select="b/@foo" />
+    ../@foo <stx:value-of select="../@foo" />
+    <stx:text>&#xA;</stx:text>
+    <stx:assign name="cnt" select="$cnt + 1" />
+    <stx:process-children />
+  </stx:template>
+
+  <stx:template match="c" xmlns:b="urn:bar">
+    #namespace::* <stx:value-of select="count(//*/namespace::*)" />
+    #namespace::bar <stx:value-of select="count(//*/namespace::bar)" />
+    <stx:variable name="n" select="//*/@*" />
+    #@* <stx:value-of select="concat(count($n), ' - ', sum($n))" />
+    <stx:assign name="n" select="//*/@b:*" />
+    #@b:* <stx:value-of select="concat(count($n), ' - ', sum($n))" />
+    <stx:assign name="n" select="//*/@foo" />
+    #@foo <stx:value-of select="concat(count($n), ' - ', sum($n))" />
+    <stx:assign name="n" select="//*/@*:foo" />
+    #@*:foo <stx:value-of select="concat(count($n), ' - ', sum($n))" />
+    xml: <stx:value-of select="namespace::xml" />
+    bar: <stx:value-of select="namespace::bar" />
+    baz: <stx:value-of select="namespace::baz" />
+    /a/@foo: <stx:value-of select="/a/@foo" />
+    /a/b/@foo: <stx:value-of select="/a/b/@foo" />
+    /a/b/@b:foo: <stx:value-of select="/a/b/@b:foo" />
+    /a/x/@foo: <stx:value-of select="/a/x/@foo" />
+  </stx:template>
+</stx:transform>
