@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- `stx:param' must be empty -->
+<!-- (because required="yes") -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:param name="foo" required="yes">a</stx:param>
+</stx:transform>

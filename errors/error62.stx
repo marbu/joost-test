@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- stx:param' must not have a `select' attribute if it declares the -->
+<!-- parameter as required -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:param name="foo" select="1" required="yes" />
+</stx:transform>
