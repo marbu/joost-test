@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+12: Attempt to emit unmatched end tag `bar' (`foo' expected)
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <foo>
+      <bar>
+        wombat
+        <stx:end-element name="bar" />
+        quux
+      </bar>
+    </foo>
+  </stx:template>
+</stx:transform>
