@@ -15,6 +15,8 @@
         <stx:value-of select=
              "concat($ns, '=', get-namespace-uri-for-prefix(., $ns))" />
       </stx:for-each-item>
+      <stx:text>&#xA;</stx:text>
+      <stx:value-of select="get-in-scope-namespaces(.)" separator=", " />
       <stx:if test="has-child-nodes()">
         <stx:text>&#xA;</stx:text>
         <new xmlns:foo="foo" prop="foo:value"><foo:foo xmlns="bar"/></new>
