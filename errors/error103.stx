@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+9: Can't assign to undeclared variable `x'
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:variable name="a" />
+  <stx:template match="/">
+    <stx:variable name="b" />
+    <stx:assign name="x" select="42" />
+    <stx:value-of select="$x" />
+  </stx:template>
+</stx:transform>
