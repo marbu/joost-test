@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Current item for evaluating `@foo' is not a node (got number 1.0) -->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:for-each select="(1,2)">
+      <stx:value-of select="@foo" />
+    </stx:for-each>
+  </stx:template>
+</stx:transform>
