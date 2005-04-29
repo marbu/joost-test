@@ -4,6 +4,6 @@
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">
-    <stx:process-children filter-src="url(error80.stx)" />
+    <stx:process-children filter-src="url('error80.stx')" />
   </stx:template>
 </stx:transform>

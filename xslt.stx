@@ -20,6 +20,12 @@
         <stx:with-param name="ns:p" select="'bear'" xmlns:ns="urn:ext" />
       </stx:process-buffer>
       <stx:text>&#xA;</stx:text>
+      <stx:variable name="filter-src" select="'xslt.xsl '" />
+      <stx:process-buffer name="data" filter-src=" url($filter-src)"
+                          filter-method="{$xsltns}">
+        <stx:with-param name="ns:p" select="'bear'" xmlns:ns="urn:ext" />
+      </stx:process-buffer>
+      <stx:text>&#xA;</stx:text>
       <stx:process-buffer name="data" filter-src="buffer(code)"
                           filter-method="{$xsltns}">
         <stx:with-param name="answer" select="42" />
