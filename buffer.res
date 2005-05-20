@@ -7,6 +7,8 @@ appending ...
   <!-- comment -->
   <?pi data?>
   <end xmlns="urn:end-uri" really="yes" /><cleared /><cleared />
+break .. break
+Gotcha: baz!
 finished
 
 }

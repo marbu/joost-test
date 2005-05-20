@@ -44,6 +44,19 @@
 
     <stx:result-buffer name="buf1" clear="yes" />
     <stx:process-buffer name="buf1" />
+    <stx:result-buffer name="buf1">
+      <stx:start-element name="foo" />
+    </stx:result-buffer>
+    <stx:text>&#xA;break ..</stx:text>
+    <stx:result-buffer name="buf1">
+      <stx:attribute name="bar" select="'baz'" />
+      <stx:text>Gotcha</stx:text>
+    </stx:result-buffer>
+    <stx:text> break&#xA;</stx:text>
+    <stx:result-buffer name="buf1">
+      <stx:end-element name="foo" />
+    </stx:result-buffer>
+    <stx:process-buffer name="buf1" />
     <stx:text>&#xA;finished&#xA;</stx:text>
   </stx:template>
 
@@ -62,6 +75,10 @@
       </yyy>
     </stx:buffer>
     <stx:process-buffer name="buf4" />
+  </stx:template>
+  
+  <stx:template match="foo">
+    <stx:value-of select="concat(., ': ', @bar, '!')" />
   </stx:template>
   
 </stx:transform>
