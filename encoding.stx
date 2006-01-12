@@ -5,5 +5,7 @@
                pass-through="text">
   <stx:template match="abc">
     <ABC euro="&#x20AC;">бав<stx:process-children />&#xA5;&#xA3;&#xA9;&#xFF;</ABC>
+    <stx:text>&#xA;</stx:text>
+    <surrogate char="&#120543;">alpha: &#x1D6C2;, beta: &#x1D6C3;</surrogate>
   </stx:template>
 </stx:transform>
