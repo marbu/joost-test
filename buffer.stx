@@ -13,6 +13,7 @@
       </y>
     </x>
   </stx:buffer>
+  <stx:buffer name="buf4">10</stx:buffer>
   
   <stx:template match="root">
     <stx:result-buffer name="buf1">
@@ -65,16 +66,17 @@
   <stx:template match="/">
     <stx:text/>{<stx:process-children/>}<stx:text/>
     <stx:process-buffer name="buf3" />
+    <number><stx:process-buffer name="buf4" /></number>
   </stx:template>
 
   <stx:template match="y"> <!-- from buf3 -->
-    <stx:buffer name="buf4">
+    <stx:buffer name="buf5">
       <yyy>
         <stx:process-attributes />
         <stx:process-children />
       </yyy>
     </stx:buffer>
-    <stx:process-buffer name="buf4" />
+    <stx:process-buffer name="buf5" />
   </stx:template>
   
   <stx:template match="foo">

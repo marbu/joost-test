@@ -6,11 +6,11 @@ appending ...
   <cdata>   <![CDATA[here]]>  <![CDATA[  ]]>!</cdata>
   <!-- comment -->
   <?pi data?>
-  <end xmlns="urn:end-uri" really="yes" /><cleared /><cleared />
+  <end xmlns="urn:end-uri" really="yes" />
+<cleared /><cleared />
 break .. break
 Gotcha: baz!
 finished
-
 }
     <x>
       <yyy and="last">
@@ -18,3 +18,4 @@ finished
         <z />
       </yyy>
     </x>
+  <number>10</number>
