@@ -3,7 +3,7 @@ principal source document
 Processing errors/../flat.xml
 other document
 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136
-Processing http://cvs.sourceforge.net/viewcvs.py/*checkout*/joost/test/bubble.xml?rev=HEAD
+Processing http://joost.cvs.sourceforge.net/*checkout*/joost/test/bubble.xml?revision=HEAD
 other document
 127, 126, 130, 124, 128, 131, 134, 132, 133, 123, 135, 136, 125, 129
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
