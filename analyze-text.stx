@@ -7,7 +7,7 @@
     <stx:text>&#xA;</stx:text>
     <stx:variable name="ignored" select="()" />
     <stx:analyze-text select=".">
-      <stx:match regex="[a-z]*">
+      <stx:match regex="[a-z]*" case="insensitive">
         <str><stx:value-of select="regex-group(0)" /></str>
       </stx:match>
       <stx:match regex=",">-</stx:match>

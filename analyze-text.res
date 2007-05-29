@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<analyze>55abc,def,123,rrr,oli9,,sss</analyze>
-<str>abc</str>-<str>def</str>--<str>rrr</str>-<str>oli</str>--<str>sss</str>
+<analyze>55abc,def,123,rrr,Oli9,,sss</analyze>
+<str>abc</str>-<str>def</str>--<str>rrr</str>-<str>Oli</str>--<str>sss</str>
 <ignored>55 123 9</ignored>
 <analyze>xx:foo</analyze>
 prefix: xx
