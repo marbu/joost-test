@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="text">
+    <stx:text>&#xA;</stx:text>
+    <analyze><stx:value-of select="." /></analyze>
+    <stx:text>&#xA;</stx:text>
+    <stx:variable name="ignored" select="()" />
+    <stx:analyze-text select=".">
+      <stx:match regex="[a-z]*">
+        <str><stx:value-of select="regex-group(0)" /></str>
+      </stx:match>
+      <stx:match regex=",">-</stx:match>
+      <stx:no-match>
+        <stx:assign name="ignored" select="($ignored, regex-group(0))" />
+      </stx:no-match>
+    </stx:analyze-text>
+    <stx:text>&#xA;</stx:text>
+    <ignored><stx:value-of select="$ignored" /></ignored>
+  </stx:template>
+  
+  <stx:template match="att">
+    <stx:text>&#xA;</stx:text>
+    <analyze><stx:value-of select="@name" /></analyze>
+    <stx:text>&#xA;</stx:text>
+    <stx:analyze-text select="@name">
+      <stx:match regex="([a-z]+):">
+        <stx:text>prefix: </stx:text>
+        <stx:value-of select="regex-group(1)" />
+        <stx:text>&#xA;</stx:text>
+        <stx:process-children />
+        <stx:text>prefix (again): </stx:text>
+        <stx:value-of select="regex-group(1)" />
+        <stx:text>&#xA;</stx:text>
+      </stx:match>
+      <stx:match regex="[a-z]+">
+        <stx:text>local: </stx:text>
+        <stx:value-of select="regex-group(0)" />
+        <stx:text>&#xA;</stx:text>
+      </stx:match>
+      <stx:match regex="(\+)([a-z]+)\(([0-9]+)((,)([0-9]+))*(\))">
+        0: <stx:value-of select="regex-group(0)" />
+        1: <stx:value-of select="regex-group(1)" />
+        2: <stx:value-of select="regex-group(2)" />
+        3: <stx:value-of select="regex-group(3)" />
+        4: <stx:value-of select="regex-group(4)" />
+        5: <stx:value-of select="regex-group(5)" />
+        6: <stx:value-of select="regex-group(6)" />
+        7: <stx:value-of select="regex-group(7)" />
+        8: <stx:value-of select="regex-group(8)" />
+        <stx:process-children />
+        0a: <stx:value-of select="regex-group(0)" />
+        1a: <stx:value-of select="regex-group(1)" />
+        2a: <stx:value-of select="regex-group(2)" />
+        3a: <stx:value-of select="regex-group(3)" />
+        4a: <stx:value-of select="regex-group(4)" />
+        5a: <stx:value-of select="regex-group(5)" />
+        6a: <stx:value-of select="regex-group(6)" />
+        7a: <stx:value-of select="regex-group(7)" />
+        8a: <stx:value-of select="regex-group(8)" />
+        <stx:text>&#xA;</stx:text>
+      </stx:match>
+      <stx:no-match>
+        <ignored one="{regex-group(0)}" />
+        <stx:process-children />
+        <ignored two="{regex-group(0)}" />
+      </stx:no-match>
+    </stx:analyze-text>
+  </stx:template>
+</stx:transform>
