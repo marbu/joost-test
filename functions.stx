@@ -2,6 +2,13 @@
 <!-- Function test suite -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
+<stx:variable name="poem">
+Kaum hat dies der Hahn gesehen,
+Fängt er auch schon an zu krähen:
+«Kikeriki! Kikikerikih!!»
+Tak, tak, tak! - da kommen sie.
+</stx:variable>
+
   <stx:template match="/">
     <stx:value-of select="concat('Hello', ', ', 'world&#xA;')" />
     <stx:value-of select="string-length(1234=5)" />, <!-- false -->
@@ -68,6 +75,25 @@
     "<stx:value-of select="string-pad('STX',1)" />"
     "<stx:value-of select="string-pad('STX',0)" />"
     "<stx:value-of select="string-pad((),20)" />"
+ matches
+    "<stx:value-of select="matches('abracadabra', 'bra')" />"
+    "<stx:value-of select="matches('abracadabra', '^a.*a$')" />"
+    "<stx:value-of select="matches('abracadabra', '^bra')" />"
+    "<stx:value-of select="matches($poem, 'Kaum.*krähen')" />"
+    "<stx:value-of select="matches($poem, 'Kaum.*krähen', 's')" />"
+    "<stx:value-of select="matches($poem, '^Kaum.*gesehen,$', 'm')" />"
+    "<stx:value-of select="matches($poem, '^Kaum.*gesehen,$')" />"
+    "<stx:value-of select="matches($poem, 'kiki', 'i')" />"
+ replace
+    "<stx:value-of select="replace('abcd', '(ab)|(a)', '[1=$1][2=$2]')" />"
+    "<stx:value-of select="replace('abracadabra', 'bra', '*')" />"
+    "<stx:value-of select="replace('abracadabra', 'a.*a', '*')" />"
+    "<stx:value-of select="replace('abracadabra', 'a.*?a', '*')" />"
+    "<stx:value-of select="replace('abracadabra', 'a', '')" />"
+    "<stx:value-of select="replace('abracadabra', 'a(.)', 'a$1$1')" />"
+    "<stx:value-of select="replace('AAAA', 'A+', 'b')" />"
+    "<stx:value-of select="replace('AAAA', 'A+?', 'b')" />"
+    "<stx:value-of select="replace('darted', '^(.*?)d(.*)$', '$1c$2')" />"
  escape-uri
     "<stx:value-of select='escape-uri("http://www.example.com/00/Weather/CA/Los%20Angeles#ocean", true())' />"
     "<stx:value-of select='escape-uri("http://www.example.com/00/Weather/CA/Los%20Angeles#ocean", false())' />"
