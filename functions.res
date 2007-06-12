@@ -80,6 +80,12 @@ Hello, world
     "b"
     "bbbb"
     "carted"
+ tokenize
+    "", "r", "c", "d", "r", ""
+    "The", "cat", "sat", "on", "the", "mat"
+    "1", "15", "24", "50"
+    "1", "15", "", "24", "50", ""
+    "Some unparsed", "HTML", "text"
  escape-uri
     "http%3A%2F%2Fwww.example.com%2F00%2FWeather%2FCA%2FLos%20Angeles#ocean"
     "http://www.example.com/00/Weather/CA/Los%20Angeles#ocean"
