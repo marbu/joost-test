@@ -1,0 +1,25 @@
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+    xmlns:x="xxx" exclude-result-prefixes="x"
+    version="1.0" pass-through="all">
+        
+    <stx:buffer name="b"/>
+    
+    <stx:template match="/">
+        <result>
+            <stx:process-children/>
+        </result>
+    </stx:template>
+
+    <stx:template match="x:xml">
+        <stx:result-buffer name="b">
+            <stx:process-children/>
+        </stx:result-buffer>
+        <stx:process-buffer name="b" group="copy"/>
+    </stx:template>
+    
+    <stx:template match="x:foo">
+        <FOO/>
+    </stx:template>
+        
+    <stx:group name="copy" pass-through="all"/>
+</stx:transform>
