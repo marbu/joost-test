@@ -67,4 +67,20 @@
       </stx:no-match>
     </stx:analyze-text>
   </stx:template>
+  
+  <stx:template match="xlf">
+    <stx:copy>
+      <stx:analyze-text select=".">
+        <stx:match regex="\{{\|\|(\d+)\}}">
+          <stx:value-of select="regex-group(1)" />
+        </stx:match>
+        <stx:match regex="\{{(\d+)\|\|\}}">
+          <stx:value-of select="regex-group(1)" />
+        </stx:match>
+        <stx:no-match>
+          <stx:value-of select="regex-group(0)" />
+        </stx:no-match>
+      </stx:analyze-text>
+    </stx:copy>
+  </stx:template>
 </stx:transform>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<analyze>55abc,def,123,rrr,Oli9,,sss</analyze>
+<analyze>55abc,def,123,rrr,Oli9,,sss-</analyze>
 <str>abc</str>-<str>def</str>--<str>rrr</str>-<str>Oli</str>--<str>sss</str>
-<ignored>55 123 9</ignored>
+<ignored>55 123 9 -</ignored>
 <analyze>xx:foo</analyze>
 prefix: xx
 
@@ -73,4 +73,6 @@ local: baz
         8a: 
 prefix (again): xx
 local: foo
-
+<xlf>
+    {12} 12 abc 12
+  </xlf>

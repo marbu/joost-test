@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <data>
-  <text>55abc,def,123,rrr,Oli9,,sss</text>
+  <text>55abc,def,123,rrr,Oli9,,sss-</text>
   <att name="xx:foo">
     <att name="yy:bar">
       <att name="zz:wombat" />
@@ -14,4 +14,7 @@
       <att name="+proc(44,55)" />
     </att>
   </att>
+  <xlf>
+    {12} {||12} abc {12||}
+  </xlf>
 </data>
