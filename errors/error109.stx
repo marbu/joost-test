@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!--
-7: Cannot output character with code 228 in the encoding `ASCII'
+7: Cannot output character with code 228 in the encoding 'ASCII'
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                version="1.0" output-encoding="ascii" output-method="text">

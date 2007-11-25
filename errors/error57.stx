@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-7: Unknown target group `foo' specified for `stx:process-document'
+7: Unknown target group 'foo' specified for 'stx:process-document'
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

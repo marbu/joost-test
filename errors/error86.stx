@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-4: Public procedure `p' conflicts with the procedure definition in line 4 (possibly several times included)
+4: Public procedure 'p' conflicts with the procedure definition in line 4 (possibly several times included)
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 

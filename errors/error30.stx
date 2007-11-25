@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-9: Encountered `stx:process-children' after stx:process-self
+9: Encountered 'stx:process-children' after stx:process-self
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

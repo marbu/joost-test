@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-9: Target object (first parameter) in the function call to `toString' is null
+9: Target object (first parameter) in the function call to 'toString' is null
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
                xmlns:sys="java:java.lang.System"

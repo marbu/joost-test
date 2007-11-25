@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-6: Syntax error. Couldn't repair and continue parse. Encountered end of pattern after `['.
+6: Syntax error. Couldn't repair and continue parse. Encountered end of pattern after '['.
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="a[" />

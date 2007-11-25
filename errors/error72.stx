@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <!--
-5: File is not an STX transformation sheet, need namespace `http://stx.sourceforge.net/2002/ns' for the `transform' element
+5: File is not an STX transformation sheet, need namespace 'http://stx.sourceforge.net/2002/ns' for the 'transform' element
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2001/ns" version="1.0" />

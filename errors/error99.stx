@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-7: Parameter `y' is not a valid index for function `insert-before'
+7: Parameter 'y' is not a valid index for function 'insert-before'
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

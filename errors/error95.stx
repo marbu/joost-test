@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-6: The value of `result-prefix' must be either a NCName or the string `#default', found `foo:bar'
+6: The value of 'result-prefix' must be either a NCName or the string '#default', found 'foo:bar'
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:namespace-alias sheet-prefix="stx" result-prefix="foo:bar" />

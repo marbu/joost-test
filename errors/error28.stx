@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-5: Missing end tag for `foo' at the end of the document
+5: Missing end tag for 'foo' at the end of the document
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

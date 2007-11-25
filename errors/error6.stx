@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-6: `stx:template' must have a `match' attribute
+6: 'stx:template' must have a 'match' attribute
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template />

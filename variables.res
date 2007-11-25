@@ -4,8 +4,8 @@ bar:foo=2
 bar=3
 oder:and=0.0012000000000000001
 bar=7 (nodes in the document)
-Comment: ` this is a comment '
-PI: `this is a processing instruction'
-Text: `
+Comment: ' this is a comment '
+PI: 'this is a processing instruction'
+Text: '
   and this is text'
   

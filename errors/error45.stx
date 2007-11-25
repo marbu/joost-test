@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-7: Can't create processing instruction `x' here (`stx:comment' started in line 7)
+7: Can't create processing instruction 'x' here ('stx:comment' started in line 7)
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

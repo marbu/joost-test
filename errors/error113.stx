@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- 
-9: `stx:doctype' must have a `name' attribute
+9: 'stx:doctype' must have a 'name' attribute
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

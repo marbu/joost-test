@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-8: Group procedure `p' conflicts with the procedure definition in line 10
+8: Group procedure 'p' conflicts with the procedure definition in line 10
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 

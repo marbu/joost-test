@@ -28,9 +28,9 @@
     <stx:process-children />
     <stx:text />bar=<stx:value-of select="$bar" />
     <stx:text> (nodes in the document)&#xA;</stx:text>
-    <stx:text />Comment: `<stx:value-of select="$comment" />'
-PI: `<stx:value-of select="$pi" />'
-Text: `<stx:value-of select="$text" />'
+    <stx:text />Comment: '<stx:value-of select="$comment" />'
+PI: '<stx:value-of select="$pi" />'
+Text: '<stx:value-of select="$text" />'
   </stx:template>
 
   <stx:template match="text()">

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-8: Procedure `foo' already defined in line 6
+8: Procedure 'foo' already defined in line 6
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:procedure name="foo" />

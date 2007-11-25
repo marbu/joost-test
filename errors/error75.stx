@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-6: Syntax error. Couldn't repair and continue parse. Found `#'.
+6: Syntax error. Couldn't repair and continue parse. Found '#'.
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="a[#" />

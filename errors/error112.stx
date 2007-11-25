@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-14: Missing end tag for `bar' at the end of the buffer
+14: Missing end tag for 'bar' at the end of the buffer
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 

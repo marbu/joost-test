@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-11: Attempt to emit unmatched end tag `foo' (no element opened)
+11: Attempt to emit unmatched end tag 'foo' (no element opened)
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
   <stx:template match="/">

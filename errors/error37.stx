@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-10: Found `stx:else' without stx:if
+10: Found 'stx:else' without stx:if
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 

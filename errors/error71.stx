@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <!--
-5: Found `stx:text' as root element, file is not an STX transformation sheet
+5: Found 'stx:text' as root element, file is not an STX transformation sheet
 -->
 <stx:text xmlns:stx="http://stx.sourceforge.net/2002/ns" />

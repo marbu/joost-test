@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-18: Buffer `buf1' acts already as result buffer
+18: Buffer 'buf1' acts already as result buffer
 -->
 <stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
 
