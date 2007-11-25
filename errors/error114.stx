@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- 
+8: Cannot create a document type declaration for `foo' when an element or another DTD has already been output
+-->
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:doctype name="tmx" />
+    <stx:doctype name="foo" />
+  </stx:template>
+</stx:transform>

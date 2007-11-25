@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="/">
+    <stx:comment>without SYSTEM</stx:comment>
+    <stx:text>&#xA;</stx:text>
+    <stx:doctype name="tmx" 
+      public-id="-//LISA OSCAR:1998//DTD for Translation Memory eXchange//EN" />
+    <tmx>
+      <header />
+      <body />
+    </tmx>
+  </stx:template>
+</stx:transform>
