@@ -6,13 +6,13 @@
     <table>
       <stx:analyze-text select=".">
         <stx:match regex="[ \n]+" /><!-- ignore spaces -->
-        <stx:match regex="([a-z]+)[ ]*$">
+        <stx:match regex="([a-z]+)[ ]*$" flags="m">
           <td>
             <stx:value-of select="regex-group(1)" />
           </td>
           <stx:end-element name="tr" />
         </stx:match>
-        <stx:match regex="^[ ]*([a-z]+)">
+        <stx:match regex="^[ ]*([a-z]+)" flags="m">
           <stx:text>&#xA;</stx:text>
           <stx:start-element name="tr" />
           <td>
