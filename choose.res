@@ -5,6 +5,7 @@ b: c: a ok
 a finished
 d: Attribute e
 d ok
+d finished
 root ok
 if true else true yes
 root finished

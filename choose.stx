@@ -56,6 +56,7 @@
         <stx:text>d ok&#xA;</stx:text>
       </stx:when>
     </stx:choose>
+    <stx:text>d finished&#xA;</stx:text>
   </stx:template>
 
   <stx:template match="@*">
