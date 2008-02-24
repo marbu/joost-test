@@ -1,0 +1,22 @@
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               version="1.0" pass-through="all">
+
+  <stx:buffer name="words"/>
+
+  <stx:template match="word | space | punctuation">
+    <stx:result-buffer name="words" clear="yes">
+      <stx:process-self group="copy"/>
+      <stx:process-siblings until="linebreak" group="copy"/>
+    </stx:result-buffer>
+    <stx:process-buffer name="words" group="strip-wrapper-elems"/>
+  </stx:template>
+
+  <stx:group name="copy" pass-through="all"/>
+
+  <stx:group name="strip-wrapper-elems" pass-through="none">
+    <stx:template match="word | space | punctuation">
+      <stx:value-of select="."/>
+    </stx:template>
+  </stx:group>
+
+</stx:transform>

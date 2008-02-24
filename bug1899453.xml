@@ -1,0 +1,13 @@
+<para>
+  <word>Hello</word>
+  <space xml:space="preserve"> </space>
+  <word>world</word>
+  <punctuation>!</punctuation>
+  <linebreak/>
+  <word>The</word>
+  <space xml:space="preserve"> </space>
+  <word>quick</word>
+  <space xml:space="preserve"> </space>
+  <word>brown</word>
+  <punctuation>...</punctuation>
+</para>
