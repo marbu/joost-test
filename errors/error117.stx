@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- 
+5: 'stx:include' not allowed as root element
+-->
+<stx:include xmlns:stx="http://stx.sourceforge.net/2002/ns" href="error116.stx" />
