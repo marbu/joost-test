@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+               xmlns:alias="urn:alias" 
+               version="1.0">
+
+  <stx:namespace-alias sheet-prefix="alias" result-prefix="stx" />
 
   <stx:procedure name="p4" visibility="global">
     <stx:text>Greetings from inc4.stx&#xA;</stx:text>
@@ -9,5 +13,14 @@
   <stx:template match="*">
     <stx:text />in inc4.stx: <stx:copy />
     <stx:text>&#xA;</stx:text>
+    <!-- Test for stx:include from dynamically created code -->
+    <stx:buffer name="code">
+       <alias:transform version="1.0">
+         <alias:include href="inc5.stx" />
+       </alias:transform>
+    </stx:buffer>
+    <stx:process-self filter-src="buffer(code)"
+                      filter-method="http://stx.sourceforge.net/2002/ns" />
   </stx:template>
+
 </stx:transform>

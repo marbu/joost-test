@@ -8,7 +8,7 @@
     <stx:process-children />
     <stx:text>&#xA;</stx:text>
     <stx:process-document href="()" />
-    <stx:process-document href="'include/inc4.stx'" base="#sheet"
+    <stx:process-document href="'include/inc5.stx'" base="#sheet"
                           group="copy" />
     <stx:process-document href="('sum.xml','serialize.xml', 'xmlspace.xml')"
                           group="copy" />

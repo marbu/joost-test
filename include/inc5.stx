@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+
+  <stx:template match="*">
+    <stx:text>Greetings from inc5.stx: </stx:text>
+    <stx:value-of select="name()" />
+    <stx:text>&#xA;</stx:text>
+  </stx:template>
+  
+</stx:transform>
