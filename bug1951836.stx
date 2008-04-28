@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  
+  <stx:template match="x">
+    <stx:choose>
+      <stx:when test=". = 1" />
+      <stx:when test=". &gt; 1 and . &lt; 7" >   </stx:when>
+      <stx:when test=". = 7"><!-- seven --></stx:when>
+      <stx:when test=". = 8">eight&#xA;</stx:when>
+      <stx:otherwise>default: <stx:value-of select="." />.&#xA;</stx:otherwise>
+    </stx:choose>
+  </stx:template>
+
+</stx:transform>
