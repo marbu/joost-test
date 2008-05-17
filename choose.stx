@@ -32,6 +32,7 @@
     <stx:choose>
       <stx:when test="1=2">first when</stx:when>
       <stx:otherwise>
+        <stx:variable name="var" />
         <stx:text>otherwise&#xA;</stx:text>
         <stx:process-self />
         <stx:text>a ok&#xA;</stx:text>
