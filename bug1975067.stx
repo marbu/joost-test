@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns" version="1.0">
+  <stx:template match="node()">
+    <stx:choose>
+      <stx:when test="true()">
+        <stx:text>WHEN</stx:text>
+        <stx:if test="true()" />
+      </stx:when>
+      <stx:otherwise>
+        <stx:text>OTHERWISE</stx:text>
+      </stx:otherwise>
+    </stx:choose>
+  </stx:template>
+</stx:transform>
