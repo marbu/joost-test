@@ -1,0 +1,11 @@
+<stx:transform xmlns:stx="http://stx.sourceforge.net/2002/ns"
+  xmlns:foo="http://foo.org" pass-through="all"
+  version="1.0" output-method="xml">
+
+  <stx:template match="foo:bar">
+    <foo id="{@id}" xmlns="http://foo.org">
+      <stx:process-children />
+    </foo>
+  </stx:template>
+
+</stx:transform>
