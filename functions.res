@@ -86,6 +86,8 @@ Hello, world
     "1", "15", "24", "50"
     "1", "15", "", "24", "50", ""
     "Some unparsed", "HTML", "text"
+    "true"
+    "true"
  escape-uri
     "http%3A%2F%2Fwww.example.com%2F00%2FWeather%2FCA%2FLos%20Angeles#ocean"
     "http://www.example.com/00/Weather/CA/Los%20Angeles#ocean"

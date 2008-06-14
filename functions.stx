@@ -102,6 +102,8 @@ Tak, tak, tak! - da kommen sie.
     "<stx:value-of select="string-join(tokenize('1, 15, 24, 50', ',\s*'), $sep)" />"
     "<stx:value-of select="string-join(tokenize('1,15,,24,50,', ','), $sep)" />"
     "<stx:value-of select="string-join(tokenize('Some unparsed &lt;br> HTML &lt;BR> text', '\s*&lt;br>\s*', 'i'), $sep)" />"
+    "<stx:value-of select="empty(tokenize('',' '))"/>"
+    "<stx:value-of select="empty(tokenize((),' '))"/>"
  escape-uri
     "<stx:value-of select='escape-uri("http://www.example.com/00/Weather/CA/Los%20Angeles#ocean", true())' />"
     "<stx:value-of select='escape-uri("http://www.example.com/00/Weather/CA/Los%20Angeles#ocean", false())' />"
